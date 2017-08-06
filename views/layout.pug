@@ -2,5 +2,8 @@ doctype html
 html
   include ./includes/head
   body(data-spy='scroll', data-target='#navbarNav', data-offset='60')
+    include ./includes/navbar
     block content
+    .container.px-0.py-0
+      include ./includes/footer
     include ./includes/scripts
