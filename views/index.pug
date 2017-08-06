@@ -1,6 +1,13 @@
 extends layout
 
 block content
-  .container.bg-inverse
-    h1= title
-    p Welcome to #{title}
+  include ./includes/navbar
+  audio#player(autoplay='', onloadeddata='setHalfVolume()')
+    source(src='music/we_ll_meet_again.mp3', type='audio/mp3')
+  include ./includes/title
+  include ./includes/about
+  include ./includes/operations
+  include ./includes/arsenal
+  include ./includes/join
+  include ./includes/donations
+  include ./includes/footer

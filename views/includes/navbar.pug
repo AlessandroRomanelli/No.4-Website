@@ -1,0 +1,27 @@
+nav.navbar.navbar-toggleable-sm.navbar-inverse.bg-inverse.fixed-top.container.pl-lg-5
+  button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+  #navbarNav.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto.mt-2.mt-md-0
+      li.nav-item
+        a.nav-link(href='#home')
+          | Home 
+          span.sr-only (current)
+      li.nav-item
+        a.nav-link(href='#about') About
+      li.nav-item
+        a.nav-link(href='#operations') Operations
+      li.nav-item
+        a.nav-link(href='#structure') Structure
+      li.nav-item
+        a.nav-link(href='#arsenal-hd') Arsenal
+      li.nav-item
+        a.nav-link(href='#media') Media
+      li.nav-item
+        a.nav-link(href='#join') Join
+      li.nav-item
+        a.nav-link(href='#donation') Donate
+  div
+    .pause.mr-4(onclick='togglePlayback()')
+  a.navbar-brand.mx-auto.d-inline-block.align-top.float-md-right(href='https://arma3.com/', target='_blank')
+    img(src='img/a3logo.png')
