@@ -4,6 +4,7 @@ $(document).ready(() => {
       container: 'body'
     });
 
+    $('body').scrollspy({ target: '#navbarNav' });
 
     $('#time').one('click', function() {
       setInterval(() => {
@@ -24,6 +25,10 @@ $(document).ready(() => {
       $(this).addClass('collapsed');
       $(this).next().children().last().collapse('hide');
     }, 300);
+  });
+
+  $('#navbarNav ul li a[href="#"]').click(function(event) {
+    event.preventDefault();
   });
 
   // Select all links with hashes

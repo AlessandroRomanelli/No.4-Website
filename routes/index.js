@@ -5,7 +5,11 @@ var weapons = require('../data/data').weapons;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express', ops: operations, weapons: weapons });
+  res.render('index');
+});
+
+router.get('/unit', function(req, res, next) {
+  res.render('unit', {ops: operations, weapons: weapons });
 });
 
 module.exports = router;

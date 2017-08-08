@@ -6,6 +6,25 @@
     font-family: "headline";
     src: url("../font/headline.ttf");
 }
+@font-face {
+    font-family: "headers";
+    src: url("../font/headers.ttf");
+}
+
+.header {
+  font-family: 'headers';
+  font-size: 2rem;
+  text-shadow: 2px 0 1px rgba(0,0,0,0.25),
+               2px 2px 1px rgba(0,0,0,0.25),
+               2px -2px 1px rgba(0,0,0,0.25),
+               0px -2px 1px rgba(0,0,0,0.25),
+               0px 2px 1px rgba(0,0,0,0.25),
+               -2px -2px 1px rgba(0,0,0,0.25),
+               -2px 2px 1px rgba(0,0,0,0.25),
+               -2px 0 1px rgba(0,0,0,0.25);
+  margin: 0;
+  text-transform: uppercase;
+}
 
 .container a:link {
   color: #a90000;
@@ -39,7 +58,6 @@ li {
 
 body {
   position: relative;
-  padding: 0 !important;
 }
 
 .background-image {
@@ -68,7 +86,7 @@ body::after {
 
 div.container {
   z-index: 1;
-  padding-top: 60px;
+  padding-top: 55px;
   background-color: rgba(255,255,255,.5);
   box-shadow: 0 0 20px 25px rgba(0,0,0,.5)
 }
@@ -121,13 +139,15 @@ div.container {
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0%, transparent 20%, transparent 80%, rgba(0, 0, 0, 0.4) 100%);
 }
 
+.jumbotron {
+  background-color: transparent;
+}
+
 .navbar {
   box-sizing: border-box;
 }
 
 .navbar-brand img {
-  width: 70px;
-  height: 40px;
   opacity: .8;
   transform: scale3d(1,1,1);
   transition: .25s ease-in-out;
@@ -144,7 +164,7 @@ a.nav-link:link {
 
 h1.headline {
   font-family: "headline";
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 .cdo-color {
@@ -221,14 +241,15 @@ h1.headline {
 
 #home h1 {
   letter-spacing: 3px;
-  text-shadow: 1px 1px 5px rgba(0,0,0,.5);
+  text-shadow: 2px 2px 5px rgba(0,0,0,.5);
 	-webkit-animation: text-focus-in 1.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0s both;
 	        animation: text-focus-in 1.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0s both;
+  line-height: 85px;
 }
 
 #home p {
   letter-spacing: 2px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,.7);
+  text-shadow: 2px 2px 3px rgba(0,0,0,.7);
   -webkit-animation: text-focus-in 1.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0s both;
           animation: text-focus-in 1.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0s both;
 }
@@ -313,12 +334,12 @@ h1.headline {
 @media (max-width: 575px) {
   #home h1 {
     letter-spacing: 3px;
-    text-shadow: 1px 1px 5px rgba(0,0,0,.5);
+    text-shadow: 2px 2px 5px rgba(0,0,0,.5);
   }
 
   #home p {
     letter-spacing: 0px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,.6);
+    text-shadow: 2px 2px 2px rgba(0,0,0,.6);
   }
 
   #join-img1 {
@@ -346,7 +367,7 @@ html {
 
 @include media-breakpoint-up(sm) {
   html {
-    font-size: 1px;
+    font-size: 2px;
   }
 }
 

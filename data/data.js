@@ -47,7 +47,7 @@ const operations = [
     title: "Libyan Desert Campaign",
     date: "10th June 1940 — 13th May 1943",
     description: "The Italians sided with Germany and declared war on the Allies, a few days later the British Army was already crossing the border from Egypt into Lybia, where Italy had its colonial interests. It was the start of a series of brutal fights, before the formidable Deutsches Afrika Korps stepped in, led by Erwin Rommel, known as 'The Desert Fox'.",
-    status: 1
+    status: 0
   },
   {
     id: "svalbard",
@@ -61,9 +61,17 @@ const operations = [
     id: "greece",
     img: "img/thumbnails/africa.jpg",
     title: "Battle of Greece",
-    date: "May 1941 — April 1941",
-    description: "Allies were all caught by surprise when the German Army unexpectedly pushed through and conquered the Netherlands, Luxemburg and Belgium and attacked the French front on their less covered side. The BEF fought bravely through the Ardennes but was forced to retreat to Dunkirk and leave the mainland.",
+    date: "March 1941 — April 1941",
+    description: "Description pending.",
     status: 2
+  },
+  {
+    id: "french",
+    img: "img/thumbnails/italy.jpg",
+    title: "French Campaign",
+    date: "April 1941 — May 1941",
+    description: "Description pending.",
+    status: 3
   },
   {
     id: "italy",
@@ -102,7 +110,7 @@ const weapons = [
     img: "img/sniper.jpg",
     name: "SMLE No. 4 Mk. I (T)",
     title: "Designated Marksman Rifle",
-    description: "Designated Marksman Rifle', data-content='Identical to the SMLE No. 4 Mk. I except that this variant is issued to marksmen and is fitted with a 3x telescopic sight for better accuracy at range. Effective up to 700m.",
+    description: "Identical to the SMLE No. 4 Mk. I except that this variant is issued to marksmen and is fitted with a 3x telescopic sight for better accuracy at range. Effective up to 700m.",
   },
   {
     img: "img/bazooka.jpg",

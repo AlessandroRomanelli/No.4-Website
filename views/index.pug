@@ -1,13 +1,8 @@
 extends layout
 
 block content
+  include ./includes/components/indexLinks
   audio#player(autoplay='', onloadeddata='setHalfVolume()')
     source(src='music/we_ll_meet_again.mp3', type='audio/mp3')
-  .background-image
-  .container.px-0  
-    include ./includes/title
-    include ./includes/about
-    include ./includes/operations
-    include ./includes/arsenal
-    include ./includes/join
-    include ./includes/donations
+  include ./includes/about
+  include ./includes/join
