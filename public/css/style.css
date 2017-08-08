@@ -11,6 +11,10 @@
     src: url("../font/headers.ttf");
 }
 
+.table td {
+  border-top: 1px solid #292b2c;
+}
+
 .header {
   font-family: 'headers';
   font-size: 2rem;
