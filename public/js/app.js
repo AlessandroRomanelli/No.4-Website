@@ -15,6 +15,20 @@ $(document).ready(() => {
     })
   });
 
+  $('#bgVideo').vide('video/bg',
+    {
+    volume: 1,
+    playbackRate: 1,
+    muted: false,
+    loop: true,
+    autoplay: true,
+    position: '0% 0%', // Similar to the CSS `background-position` property.
+    posterType: 'none', // Poster image type. "detect" — auto-detection; "none" — no poster; "jpg", "png", "gif",... - extensions.
+    resizing: true, // Auto-resizing, read: https://github.com/VodkaBears/Vide#resizing
+    bgColor: 'transparent', // Allow custom background-color for Vide div,
+    className: '' // Add custom CSS class to Vide div
+  });
+
   $('.popover-dismiss').popover({
     trigger: 'focus'
   });

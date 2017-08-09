@@ -64,15 +64,14 @@ body {
   position: relative;
 }
 
-.background-image {
+#bgVideo {
   position: fixed;
   left: 0;
   top: 0;
   height: 100vh;
   width: 100vw;
-  background: url(../img/background-wood.jpg) repeat-y 50% 0%;
-  background-size: 100%;
-  z-index: 0;
+  background color: transparent;
+  z-index: -1;
 }
 
 body::after {
@@ -91,8 +90,9 @@ body::after {
 div.container {
   z-index: 1;
   padding-top: 55px;
-  background-color: rgba(255,255,255,.5);
-  box-shadow: 0 0 20px 25px rgba(0,0,0,.5)
+  background-color: rgba(255,245,235,.7);
+  box-shadow: 0 0 20px 5px rgba(0,0,0,.75),
+              0 0 30px 25px rgba(0,0,0,.35);
 }
 
 .carousel-control-prev,
@@ -288,6 +288,11 @@ h1.headline {
   background: url(../img/join.png) no-repeat 50% 50%;
   background-size: 50%;
   filter: grayscale(100%);
+}
+#structure-img {
+  position: relative;
+  background: url(../img/structure.jpg) no-repeat 50% 50%;
+  background-size: cover;
 }
 
 #join-img1::after {
