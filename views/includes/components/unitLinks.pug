@@ -3,22 +3,24 @@ extends ../navbar
 block links
   ul.navbar-nav.mr-5.mt-2.mt-md-0
     li.nav-item
-      a.nav-link(href='/')
-        | Home 
-        span.sr-only (current)
+      a.nav-link(href='/') Home 
     li.nav-item
       a.nav-link(href='/#about') About
     li.nav-item
       a.nav-link(href='/#join') Join
   ul.navbar-nav.mr-5.mt-2.mt-md-0
     li.nav-item
-      a.nav-link(href='#operations') Operations
-    li.nav-item
-      a.nav-link(href='#arsenal-hd') Arsenal
+      a.nav-link(href='#operations') 
+        | Operations
+        span.sr-only (current)
     li.nav-item
       a.nav-link(href='#structure') Structure
     li.nav-item
-      a.nav-link(href='#donation') Donate
+      a.nav-link(href='#arsenal-hd') Arsenal
   ul.navbar-nav.mr-auto.mt-2.mt-md-0
     li.nav-item
+      a.nav-link(href='/media') Server
+    li.nav-item
       a.nav-link(href='/media') Media
+    li.nav-item
+      a.nav-link(href='#donation') Donate

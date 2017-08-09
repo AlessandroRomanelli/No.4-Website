@@ -17,7 +17,7 @@ $(document).ready(() => {
 
   $('#bgVideo').vide('video/bg',
     {
-    volume: 1,
+    volume: 0.4,
     playbackRate: 1,
     muted: false,
     loop: true,
