@@ -1,9 +1,9 @@
 extends layout
 
 block content
-  include ./includes/components/unitLinks
+  include ./includes/components/publicLinks
   audio#player(onloadeddata='setHalfVolume()')
     source(src='music/we_ll_meet_again.mp3', type='audio/mp3')
-  include ./includes/operations
-  include ./includes/structure
-  include ./includes/arsenal
+  include ./includes/server
+  include ./includes/media
+  include ./includes/donations

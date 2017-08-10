@@ -181,8 +181,11 @@ h1.headline {
   text-shadow: 0 0 2px rgba(0,0,0,.75);
   border-color: #a90000;
   border-radius: 4px;
-	-webkit-animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 3s both;
-	        animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 3s both;
+}
+
+#home.btn-outline-danger {
+  -webkit-animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 3s both;
+          animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 3s both;
 }
 
 .btn-outline-danger:focus {
@@ -292,6 +295,18 @@ h1.headline {
 #structure-img {
   position: relative;
   background: url(../img/structure.jpg) no-repeat 50% 50%;
+  background-size: cover;
+}
+
+#server-img {
+  position: relative;
+  background: url(../img/server.jpg) no-repeat 50% 50%;
+  background-size: cover;
+}
+
+#media-img {
+  position: relative;
+  background: url(../img/media.jpg) no-repeat 50% 50%;
   background-size: cover;
 }
 

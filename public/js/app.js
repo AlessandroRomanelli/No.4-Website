@@ -1,5 +1,32 @@
+function pauseSong() {
+  var myAudio = document.getElementById("player");
+  $("div.pause").removeClass("pause").addClass("play");
+  myAudio.pause();
+}
+
+function playSong() {
+  var myAudio = document.getElementById("player");
+  $("div.play").removeClass("play").addClass("pause");
+  myAudio.play();
+}
+
+function togglePlayback() {
+  var myAudio = document.getElementById("player");
+  if (myAudio.paused) {
+    playSong();
+  } else {
+    pauseSong();
+  }
+}
+
 $(document).ready(() => {
   $(() => {
+    if (!sessionStorage.hasVisited) {
+      sessionStorage.hasVisited = true;
+    } else {
+      pauseSong();
+    }
+
     $('.weapon-pop').popover({
       container: 'body'
     });
@@ -13,6 +40,29 @@ $(document).ready(() => {
         $(this).text(curTime);
       }, 1000);
     })
+  });
+
+  $(".animsition").animsition({
+    inClass: 'fade-in-down-lg',
+    outClass: 'fade-out-down-lg',
+    inDuration: 1500,
+    outDuration: 800,
+    linkElement: '.animsition-link',
+    // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+    loading: true,
+    loadingParentElement: 'body', //animsition wrapper element
+    loadingClass: 'animsition-loading',
+    loadingInner: '', // e.g '<img src="loading.svg" />'
+    timeout: true,
+    timeoutCountdown: 3500,
+    onLoadEvent: true,
+    browser: [ 'animation-duration', '-webkit-animation-duration'],
+    // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+    // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+    overlay : false,
+    overlayClass : 'animsition-overlay-slide',
+    overlayParentElement : 'body',
+    transition: function(url){ window.location.href = url; }
   });
 
   $('#bgVideo').vide('video/bg',
@@ -94,25 +144,4 @@ function formatAMPM(date) {
   seconds = seconds < 10 ? '0'+seconds : seconds;
   var strTime = `${hours}:${minutes}:${seconds} ${ampm}`;
   return strTime;
-}
-
-function pauseSong() {
-  var myAudio = document.getElementById("player");
-  $("div.pause").removeClass("pause").addClass("play");
-  myAudio.pause();
-}
-
-function playSong() {
-  var myAudio = document.getElementById("player");
-  $("div.play").removeClass("play").addClass("pause");
-  myAudio.play();
-}
-
-function togglePlayback() {
-  var myAudio = document.getElementById("player");
-  if (myAudio.paused) {
-    playSong();
-  } else {
-    pauseSong();
-  }
 }
