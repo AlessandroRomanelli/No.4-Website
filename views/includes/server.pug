@@ -4,40 +4,99 @@
 #server-text.about-text.mb-5.pt-3.pb-0.px-3.px-lg-5
   br
   .container-fluid.px-0
-    p.lead Here you can find all the information that you need to connect to our servers:
-    p.d-flex.justify-content-around.mt-5
+    p.text-center Here below you can find all the information that you need to connect to our servers, click the buttons to learn more:
+    p.d-flex.justify-content-around.mt-3
       button.btn.btn-outline-danger(type='button', data-toggle='collapse', data-target='#publicServer', aria-expanded='false', aria-controls='collapseExample')
+        if public.status == 0
+          .d-inline-block.mr-2(style='background-color: #5cb85c; width: 16px; height: 16px; border-radius: 50%; vertical-align: top')
+        else 
+          .d-inline-block.mr-2(style='background-color: #d9534f; width: 16px; height: 16px; border-radius: 50%; vertical-align: top')
         strong PUBLIC 
         | Gameserver
       button.btn.btn-outline-danger(type='button', data-toggle='collapse', data-target='#privateServer', aria-expanded='false', aria-controls='collapseExample')
+        if private.status == 0
+          .d-inline-block.mr-2(style='background-color: #5cb85c; width: 16px; height: 16px; border-radius: 50%; vertical-align: top')
+        else 
+          .d-inline-block.mr-2(style='background-color: #d9534f; width: 16px; height: 16px; border-radius: 50%; vertical-align: top')
         strong PRIVATE 
         | Gameserver
       button.btn.btn-outline-danger(type='button', data-toggle='collapse', data-target='#teamspeakServer', aria-expanded='false', aria-controls='collapseExample')
+        .d-inline-block.mr-2(style='background-color: #5cb85c; width: 16px; height: 16px; border-radius: 50%; vertical-align: top')
         strong TS3 
         | Voiceserver
     .row.mt-3
       .col-4
         #publicServer.collapse
           .card.card-block
-            h4 Public Server
-            img(src='http://cache.gametracker.com/components/html0/?host=37.59.43.226:2312&bgColor=292B2C&fontColor=CCCCCC&titleBgColor=222222&titleColor=B80003&borderColor=555555&linkColor=D10009&borderLinkColor=222222&showMap=0&currentPlayersHeight=100&showCurrPlayers=1&showTopPlayers=0&showBlogs=0&width=300')
-                
+            h4 
+              a(href='http://www.gametracker.com/server_info/37.59.43.226:2312/' target='_blank') Public Server
+            span
+              if public.name
+                strong Name: 
+                | #{public.name}
+                br
+              strong IP: 
+              | 37.59.43.226
+              br
+              strong Port: 
+              | 2312   
+              br
+              strong Mode: 
+              | WW2 Rush PvP
+              br
+              strong Mods:
+              ul.mb-0
+                li IFA3
+                li CUP Terrains - Core
+              strong Status: 
+              case public.status
+                when 0
+                  span.badge.badge-pill.badge-success UP
+                when 2
+                  span.badge.badge-pill.badge-danger DOWN
+              if public.name
+                br
+                strong Map: 
+                | #{public.map}
+                br
+                strong Players: 
+                | #{public.players.length}/#{public.maxplayers}
       .col-4
         #privateServer.collapse
           .card.card-block
             h4 Private Server
             span
-              | IP: 37.59.43.226
+              if private.name
+                strong Name: 
+                | #{private.name}
+                br
+              strong IP: 
+              | 37.59.43.226
               br
-              | Port: 2302   
+              strong Port: 
+              | 2302   
               br
-              | Mode: PvE COOP
+              strong Mode: 
+              | PvE COOP
               br
-              | Modlist: 
-              ul 
+              strong Mods: 
+              ul.mb-0
                 li No.4 CDO Private Mod
                 li 
                   a(href='http://steamcommunity.com/sharedfiles/filedetails/?id=851312465', target='_blank') Unit Modpack
+              strong Status: 
+              case private.status
+                when 0
+                  span.badge.badge-pill.badge-success UP
+                when 2
+                  span.badge.badge-pill.badge-danger DOWN
+              if private.name
+                br
+                strong Map: 
+                | #{private.map}
+                br
+                strong Players: 
+                | #{private.players.length}/#{private.maxplayers}
       .col-4
         #teamspeakServer.collapse
           .card.card-block
@@ -48,7 +107,7 @@
               | Port: 11727
               br
               br
-              | On your first visit you won't be able to navigates freely. You will however have access to the recruitment waiting room where you can wait for a recruiter.
+              p.text-justify On your first visit you won't be able to navigates freely. You will however have access to the recruitment waiting room where you can wait for a recruiter.
               br
               .text-center.mt-3
                 a(href='ts3server://85.236.101.154/?port=11727&nickname=Web Guest')

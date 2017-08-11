@@ -41,7 +41,7 @@ $(document).ready(() => {
       }, 1000);
     })
   });
-
+  
   $(".animsition").animsition({
     inClass: 'fade-in-down-lg',
     outClass: 'fade-out-down-lg',

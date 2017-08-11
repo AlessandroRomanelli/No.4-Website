@@ -51,7 +51,7 @@ const operations = [
   },
   {
     id: "svalbard",
-    img: "img/thumbnails/africa.jpg",
+    img: "img/thumbnails/svalbard.jpg",
     title: "Svalbard Islands Campaign",
     date: "January - February 1941",
     description: "After the Germans started ambushing the British convoys in the North Sea, the No.4 Commandos had been dispatched to the Svalbard archipelago, where the u-boats were suspected to resupply from. The No.4 deployed deep within enemy territory and conducted a guerilla warfare aimed to weaken the German presence before the Canadians' arrival.",
@@ -59,15 +59,15 @@ const operations = [
   },
   {
     id: "greece",
-    img: "img/thumbnails/africa.jpg",
+    img: "img/thumbnails/greece.jpg",
     title: "Battle of Greece",
     date: "March 1941 — April 1941",
-    description: "Description pending.",
+    description: "Also known as Operation Marita, it's the common name for the invasion of Allied Greece by Italy and Nazi Germany. The Italian began in late 1940 with an invasion which was followed months later by a German one, on a different front. The Greeks found themselves outnumbered and surrounded, their only hope was a special English detachment.",
     status: 2
   },
   {
     id: "french",
-    img: "img/thumbnails/italy.jpg",
+    img: "img/thumbnails/french.jpg",
     title: "French Campaign",
     date: "April 1941 — May 1941",
     description: "Description pending.",
