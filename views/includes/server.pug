@@ -20,25 +20,7 @@
         #publicServer.collapse
           .card.card-block
             h4 Public Server
-            span
-              | IP: 37.59.43.226
-              br
-              | Port: 2312   
-              br
-              | Mode: PvP
-              br
-              | Modlist:
-              ul.mb-0
-                li IFA3
-                li CUP Terrains - Core
-              | Status: 
-              case public.status
-                when 0
-                  span.badge.badge-pill.badge-success UP
-                when 1
-                  span.badge.badge-pill.badge-warning MAINTENANCE
-                when 2
-                  span.badge.badge-pill.badge-danger DOWN
+            img(src='http://cache.gametracker.com/components/html0/?host=37.59.43.226:2312&bgColor=292B2C&fontColor=CCCCCC&titleBgColor=222222&titleColor=B80003&borderColor=555555&linkColor=D10009&borderLinkColor=222222&showMap=0&currentPlayersHeight=100&showCurrPlayers=1&showTopPlayers=0&showBlogs=0&width=300')
                 
       .col-4
         #privateServer.collapse
