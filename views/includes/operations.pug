@@ -25,35 +25,26 @@
       each day in weekdays
         case day
           when "Saturday"
-            div(style='background-color: rgba(255, 82, 63, 1); width:14.285%;')
-              p.align-self-center.text-center.py-1.mb-0 #{day}
-                br
-                small
-                  strong MAIN OP
+            div(style='background-color: rgba(169, 0, 0, 1); width:14.285%;')
+              button.btn.w-100.text-white.py-1(type='button', style='background-color: rgba(0,0,0,0)' data-container='body', data-toggle='popover', data-placement='bottom', title="MAIN OPERATION" data-content='Saturday is the day dedicated to the big scale combat, where the units gets to experience the best creations of the mission makers.')
+                | #{day}
           when "Monday"
-            div(style='background-color: rgba(255, 82, 63, 0.75); width:14.285%;')
-              p.align-self-center.text-center.py-1.mb-0 #{day}
-                br
-                small
-                  strong SIDE OP
+            div(style='background-color: rgba(169, 0, 0, 0.9); width:14.285%;')
+              button.btn.w-100.text-white.py-1(type='button', style='background-color: rgba(0,0,0,0)' data-container='body', data-toggle='popover', data-placement='bottom', title="SIDE OPERATION" data-content='On this day we organize smaller scale operations, better tailored to our numbers and intended to fit the reduced members\' presence during the week.')
+                | #{day}
           when "Wednesday"
-            div(style='background-color: rgba(255, 82, 63, 0.75); width:14.285%;')
-              p.align-self-center.text-center.py-1.mb-0 #{day}
-                br
-                small
-                  strong SIDE OP
+            div(style='background-color: rgba(169, 0, 0, 0.9); width:14.285%;')
+              button.btn.w-100.text-white.py-1(type='button', style='background-color: rgba(0,0,0,0)' data-container='body', data-toggle='popover', data-placement='bottom', title="SIDE OPERATION" data-content='On this day we organize smaller scale operations, better tailored to our numbers and intended to fit the reduced members\' presence during the week.')
+                | #{day}
           when "Sunday"
-            div(style='background-color: rgba(255, 82, 63, 0.5); width:14.285%;')
-              p.align-self-center.text-center.py-1.mb-0 #{day}
-                br
-                small
-                  strong TRAINING
+            div(style='background-color: rgba(169, 0, 0, 0.75); width:14.285%;')
+              button.btn.w-100.text-white.py-1(type='button', style='background-color: rgba(0,0,0,0)' data-container='body', data-toggle='popover', data-placement='bottom', title="TRAINING DAY" data-content='On sundays the units get to train together. On this day new recruits are usually instructed with the BCT programm, while the rest of the unit get to train topics that are usually picked by the senior leaders.')
+                | #{day}
           default
             div(style='width:14.28%;')
-              p.align-self-center.text-center.py-1.mb-0 #{day}
-                br
-                small
-                  strong DAY OFF
+              button.btn.w-100.py-1(type='button', style='background-color: rgba(0,0,0,0)' data-container='body', data-toggle='popover', data-placement='bottom', title="DAY OFF" data-content='On these days no events are planned and the members are left free to organize something by themselves or just enjoy a break from the unit activities.')
+                | #{day}
+
   hr
   .px-3.px-lg-5.mt-4
     h5 Here you can see the current status of our activities:

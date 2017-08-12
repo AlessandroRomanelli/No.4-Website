@@ -12,26 +12,14 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/unit', function(req, res, next) {
-  var date = new Date();
-  var day = date.getDay();
-  var weekdays=["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  var nextDays = [];
-  for (var i = 0; i < 7; i++) {
-    if (day > 6) {
-      day = 0;
-    }
-    nextDays.push(weekdays[day]);
-    day += 1;
-  }
-  console.log(nextDays);
-  res.render('unit', {ops: operations, weapons: weapons, weekdays: nextDays, play: false });
+  var weekdays=["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+  res.render('unit', {ops: operations, weapons: weapons, weekdays: weekdays, play: false });
 });
 
 router.get('/public', function(req, res, next) {
   let publicServer = {},
       privateServer = {},
       servers = [['arma3', '37.59.43.226', 2312], ['arma3', '37.59.43.226', 2302]];
-
   function getServer(connectData, callback) {
     let response = {};
     gameDig.query({
@@ -61,7 +49,18 @@ router.get('/public', function(req, res, next) {
       play: false
     });
   })
+});
 
+router.get('/videos', function(req,res,next) {
+  res.render('videos', {
+    play: false
+  })
+});
+
+router.get('/screenshots', function(req,res,next) {
+  res.render('videos', {
+    play: false
+  })
 });
 
 module.exports = router;

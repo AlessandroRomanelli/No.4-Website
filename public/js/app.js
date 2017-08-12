@@ -31,6 +31,14 @@ $(document).ready(() => {
       container: 'body'
     });
 
+    $('#weekdays > div > button').popover({
+      trigger: "hover"
+    })
+
+    $('.popover-dismiss').popover({
+      trigger: 'focus'
+    });
+
     $('body').scrollspy({ target: '#navbarNav' });
 
     $('#time').one('click', function() {
@@ -41,7 +49,7 @@ $(document).ready(() => {
       }, 1000);
     })
   });
-  
+
   $(".animsition").animsition({
     inClass: 'fade-in-down-lg',
     outClass: 'fade-out-down-lg',
@@ -78,11 +86,6 @@ $(document).ready(() => {
     bgColor: 'transparent', // Allow custom background-color for Vide div,
     className: '' // Add custom CSS class to Vide div
   });
-
-  $('.popover-dismiss').popover({
-    trigger: 'focus'
-  });
-
 
   $('#operations-cards a').blur(function() {
     setTimeout(() => {

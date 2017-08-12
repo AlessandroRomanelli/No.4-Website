@@ -1,6 +1,13 @@
 extends layout
 
 block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+  include ./includes/components/outerLinks
+  audio#player(onloadeddata='setHalfVolume()')
+    source(src='music/we_ll_meet_again.mp3', type='audio/mp3')
+  .text-center.my-5
+    h2.display-4
+      strong #{error.status}
+      | : #{message} 
+    span.lead
+      strong Oh snap! 
+      | It looks like the Jerries managed to sabotage this website! Report to your closest CO.
