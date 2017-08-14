@@ -51,6 +51,12 @@ router.get('/public', function(req, res, next) {
   })
 });
 
+router.get('/paypal/return', function(req, res, next) {
+  res.render('thankyou', {
+    play: false
+  })
+});
+
 router.get('/videos', function(req,res,next) {
   res.render('videos', {
     play: false
@@ -58,7 +64,7 @@ router.get('/videos', function(req,res,next) {
 });
 
 router.get('/screenshots', function(req,res,next) {
-  res.render('videos', {
+  res.render('screenshots', {
     play: false
   })
 });

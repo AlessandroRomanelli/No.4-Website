@@ -7,7 +7,7 @@ const operations = [
     title: "Pre-Deployment",
     date: "Between campaigns",
     description: "The unit undergoes periods of intensive training to perfect and fine-tune its elements. Commandos trained in the Scottish Highlands before being deployed in any of their major campaigns.",
-    status: 1
+    status: 0
   },
   {
     id: "poland",
@@ -63,7 +63,7 @@ const operations = [
     title: "Battle of Greece",
     date: "March 1941 — April 1941",
     description: "Also known as Operation Marita, it's the common name for the invasion of Allied Greece by Italy and Nazi Germany. The Italian began in late 1940 with an invasion which was followed months later by a German one, on a different front. The Greeks found themselves outnumbered and surrounded, their only hope was a special English detachment.",
-    status: 2
+    status: 1
   },
   {
     id: "french",
@@ -71,7 +71,7 @@ const operations = [
     title: "French Campaign",
     date: "April 1941 — May 1941",
     description: "Description pending.",
-    status: 3
+    status: 2
   },
   {
     id: "italy",
@@ -141,13 +141,7 @@ const weapons = [
     name: "Sten Mk.II",
     title: "Sub Machine Gun",
     description: "The standard issue full automatic 9mm SMG of the British Expeditionary Force during the late war, it comes with an unique side-mounted 32-round detachable box magazine. A suppressor can be mounted to silence the gun for stealth operations. Effective at close range.",
-  },
-  {
-    img: "img/stenMkV.jpg",
-    name: "Sten Mk.V",
-    title: "Sub Machine Gun",
-    description: "This weapon is the paratrooper variant of the Sten Gun and is carried by some Commandos during, you guessed it, airborne operations.",
-  },
+  }
 ];
 
 module.exports.operations = operations;

@@ -3,43 +3,41 @@
 #donation-img.img.img-fluid.my-0.trans-img
 #donation-text.about-text.mb-5.pt-3.pb-0.px-3.px-lg-5
   br
-  .container-fluid.px-0
-    .row
-      .col-lg-7
-        h3 Interested in making the unit grow?
-        p Any of these steps can help us out in delivering a better overall experience:
+  .row
+    .col-lg-7
+      h3 Interested in making the unit grow?
+      p Any of these steps can help us out in delivering a better overall experience:
+      br
+      ul(style='list-style: none;')
+        li
+          .media
+            img.d-flex.mr-3(width='20', height='20', src='img/join.svg', alt='Generic placeholder image')
+            .media-body
+              h5.mt-0 ——  Recruit people
+              p
+                | Word of mouth is the best weapon in this case! Get on a public server, spread the word about the commandos and get your friends involved.
         br
-        ul(style='list-style: none;')
-          li
-            .media
-              img.d-flex.mr-3(width='20', height='20', src='img/join.svg', alt='Generic placeholder image')
-              .media-body
-                h5.mt-0 ——  Recruit people
-                p
-                  | Word of mouth is the best weapon in this case! Get on a public server, spread the word about the commandos and get your friends involved.
-          br
-          li
-            .media
-              img.d-flex.mr-3(width='20', height='20', src='img/QR_icon.svg', alt='Generic placeholder image')
-              .media-body
-                h5.mt-0 ——  Give your input
-                p
-                  | Become a developer, mission builder, moderator or leader! Share your skills with us and just be creative: every little helps.
-          br
-          li
-            .media
-              img.d-flex.mr-3(width='20', height='20', src='img/pile.svg', alt='Generic placeholder image')
-              .media-body
-                h5.mt-0 ——  Donate
-                p
-                  | Recent studies have shown that servers do not run for free, therefore any donation that you can make is more than welcome.
-          br
-          .w-100
-            a.d-flex.justify-content-center(href='https://paypal.me/cfoote123', target='_blank')
-              img.img.img-fluid(src='img/paypal.png', alt='' height='100' width='200')
+        li
+          .media
+            img.d-flex.mr-3(width='20', height='20', src='img/QR_icon.svg', alt='Generic placeholder image')
+            .media-body
+              h5.mt-0 ——  Give your input
+              p
+                | Become a developer, mission builder, moderator or leader! Share your skills with us and just be creative: every little helps.
         br
-        p
-          | Having a big, committed community not only helps us afford the maintenance of the server, but also allows us to expand the unit with additional, specialised sections like Flight, Armor and Weapons.
-      .mt-5.col-lg-5.hidden-md-down
-        img#spitfire.img.img-fluid.mt-5(src='img/spitfire.png', alt='')
+        li
+          .media
+            img.d-flex.mr-3(width='20', height='20', src='img/pile.svg', alt='Generic placeholder image')
+            .media-body
+              h5.mt-0 ——  Donate
+              p
+                | Recent studies have shown that servers do not run for free, therefore any donation that you can make is more than welcome.
+        br
+        .w-100
+          include ./components/donate
+      br
+      p
+        | Having a big, committed community not only helps us afford the maintenance of the server, but also allows us to expand the unit with additional, specialised sections like Flight, Armor and Weapons.
+    .mt-5.col-lg-5.hidden-md-down
+      img#spitfire.img.img-fluid.mt-5(src='img/spitfire.png', alt='')
 #parachutes.mt-5.img.img-fluid.trans-img
