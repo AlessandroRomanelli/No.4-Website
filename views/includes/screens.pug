@@ -1,11 +1,17 @@
 .bg-inverse.text-white.py-1.pl-3.pl-lg-5
   h1.header Screenshots
-.about-text.mb-5.mt-3.py-0.px-3.px-lg-5
+.about-text.mb-3.mt-3.py-0.px-3.px-lg-5
   p.lead Here you can find some of our best screenshots:
-.row.justify-content-between
-  .col-4
-    img(src="#", alt="alt")
-  .col-4
-    img(src="#", alt="alt")
-  .col-4
-    img(src="#", alt="alt")
+each screen, index in screenshots
+  if (index % 4 == 0)
+    | <div class="row justify-content-between px-4 mb-3">
+  .col-3
+    a(data-toggle="modal" data-target=`#${screen.split('.')[0]}Modal`)
+      .shiny-hover.rounded
+        img.img.img-fluid(src=`img/screenshots/thumbnails/${screen}`, alt="alt")
+  .modal.fade(id=`${screen.split('.')[0]}Modal`, tabindex='-1', role='dialog', aria-hidden='true')
+    .modal-dialog.modal-lg
+      .modal-content
+        img.img.img-fluid(src=`img/screenshots/${screen}`)
+  if (index % 4 == 3 || index == screenshots.length-1)
+    | </div>

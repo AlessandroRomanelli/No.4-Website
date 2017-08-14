@@ -30,24 +30,39 @@
   color: inherit;
 }
 
-#media-text > div > div > div.bg-inverse:after {
-    content: "";
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 0%;
-    height: 100%;
-    background-color: rgba(255,255,255,0.4);
-    -webkit-transition: none;
-    -moz-transition: none;
-    -ms-transition: none;
-    -o-transition: none;
-    transition: none;
-    z-index: 0;
-    pointer-events: none;
+.modal-backdrop {
+  pointer-events: none;
 }
 
-#media-text > div > div > div.bg-inverse:hover:after {
+.shiny-hover {
+  position: relative;
+  transition: 0.25s ease-in-out;
+  border: 1px solid #292b2c;
+}
+
+.shiny-hover:hover {
+  opacity: 0.85;
+  cursor: pointer;
+}
+
+.shiny-hover:after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 0%;
+  height: 100%;
+  background-color: rgba(255,255,255,0.4);
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+  transition: none;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.shiny-hover:hover:after {
     width: 100%;
     background-color: rgba(255,255,255,0);
     -webkit-transition: all 0.3s ease-out;
@@ -182,7 +197,7 @@ body {
   z-index: -1;
 }
 
-body::after {
+#bgVideo::after {
   content: "";
   position: absolute;
   top: 0;
@@ -196,7 +211,6 @@ body::after {
 }
 
 div.container {
-  z-index: 1;
   padding-top: 55px;
   background-color: rgba(255,245,235,.7);
   box-shadow: 0 0 20px 5px rgba(0,0,0,.75),

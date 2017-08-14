@@ -4,6 +4,8 @@ const operations = require('../data/data').operations;
 const weapons = require('../data/data').weapons;
 const gameDig = require('gamedig');
 const async = require('async');
+const fs = require('fs');
+const path = require('path');
 
 
 /* GET home page. */
@@ -64,8 +66,18 @@ router.get('/videos', function(req,res,next) {
 });
 
 router.get('/screenshots', function(req,res,next) {
-  res.render('screenshots', {
-    play: false
+  let screenshots = [];
+  let p = './public/img/screenshots';
+  fs.readdir(p, (err, files) => {
+    files.filter(function(file) {
+      return fs.statSync(p+'/'+file).isFile();
+    }).forEach(function (file) {
+      screenshots.push(file);
+    });
+    res.render('screenshots', {
+      screenshots: screenshots,
+      play: false
+    })
   })
 });
 
