@@ -73,7 +73,7 @@ $(document).ready(() => {
     transition: function(url){ window.location.href = url; }
   });
 
-  $('#bgVideo').vide('video/bg',
+  $('#bgVideo').vide('/video/bg',
     {
     volume: 0.4,
     playbackRate: 1,
