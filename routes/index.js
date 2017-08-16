@@ -65,6 +65,7 @@ function getNewToken(oauth2Client) {
   });
   rl.question('Enter the code from that page here: ', function(code) {
     rl.close();
+    code = process.env.AUTH_CODE || code;
     return oauth2Client.getToken(code, function(err, token) {
       if (err) {
         console.log('Error while trying to retrieve access token', err);
