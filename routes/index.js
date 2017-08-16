@@ -119,40 +119,28 @@ router.get('/', function(req, res, next) {
 
 router.get('/unit', function(req, res, next) {
   var weekdays=["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-  // Load client secrets from a local file.
-  readFile('client_secret.json')
-  .then(content => {
-    debugger
-    return authorize(JSON.parse(content));
-  })
-  .then(authClient => {
-    debugger
-    var request = {
-      spreadsheetId: '1fACPJarTwBQ0Ld0N_LAfuM91D8s5fVu587o7Ymq9tDA',
-      range: 'A3:C55',
-      valueRenderOption: 'FORMATTED_VALUE',
-      dateTimeRenderOption: 'SERIAL_NUMBER',
-      auth: authClient,
-    };
-    async.series([
-      function(callback) {
-        sheets.spreadsheets.values.get(request, function(err, response) {
-         if (err) {
-           console.error(err);
-           return;
-         }
-         debugger
-         callback(null, response);
-        });
-      }
-    ],
-    function (err, response) {
-      res.render('unit', {members: response[0].values, ops: operations, weapons: weapons, weekdays: weekdays, play: false });
-    });
-  })
-  .catch(err => {
-    debugger
-    console.log('Error loading client secret file: ' + err);
+  debugger
+  var request = {
+    spreadsheetId: '1fACPJarTwBQ0Ld0N_LAfuM91D8s5fVu587o7Ymq9tDA',
+    range: 'A3:C55',
+    valueRenderOption: 'FORMATTED_VALUE',
+    dateTimeRenderOption: 'SERIAL_NUMBER',
+    auth: process.env.API_KEY
+  };
+  async.series([
+    function(callback) {
+      sheets.spreadsheets.values.get(request, function(err, response) {
+       if (err) {
+         console.error(err);
+         return;
+       }
+       debugger
+       callback(null, response);
+      });
+    }
+  ],
+  function (err, response) {
+    res.render('unit', {members: response[0].values, ops: operations, weapons: weapons, weekdays: weekdays, play: false });
   });
 });
 
