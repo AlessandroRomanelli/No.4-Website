@@ -10,9 +10,9 @@
           img.d-flex.mr-3.img.align-self-top(src="img/NATO/HQ.svg", alt="alt" height='100')
           .media-body.text-justify
             h5.d-inline-block.mr-2 Troop HQ
-            span
+            span.text-uppercase
               small &#8212; #{space}
-                strong CPT. C. FOOTE & SMAJ. A. HYDE
+                strong #{members[0][1]} #{members[0][2]} & #{members[1][1]} #{members[1][2]}
             br
             p It's the most important element of the unit, composed by the Commanding Officers of the commandos and their closest helpers, their duty is to coordinate the whole unit towards the objective and to look after their members. They usually stay in cover behind other elements or fill the gap where it's most needed, while trying to preserve the overall view of the action.  
       .col-4
@@ -20,31 +20,24 @@
           strong AUXILIARY MEMBERS:
         table.table.table-striped.table-sm
           tbody
-            tr
-              td Signaller
-              td.text-right 
-                strong Cpl
-              td N. Patrick
-            tr
-              td Runner #1
-              td.text-right &#8212;&#8212;
-              td
-                .badge.badge-pill.badge-success OPEN
-            tr
-              td Runner #2
-              td.text-right &#8212;&#8212;
-              td
-                .badge.badge-pill.badge-danger CLOSED
-            tr
-              td Bren Gunner
-              td.text-right 
-                strong Cpl
-              td B. Conway
-            tr
-              td Bren Assistant
-              td.text-right &#8212;&#8212;
-              td
-                .badge.badge-pill.badge-success OPEN
+            each member, index in members
+              if (index > 1 && index < 7)
+                tr
+                  td #{member[0]}
+                  if (member[1] == '')
+                    td.text-right &#8212;&#8212;
+                  else 
+                    td.text-right 
+                      strong #{member[1]}
+                  case member[2]
+                    when 'OPEN'
+                      td
+                        .badge.badge-pill.badge-success OPEN
+                    when 'CLOSED'
+                      td
+                        .badge.badge-pill.badge-danger CLOSED
+                    default
+                      td #{member[2]}
     hr.bg-inverse
     .row
       .col-8
@@ -52,9 +45,9 @@
           img.d-flex.mr-3.img.align-self-top(src="img/NATO/SECTION.svg", alt="alt" height='100')
           .media-body.text-justify
             h5.d-inline-block.mr-2 Able Section
-            span
+            span.text-uppercase
               small &#8212; #{space}
-                strong SGT. N. FARAGE
+                strong #{members[8][1]} #{members[8][2]}
             br
             p Able Section is the main element of the unit where most of the members are found. It is composed by two subsections, called 
               b ONE 
@@ -66,23 +59,24 @@
           strong AUXILIARY MEMBERS:
         table.table.table-striped.table-sm
           tbody
-            tr
-              td Leader 
-                b ONE
-              td.text-right 
-                strong Cpl
-              td L. Walker
-            tr
-              td Leader 
-                b TWO
-              td.text-right 
-                strong Cpl
-              td J.T Dane
-            tr
-              td Runner
-              td.text-right 
-                strong LCpl
-              td D. Hessel
+            each member, index in members
+              if (index > 8 && index < 12)
+                tr
+                  td #{member[0]}
+                  if (member[1] == '')
+                    td.text-right &#8212;&#8212;
+                  else 
+                    td.text-right 
+                      strong #{member[1]}
+                  case member[2]
+                    when 'OPEN'
+                      td
+                        .badge.badge-pill.badge-success OPEN
+                    when 'CLOSED'
+                      td
+                        .badge.badge-pill.badge-danger CLOSED
+                    default
+                      td #{member[2]}
     hr.bg-inverse
     .row
       .col-12
@@ -90,9 +84,9 @@
           img.d-flex.mr-3.img.align-self-top(src="img/NATO/SUB.svg", alt="alt" height='100')
           .media-body.text-justify
             h5.d-inline-block.mr-2 Subsections One & Two
-            span
+            span.text-uppercase
               small &#8212; #{space}
-                strong CPL. L. WALKER & CPL. J.T DANE
+                strong #{members[9][1]} #{members[9][2]} & #{members[10][1]} #{members[10][2]}
             br
             p Each subsection is composed by 8 men divided into two teams:
             ul(style='list-style: none')
@@ -111,91 +105,47 @@
           strong SUBSECTION ONE:
         table.table.table-striped.table-sm
           tbody
-            tr
-              td Subsection Leader 
-              td.text-right 
-                strong Cpl
-              td L. Walker
-            tr
-              td Bren Team Leader 
-              td.text-right 
-                strong LCpl
-              td J. Thunder
-            tr
-              td Bren Gunner
-              td.text-right 
-                strong LCpl
-              td S. Talion
-            tr
-              td Bren Assistant 
-              td.text-right &#8212;&#8212;
-              td
-                .badge.badge-pill.badge-success OPEN
-            tr
-              td Assault Team Leader 
-              td.text-right 
-                strong Cpl
-              td L. Walker
-            tr
-              td Rifleman
-              td.text-right 
-                strong LCpl
-              td T. Miezis
-            tr
-              td Rifleman
-              td.text-right 
-                strong LCpl
-              td V. Hjelm
-            tr
-              td Submachine Gunner
-              td.text-right 
-                strong LCpl
-              td G. Bacon
+            each member, index in members
+              if (index > 12 && index < 21)
+                tr
+                  td #{member[0]}
+                  if (member[1] == '')
+                    td.text-right &#8212;&#8212;
+                  else 
+                    td.text-right 
+                      strong #{member[1]}
+                  case member[2]
+                    when 'OPEN'
+                      td
+                        .badge.badge-pill.badge-success OPEN
+                    when 'CLOSED'
+                      td
+                        .badge.badge-pill.badge-danger CLOSED
+                    default
+                      td #{member[2]}
       .col-6.mt-4
         .text-center
           strong SUBSECTION TWO:
         table.table.table-striped.table-sm
           tbody
-            tr
-              td Subsection Leader 
-              td.text-right 
-                strong Cpl
-              td J.T Dane
-            tr
-              td Bren Team Leader 
-              td.text-right &#8212;&#8212;
-              td
-                .badge.badge-pill.badge-success OPEN
-            tr
-              td Bren Gunner
-              td.text-right 
-                strong LCpl
-              td O. Lawrence
-            tr
-              td Bren Assistant 
-              td.text-right
-                strong LCpl
-              td B. Berni
-            tr
-              td Assault Team Leader 
-              td.text-right 
-                strong LCpl
-              td C. Kavanagh
-            tr
-              td Rifleman
-              td.text-right 
-                strong Pte2
-              td J. Scotsman
-            tr
-              td Rifleman
-              td.text-right 
-                strong LCpl
-              td J. Henderson
-            tr
-              td Submachine Gunner
-              td.text-right 
-                strong LCpl
-              td M. Margotic
+            each member, index in members
+              if (index > 21 && index < 30)
+                tr
+                  td #{member[0]}
+                  if (member[1] == '')
+                    td.text-right &#8212;&#8212;
+                  else 
+                    td.text-right 
+                      strong #{member[1]}
+                  case member[2]
+                    when 'OPEN'
+                      td
+                        .badge.badge-pill.badge-success OPEN
+                    when 'CLOSED'
+                      td
+                        .badge.badge-pill.badge-danger CLOSED
+                    default
+                      td #{member[2]}
   hr.bg-inverse
   .row
     .col-12
@@ -203,9 +153,9 @@
         img.d-flex.mr-3.img.align-self-top(src="img/NATO/SECTION.svg", alt="alt" height='100')
         .media-body.text-justify
           h5.d-inline-block.mr-2 Weapon Section
-          span
+          span.text-uppercase
             small &#8212; #{space}
-              strong CPL. A. ANDERS & LCPL. R. MICHEAL
+              strong #{members[31][1]} #{members[31][2]} & #{members[32][1]} #{members[32][2]}
           br
           p.col-9 Weapon section is an element at disposal of Troop HQ, which decides when and how to deploy the special weapon teams according to the needs of the infantry sections. Depending on the situation, sometimes the weapons team are attached to the infantry subsections, whereas othertimes they remain independent to achieve specific tasks. The section itself is composed of specific teams:
           ul(style='list-style: none')
@@ -231,76 +181,70 @@
         strong VICKERS TEAM:
       table.table.table-striped.table-sm
         tbody
-          tr
-            td Team Leader 
-            td.text-right 
-              strong Cpl
-            td T. Test
-          tr
-            td Machine Gunner 
-            td.text-right &#8212;&#8212;
-            td
-              .badge.badge-pill.badge-success OPEN
-          tr
-            td Assistant Gunner
-            td.text-right 
-              strong LCpl
-            td A. Riggs
-          tr
-            td Rifleman 
-            td.text-right &#8212;&#8212;
-            td
-              .badge.badge-pill.badge-success OPEN
+          each member, index in members
+            if (index > 33 && index < 38)
+              tr
+                td #{member[0]}
+                if (member[1] == '')
+                  td.text-right &#8212;&#8212;
+                else 
+                  td.text-right 
+                    strong #{member[1]}
+                case member[2]
+                  when 'OPEN'
+                    td
+                      .badge.badge-pill.badge-success OPEN
+                  when 'CLOSED'
+                    td
+                      .badge.badge-pill.badge-danger CLOSED
+                  default
+                    td #{member[2]}
     .col-4.mt-4
       .text-center
         strong ANTI-TANK TEAM:
       table.table.table-striped.table-sm
         tbody
-          tr
-            td AT Rifleman 
-            td.text-right 
-              strong Cpl
-            td G. Panj
-          tr
-            td Assistant AT 
-            td.text-right 
-              strong LCpl
-            td T. Judd
-          tr
-            td AT Rifleman 
-            td.text-right 
-              strong LCpl
-            td R. Hinton
-          tr
-            td Assistant AT 
-            td.text-right 
-              strong Pte2
-            td C. Webb
+          each member, index in members
+            if (index > 38 && index < 43)
+              tr
+                td #{member[0]}
+                if (member[1] == '')
+                  td.text-right &#8212;&#8212;
+                else 
+                  td.text-right 
+                    strong #{member[1]}
+                case member[2]
+                  when 'OPEN'
+                    td
+                      .badge.badge-pill.badge-success OPEN
+                  when 'CLOSED'
+                    td
+                      .badge.badge-pill.badge-danger CLOSED
+                  default
+                    td #{member[2]}
     .col-4.mt-4
       .text-center
         strong MARKSMAN & SAPPERS TEAM:
       table.table.table-striped.table-sm
         tbody
-          tr
-            td Marksman 
-            td.text-right 
-              strong LCpl
-            td J. Jajuny
-          tr
-            td Spotter 
-            td.text-right &#8212;&#8212;
-            td
-              .badge.badge-pill.badge-success OPEN
-          tr
-            td Sapper
-            td.text-right 
-              strong LCpl
-            td K. Irons
-          tr
-            td Sapper
-            td.text-right 
-              strong LCpl
-            td R. Nimbus
+          each member, index in members
+            if ((index > 43 && index < 46) || (index > 46 && index < 49))
+              tr
+                td #{member[0]}
+                if (member[1] == '')
+                  td.text-right &#8212;&#8212;
+                else 
+                  td.text-right 
+                    strong #{member[1]}
+                case member[2]
+                  when 'OPEN'
+                    td
+                      .badge.badge-pill.badge-success OPEN
+                  when 'CLOSED'
+                    td
+                      .badge.badge-pill.badge-danger CLOSED
+                  default
+                    td #{member[2]}
   hr.bg-inverse
   .row
     .col-8
@@ -308,9 +252,9 @@
         img.d-flex.mr-3.img.align-self-center(src="img/NATO/MEDICAL.svg", alt="alt" height='100')
         .media-body.text-justify
           h5.d-inline-block.mr-2 Medical Section
-          span
+          span.text-uppercase
             small &#8212; #{space}
-              strong CPL. D. WALLBANGER
+              strong #{members[50][1]} #{members[50][2]}
           br
           p Medical section is the department of the unit specialised in providing first-aid to the injured during operations. They are the first help that any wounded soldier will receive, they make sure to make up for any error commited by the troop. They are commonly attached to a subsection and positioned in the most safe possible area within the formation. 
             strong Survival is the key to victory.
@@ -319,18 +263,21 @@
         strong MEMBERS:
       table.table.table-striped.table-sm
         tbody
-          tr
-            td Medical Officer
-            td.text-right 
-              strong Cpl
-            td D. Wallbanger
-          tr
-            td Medic
-            td.text-right
-              strong LCpl
-            td R. Gordon
-          tr
-            td Medic
-            td.text-right
-              strong Pte2
-              td H. Parrot
+          each member, index in members
+            if (index > 49 && index < 53)
+              tr
+                td #{member[0]}
+                if (member[1] == '')
+                  td.text-right &#8212;&#8212;
+                else 
+                  td.text-right 
+                    strong #{member[1]}
+                case member[2]
+                  when 'OPEN'
+                    td
+                      .badge.badge-pill.badge-success OPEN
+                  when 'CLOSED'
+                    td
+                      .badge.badge-pill.badge-danger CLOSED
+                  default
+                    td #{member[2]}
