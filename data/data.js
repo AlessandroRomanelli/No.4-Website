@@ -104,19 +104,13 @@ const weapons = [
     img: "img/enfield.jpg",
     name: "SMLE No. 4 Mk. I",
     title: "British Standard Rifle",
-    description: "This is the standard issue rifle, it fires a .303 bullet and has an internal 10-round magazine that is reloaded via stripper clip. Effective up to 500m.",
+    description: "This is the standard issue rifle, it fires a .303 bullet and has an internal 10-round magazine that is reloaded via stripper clip. Effective up to 500m. Marksman mount a telescopic 3x optic on top of their rifles to increase the effective range and accuracy.",
   },
   {
-    img: "img/sniper.jpg",
-    name: "SMLE No. 4 Mk. I (T)",
-    title: "Designated Marksman Rifle",
-    description: "Identical to the SMLE No. 4 Mk. I except that this variant is issued to marksmen and is fitted with a 3x telescopic sight for better accuracy at range. Effective up to 700m.",
-  },
-  {
-    img: "img/bazooka.jpg",
-    name: "M1 Bazooka",
+    img: "img/piat.jpg",
+    name: "Projector, Infantry, Anti Tank (PIAT)",
     title: "Anti-Tank Launcher",
-    description: "Used by the Commandos to fight off armored vehicles or tanks but can also be used to destroy fortified positions and such. It fires a 60mm HEAT M6 rocket. Effective range is 200m, after this range the rocket is still lethal however not anymore accurate.",
+    description: "Used by the Commandos to fight off armored vehicles or tanks but can also be used to destroy fortified positions and such. It fires a 2.5 pound hallow chrage. Effective range is limited to 100m, past this distance the weapon accuracy is unreliable but the charge can travel up to 300m.",
   },
   {
     img: "img/bren.jpg",
@@ -125,22 +119,28 @@ const weapons = [
     description: "This beast can deliver continuous fire without overheating as fast. It fires a .303 cartridge and is fed by a particular top-mounted 30-round detachable box magazine. Effective up to 500m.",
   },
   {
-    img: "img/1919.jpg",
-    name: "Browning M1919",
-    title: "Heavy Machine Gun",
-    description: "A .30 caliber widely used among allied forces. Considerably more powerful than the standard Bren gun when it comes to suppressive fire. The M1919 fits both 50 and 100 rounds magazine and can also be deployed on a static tripod to achieve maximum effect.",
+    img: "img/vickers.jpg",
+    name: "Vickers MG",
+    title: "Static Machine Gun",
+    description: "A .30 caliber widely used among the British armored, air and infantry forces. Famous for its great solidity and reliability. Considerably more capable than the Bren gun when it comes to suppressing the enemy for an extended amount of time. The Vickers fits large magazines capable of holding hundred of bullets but it comes to the cost of not being able to be fired without being fully deployed.",
   },
   {
-    img: "img/1929.jpg",
+    img: "img/thompson.jpg",
     name: "Thompson M1928",
     title: "Sub Machine Gun",
-    description: "The first SMG that the UK adopted during WW2 as part of a lend-lease program with the US. Expensive and likely to jam, it was replaced by the Sten in the late stages of the war. It can fit a 30 rounds .45 magazine or a drum mag capable of holding 50 rounds. It has little recoil and a good fire rate. Accurate up to 200m",
+    description: "The first SMG that the UK adopted during WW2 as part of a lend-lease program with the US. Expensive and likely to jam, it was replaced by the Sten gun as soon as it entered production. It can fit a 30 rounds .45 magazine or a drum mag capable of holding 50 rounds. It has little recoil and a good fire rate. Accurate up to 200m",
   },
   {
     img: "img/sten.jpg",
     name: "Sten Mk.II",
     title: "Sub Machine Gun",
     description: "The standard issue full automatic 9mm SMG of the British Expeditionary Force during the late war, it comes with an unique side-mounted 32-round detachable box magazine. A suppressor can be mounted to silence the gun for stealth operations. Effective at close range.",
+  },
+  {
+    img: "img/explosives.jpg",
+    name: "Explosives",
+    title: "Demolition Means",
+    description: "The unit's sappers are equipped with a vast array of explosives, ranging from fixed charges, to anti-tank and anti-personnel mines, the first ones can be triggered by detonators or fuses, while the latters can be triggered by pressure plates. Useful for setting up ambushes or clearing the path from obstacles.",
   }
 ];
 
