@@ -1,26 +1,34 @@
 extends ../navbar
 
 block links
-  ul.navbar-nav.mr-5.mt-2.mt-md-0
-    li.nav-item
-      a.nav-link.animsition-link(href='/') Home 
-    li.nav-item
-      a.nav-link.animsition-link(href='/#about') About
-    li.nav-item
-      a.nav-link.animsition-link(href='/#join') Join
-  ul.navbar-nav.mr-5.mt-2.mt-md-0
-    li.nav-item
-      a.nav-link.animsition-link(href='/unit') Operations
-    li.nav-item
-      a.nav-link.animsition-link(href='/unit#structure') Structure
-    li.nav-item
-      a.nav-link.animsition-link(href='/unit#arsenal-hd') Arsenal
+  ul.navbar-nav.mr-3.mt-2.mt-md-0
+    li.nav-item.dropdown
+      a.nav-link.dropdown-toggle(href="#" data-toggle="dropdown" aria-expanded="false") 
+        strong Home
+      ul.dropdown-menu
+        li.nav-item
+          a.dropdown-item.animsition-link(href='/#about') About Us
+        li.nav-item
+          a.dropdown-item.animsition-link(href='/#join') Join
+  ul.navbar-nav.mr-3.mt-2.mt-md-0
+    li.nav-item.dropdown
+      a.nav-link.dropdown-toggle(href="#" data-toggle="dropdown" aria-expanded="false") 
+        strong Unit
+      ul.dropdown-menu
+        li.nav-item
+          a.dropdown-item.animsition-link(href='/unit#operations') Operations
+        li.nav-item
+          a.dropdown-item.animsition-link(href='/unit#structure') Structure
+        li.nav-item
+          a.dropdown-item.animsition-link(href='/unit#arsenal-hd') Arsenal
   ul.navbar-nav.mr-auto.mt-2.mt-md-0
     li.nav-item
-      a.nav-link(href='#server')
-        | Server
+      a.nav-link(href='#')
+        strong(style='color: #fff') Public
         span.sr-only (current)
+    li.nav-item
+      a.nav-link(href='#server') Servers
     li.nav-item
       a.nav-link(href='#media') Media
     li.nav-item
-      a.nav-link(href='#donation') Donate
+      a.nav-link(href='#donation') Help us

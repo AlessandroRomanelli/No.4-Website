@@ -19,37 +19,11 @@ function togglePlayback() {
   }
 }
 
+function toggleButton(element) {
+  $(element).children().first().toggleClass('arrowUp arrowDown');
+}
+
 $(document).ready(() => {
-  $(() => {
-    if (!sessionStorage.hasVisited) {
-      sessionStorage.hasVisited = true;
-    } else {
-      pauseSong();
-    }
-
-    $('.weapon-pop').popover({
-      container: 'body'
-    });
-
-    $('#weekdays > div > button').popover({
-      trigger: "hover"
-    })
-
-    $('.popover-dismiss').popover({
-      trigger: 'focus'
-    });
-
-    $('body').scrollspy({ target: '#navbarNav' });
-
-    $('#time').one('click', function() {
-      setInterval(() => {
-        let now = new Date();
-        let curTime = formatAMPM(now);
-        $(this).text(curTime);
-      }, 1000);
-    })
-  });
-
   $(".animsition").animsition({
     inClass: 'fade-in-down-lg',
     outClass: 'fade-out-down-lg',
@@ -85,6 +59,36 @@ $(document).ready(() => {
     resizing: true, // Auto-resizing, read: https://github.com/VodkaBears/Vide#resizing
     bgColor: 'transparent', // Allow custom background-color for Vide div,
     className: '' // Add custom CSS class to Vide div
+  });
+
+  $(() => {
+    if (!sessionStorage.hasVisited) {
+      sessionStorage.hasVisited = true;
+    } else {
+      pauseSong();
+    }
+
+    $('.weapon-pop').popover({
+      container: 'body'
+    });
+
+    $('#weekdays > div > button').popover({
+      trigger: "hover"
+    })
+
+    $('.popover-dismiss').popover({
+      trigger: 'focus'
+    });
+
+    $('body').scrollspy({ target: '#navbarNav' });
+
+    $('#time').one('click', function() {
+      setInterval(() => {
+        let now = new Date();
+        let curTime = formatAMPM(now);
+        $(this).text(curTime);
+      }, 1000);
+    })
   });
 
   $('#operations-cards a').blur(function() {

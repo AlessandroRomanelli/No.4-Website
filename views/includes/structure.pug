@@ -3,281 +3,295 @@
 #structure-img.img.img-fluid.my-0.trans-img
 #structure-text.about-text.mb-5.pt-3.pb-0.px-3.px-lg-5
   .container-fluid.px-0
-    h3 The unit composition:
-    .row
-      .col-8
-        .media.mt-4
-          img.d-flex.mr-3.img.align-self-top(src="img/NATO/HQ.svg", alt="alt" height='100')
-          .media-body.text-justify
-            h5.d-inline-block.mr-2 Troop HQ
-            span.text-uppercase
-              small &#8212; #{space}
-                strong #{members[0][1]} #{members[0][2]} & #{members[1][1]} #{members[1][2]}
-            br
-            p It's the most important element of the unit, composed by the Commanding Officers of the commandos and their closest helpers, their duty is to coordinate the whole unit towards the objective and to look after their members. They usually stay in cover behind other elements or fill the gap where it's most needed, while trying to preserve the overall view of the action.  
-      .col-4
-        small 
-          strong AUXILIARY MEMBERS:
-        table.table.table-striped.table-sm
-          tbody
-            each member, index in members
-              if (index > 1 && index < 7)
-                tr
-                  td #{member[0]}
-                  if (member[1] == '')
-                    td.text-right &#8212;&#8212;
-                  else 
-                    td.text-right 
-                      strong #{member[1]}
-                  case member[2]
-                    when 'OPEN'
-                      td
-                        .badge.badge-pill.badge-success OPEN
-                    when 'CLOSED'
-                      td
-                        .badge.badge-pill.badge-danger CLOSED
-                    default
-                      td #{member[2]}
-    hr.bg-inverse
-    .row
-      .col-8
-        .media.mt-4
-          img.d-flex.mr-3.img.align-self-top(src="img/NATO/SECTION.svg", alt="alt" height='100')
-          .media-body.text-justify
-            h5.d-inline-block.mr-2 Able Section
-            span.text-uppercase
-              small &#8212; #{space}
-                strong #{members[8][1]} #{members[8][2]}
-            br
-            p Able Section is the main element of the unit where most of the members are found. It is composed by two subsections, called 
-              b ONE 
-              | and 
-              b TWO
-              | . Each subsection follows the orders of the section leader, who receives orders from HQ and carries them out by coming up with his own strategic initiative. The section leader is also responsible for the training and well-being of the section.
-      .col-4.mt-4
-        small
-          strong AUXILIARY MEMBERS:
-        table.table.table-striped.table-sm
-          tbody
-            each member, index in members
-              if (index > 8 && index < 12)
-                tr
-                  td #{member[0]}
-                  if (member[1] == '')
-                    td.text-right &#8212;&#8212;
-                  else 
-                    td.text-right 
-                      strong #{member[1]}
-                  case member[2]
-                    when 'OPEN'
-                      td
-                        .badge.badge-pill.badge-success OPEN
-                    when 'CLOSED'
-                      td
-                        .badge.badge-pill.badge-danger CLOSED
-                    default
-                      td #{member[2]}
-    hr.bg-inverse
-    .row
-      .col-12
-        .media.mt-4
-          img.d-flex.mr-3.img.align-self-top(src="img/NATO/SUB.svg", alt="alt" height='100')
-          .media-body.text-justify
-            h5.d-inline-block.mr-2 Subsections One & Two
-            span.text-uppercase
-              small &#8212; #{space}
-                strong #{members[9][1]} #{members[9][2]} & #{members[10][1]} #{members[10][2]}
-            br
-            p Each subsection is composed by 8 men divided into two teams:
-            ul(style='list-style: none')
-              li
-                img(src="img/NATO/TEAM.svg", alt="alt" height='25')
-                b Assault Team 
-                | &#8212; armed with SMGs and counting four men;
-              li 
-                img(src="img/NATO/TEAM.svg", alt="alt" height='25') 
-                b Bren Team 
-                | &#8212; armed with the Bren gun and counting three men;
-            p Normally the subsections moves together unless the situation requires the two teams to split up momentarily and bound towards the objective. The subsections are the two tactical elements that the section leader coordinates to carry out his strategy.
-    .row
-      .col-6.mt-4
-        .text-center
-          strong SUBSECTION ONE:
-        table.table.table-striped.table-sm
-          tbody
-            each member, index in members
-              if (index > 12 && index < 21)
-                tr
-                  td #{member[0]}
-                  if (member[1] == '')
-                    td.text-right &#8212;&#8212;
-                  else 
-                    td.text-right 
-                      strong #{member[1]}
-                  case member[2]
-                    when 'OPEN'
-                      td
-                        .badge.badge-pill.badge-success OPEN
-                    when 'CLOSED'
-                      td
-                        .badge.badge-pill.badge-danger CLOSED
-                    default
-                      td #{member[2]}
-      .col-6.mt-4
-        .text-center
-          strong SUBSECTION TWO:
-        table.table.table-striped.table-sm
-          tbody
-            each member, index in members
-              if (index > 21 && index < 30)
-                tr
-                  td #{member[0]}
-                  if (member[1] == '')
-                    td.text-right &#8212;&#8212;
-                  else 
-                    td.text-right 
-                      strong #{member[1]}
-                  case member[2]
-                    when 'OPEN'
-                      td
-                        .badge.badge-pill.badge-success OPEN
-                    when 'CLOSED'
-                      td
-                        .badge.badge-pill.badge-danger CLOSED
-                    default
-                      td #{member[2]}
-  hr.bg-inverse
-  .row
-    .col-12
-      .media.mt-4
-        img.d-flex.mr-3.img.align-self-top(src="img/NATO/SECTION.svg", alt="alt" height='100')
-        .media-body.text-justify
-          h5.d-inline-block.mr-2 Weapon Section
-          span.text-uppercase
-            small &#8212; #{space}
-              strong #{members[31][1]} #{members[31][2]} & #{members[32][1]} #{members[32][2]}
-          br
-          p.col-9 Weapon section is an element at disposal of Troop HQ, which decides when and how to deploy the special weapon teams according to the needs of the infantry sections. Depending on the situation, sometimes the weapons team are attached to the infantry subsections, whereas othertimes they remain independent to achieve specific tasks. The section itself is composed of specific teams:
-          ul(style='list-style: none')
-            li
-              img(src="img/NATO/TEAM.svg", alt="alt" height='25')
-              b Vickers Team 
-              | &#8212; armed with a powerful HMG and counting four men;
-            li 
-              img(src="img/NATO/TEAM.svg", alt="alt" height='25') 
-              b Anti-Tank Team 
-              | &#8212; armed with the spring-loaded two PIAT launchers and counting four men;
-            li 
-              img(src="img/NATO/TEAM.svg", alt="alt" height='25') 
-              b Marksman Team 
-              | &#8212; issued with a 3x sight mounted on the standard SMLE Mk. I, only two men;
-            li 
-              img(src="img/NATO/TEAM.svg", alt="alt" height='25') 
-              b Sappers Team 
-              | &#8212; carrying the explosives for demolition, counting two men;
-  .row
-    .col-4.mt-4
-      .text-center
-        strong VICKERS TEAM:
-      table.table.table-striped.table-sm
-        tbody
-          each member, index in members
-            if (index > 33 && index < 38)
-              tr
-                td #{member[0]}
-                if (member[1] == '')
-                  td.text-right &#8212;&#8212;
-                else 
-                  td.text-right 
-                    strong #{member[1]}
-                case member[2]
-                  when 'OPEN'
-                    td
-                      .badge.badge-pill.badge-success OPEN
-                  when 'CLOSED'
-                    td
-                      .badge.badge-pill.badge-danger CLOSED
-                  default
-                    td #{member[2]}
-    .col-4.mt-4
-      .text-center
-        strong ANTI-TANK TEAM:
-      table.table.table-striped.table-sm
-        tbody
-          each member, index in members
-            if (index > 38 && index < 43)
-              tr
-                td #{member[0]}
-                if (member[1] == '')
-                  td.text-right &#8212;&#8212;
-                else 
-                  td.text-right 
-                    strong #{member[1]}
-                case member[2]
-                  when 'OPEN'
-                    td
-                      .badge.badge-pill.badge-success OPEN
-                  when 'CLOSED'
-                    td
-                      .badge.badge-pill.badge-danger CLOSED
-                  default
-                    td #{member[2]}
-    .col-4.mt-4
-      .text-center
-        strong MARKSMAN & SAPPERS TEAM:
-      table.table.table-striped.table-sm
-        tbody
-          each member, index in members
-            if ((index > 43 && index < 46) || (index > 46 && index < 49))
-              tr
-                td #{member[0]}
-                if (member[1] == '')
-                  td.text-right &#8212;&#8212;
-                else 
-                  td.text-right 
-                    strong #{member[1]}
-                case member[2]
-                  when 'OPEN'
-                    td
-                      .badge.badge-pill.badge-success OPEN
-                  when 'CLOSED'
-                    td
-                      .badge.badge-pill.badge-danger CLOSED
-                  default
-                    td #{member[2]}
-  hr.bg-inverse
-  .row
-    .col-8
-      .media.mt-4
-        img.d-flex.mr-3.img.align-self-center(src="img/NATO/MEDICAL.svg", alt="alt" height='100')
-        .media-body.text-justify
-          h5.d-inline-block.mr-2 Medical Section
-          span.text-uppercase
-            small &#8212; #{space}
-              strong #{members[50][1]} #{members[50][2]}
-          br
-          p Medical section is the department of the unit specialised in providing first-aid to the injured during operations. They are the first help that any wounded soldier will receive, they make sure to make up for any error commited by the troop. They are commonly attached to a subsection and positioned in the most safe possible area within the formation. 
-            strong Survival is the key to victory.
-    .col-4.mt-4
-      small 
-        strong MEMBERS:
-      table.table.table-striped.table-sm
-        tbody
-          each member, index in members
-            if (index > 49 && index < 53)
-              tr
-                td #{member[0]}
-                if (member[1] == '')
-                  td.text-right &#8212;&#8212;
-                else 
-                  td.text-right 
-                    strong #{member[1]}
-                case member[2]
-                  when 'OPEN'
-                    td
-                      .badge.badge-pill.badge-success OPEN
-                  when 'CLOSED'
-                    td
-                      .badge.badge-pill.badge-danger CLOSED
-                  default
-                    td #{member[2]}
+    p The real No.4 Commando was a battalion sized unit which consisted of approximately 500 highly trained soldiers. 
+      br
+      | Our unit is mainly based on the 
+      strong 1st Troop 
+      | of said battalion.
+      a.arrow(data-toggle="collapse" href="#structureCollapse" aria-expanded='false' aria-controls='structureCollapse' onclick='toggleButton(this)')
+        img.img.d-flex.mx-auto.arrowDown(src='img/arrow.svg' width='35' style="border-bottom: none")
+    #structureCollapse.collapse
+      h3 The unit composition:
+      .row
+        .col-8
+          .media.mt-4
+            img.d-flex.mr-3.img.align-self-top(src="img/NATO/HQ.svg", alt="alt" height='100')
+            .media-body.text-justify
+              h5.d-inline-block.mr-2 Troop HQ
+              span.text-uppercase
+                small &#8212; #{space}
+                  strong #{members[0][1]} #{members[0][2]} & #{members[1][1]} #{members[1][2]}
+              br
+              p It's the most important element of the unit, composed by the Commanding Officers of the commandos and their closest helpers, their duty is to coordinate the whole unit towards the objective and to look after their members. They usually stay in cover behind other elements or fill the gap where it's most needed, while trying to preserve the overall view of the action.  
+        .col-4
+          small 
+            strong AUXILIARY MEMBERS:
+          table.table.table-striped.table-sm
+            tbody
+              each member, index in members
+                if (index > 1 && index < 7)
+                  tr
+                    td #{member[0]}
+                    if (member[1] == '')
+                      td.text-right &#8212;&#8212;
+                    else 
+                      td.text-right 
+                        strong #{member[1]}
+                    case member[2]
+                      when 'OPEN'
+                        td
+                          .badge.badge-pill.badge-success OPEN
+                      when 'CLOSED'
+                        td
+                          .badge.badge-pill.badge-danger CLOSED
+                      default
+                        td #{member[2]}
+      hr.bg-inverse
+      .row
+        .col-8
+          .media.mt-4
+            img.d-flex.mr-3.img.align-self-top(src="img/NATO/SECTION.svg", alt="alt" height='100')
+            .media-body.text-justify
+              h5.d-inline-block.mr-2 Able Section
+              span.text-uppercase
+                small &#8212; #{space}
+                  strong #{members[8][1]} #{members[8][2]}
+              br
+              p Able Section is the main element of the unit where most of the members are found. It is composed by two subsections, called 
+                b ONE 
+                | and 
+                b TWO
+                | . Each subsection follows the orders of the section leader, who receives orders from HQ and carries them out by coming up with his own strategic initiative. The section leader is also responsible for the training and well-being of the section.
+        .col-4.mt-4
+          small
+            strong AUXILIARY MEMBERS:
+          table.table.table-striped.table-sm
+            tbody
+              each member, index in members
+                if (index > 8 && index < 12)
+                  tr
+                    td #{member[0]}
+                    if (member[1] == '')
+                      td.text-right &#8212;&#8212;
+                    else 
+                      td.text-right 
+                        strong #{member[1]}
+                    case member[2]
+                      when 'OPEN'
+                        td
+                          .badge.badge-pill.badge-success OPEN
+                      when 'CLOSED'
+                        td
+                          .badge.badge-pill.badge-danger CLOSED
+                      default
+                        td #{member[2]}
+      hr.bg-inverse
+      .row
+        .col-12
+          .media.mt-4
+            img.d-flex.mr-3.img.align-self-top(src="img/NATO/SUB.svg", alt="alt" height='100')
+            .media-body.text-justify
+              h5.d-inline-block.mr-2 Subsections One & Two
+              span.text-uppercase
+                small &#8212; #{space}
+                  strong #{members[9][1]} #{members[9][2]} & #{members[10][1]} #{members[10][2]}
+              br
+              p Each subsection is composed by 8 men divided into two teams:
+              ul(style='list-style: none')
+                li
+                  img(src="img/NATO/TEAM.svg", alt="alt" height='25')
+                  b Assault Team 
+                  | &#8212; armed with SMGs and counting four men;
+                li 
+                  img(src="img/NATO/TEAM.svg", alt="alt" height='25') 
+                  b Bren Team 
+                  | &#8212; armed with the Bren gun and counting three men;
+              p Normally the subsections moves together unless the situation requires the two teams to split up momentarily and bound towards the objective. The subsections are the two tactical elements that the section leader coordinates to carry out his strategy.
+      a.arrow(data-toggle="collapse" href="#subsCollapse" aria-expanded='false' aria-controls='subsCollapse' onclick='toggleButton(this)')
+        img.img.d-flex.mx-auto.arrowDown(src='img/arrow.svg' width='25')
+      #subsCollapse.collapse
+        .row
+          .col-6.mt-4
+            .text-center
+              strong SUBSECTION ONE:
+            table.table.table-striped.table-sm
+              tbody
+                each member, index in members
+                  if (index > 12 && index < 21)
+                    tr
+                      td #{member[0]}
+                      if (member[1] == '')
+                        td.text-right &#8212;&#8212;
+                      else 
+                        td.text-right 
+                          strong #{member[1]}
+                      case member[2]
+                        when 'OPEN'
+                          td
+                            .badge.badge-pill.badge-success OPEN
+                        when 'CLOSED'
+                          td
+                            .badge.badge-pill.badge-danger CLOSED
+                        default
+                          td #{member[2]}
+          .col-6.mt-4
+            .text-center
+              strong SUBSECTION TWO:
+            table.table.table-striped.table-sm
+              tbody
+                each member, index in members
+                  if (index > 21 && index < 30)
+                    tr
+                      td #{member[0]}
+                      if (member[1] == '')
+                        td.text-right &#8212;&#8212;
+                      else 
+                        td.text-right 
+                          strong #{member[1]}
+                      case member[2]
+                        when 'OPEN'
+                          td
+                            .badge.badge-pill.badge-success OPEN
+                        when 'CLOSED'
+                          td
+                            .badge.badge-pill.badge-danger CLOSED
+                        default
+                          td #{member[2]}
+      hr.bg-inverse
+      .row
+        .col-12
+          .media.mt-4
+            img.d-flex.mr-3.img.align-self-top(src="img/NATO/SECTION.svg", alt="alt" height='100')
+            .media-body.text-justify
+              h5.d-inline-block.mr-2 Weapon Section
+              span.text-uppercase
+                small &#8212; #{space}
+                  strong #{members[31][1]} #{members[31][2]} & #{members[32][1]} #{members[32][2]}
+              br
+              p.col-9 Weapon section is an element at disposal of Troop HQ, which decides when and how to deploy the special weapon teams according to the needs of the infantry sections. Depending on the situation, sometimes the weapons team are attached to the infantry subsections, whereas othertimes they remain independent to achieve specific tasks. The section itself is composed of specific teams:
+      a.arrow(data-toggle="collapse" href="#wepCollapse" aria-expanded='false' aria-controls='wepCollapse' onclick='toggleButton(this)')
+        img.img.d-flex.mx-auto.arrowDown(src='img/arrow.svg' width='25')
+      #wepCollapse.collapse
+        ul(style='list-style: none')
+          li
+            img(src="img/NATO/TEAM.svg", alt="alt" height='25')
+            b Vickers Team 
+            | &#8212; armed with a powerful HMG and counting four men;
+          li 
+            img(src="img/NATO/TEAM.svg", alt="alt" height='25') 
+            b Anti-Tank Team 
+            | &#8212; armed with the spring-loaded two PIAT launchers and counting four men;
+          li 
+            img(src="img/NATO/TEAM.svg", alt="alt" height='25') 
+            b Marksman Team 
+            | &#8212; issued with a 3x sight mounted on the standard SMLE Mk. I, only two men;
+          li 
+            img(src="img/NATO/TEAM.svg", alt="alt" height='25') 
+            b Sappers Team 
+            | &#8212; carrying the explosives for demolition, counting two men;
+        .row
+          .col-4.mt-4
+            .text-center
+              strong VICKERS TEAM:
+            table.table.table-striped.table-sm
+              tbody
+                each member, index in members
+                  if (index > 33 && index < 38)
+                    tr
+                      td #{member[0]}
+                      if (member[1] == '')
+                        td.text-right &#8212;&#8212;
+                      else 
+                        td.text-right 
+                          strong #{member[1]}
+                      case member[2]
+                        when 'OPEN'
+                          td
+                            .badge.badge-pill.badge-success OPEN
+                        when 'CLOSED'
+                          td
+                            .badge.badge-pill.badge-danger CLOSED
+                        default
+                          td #{member[2]}
+          .col-4.mt-4
+            .text-center
+              strong ANTI-TANK TEAM:
+            table.table.table-striped.table-sm
+              tbody
+                each member, index in members
+                  if (index > 38 && index < 43)
+                    tr
+                      td #{member[0]}
+                      if (member[1] == '')
+                        td.text-right &#8212;&#8212;
+                      else 
+                        td.text-right 
+                          strong #{member[1]}
+                      case member[2]
+                        when 'OPEN'
+                          td
+                            .badge.badge-pill.badge-success OPEN
+                        when 'CLOSED'
+                          td
+                            .badge.badge-pill.badge-danger CLOSED
+                        default
+                          td #{member[2]}
+          .col-4.mt-4
+            .text-center
+              strong MARKSMAN & SAPPERS TEAM:
+            table.table.table-striped.table-sm
+              tbody
+                each member, index in members
+                  if ((index > 43 && index < 46) || (index > 46 && index < 49))
+                    tr
+                      td #{member[0]}
+                      if (member[1] == '')
+                        td.text-right &#8212;&#8212;
+                      else 
+                        td.text-right 
+                          strong #{member[1]}
+                      case member[2]
+                        when 'OPEN'
+                          td
+                            .badge.badge-pill.badge-success OPEN
+                        when 'CLOSED'
+                          td
+                            .badge.badge-pill.badge-danger CLOSED
+                        default
+                          td #{member[2]}
+      hr.bg-inverse
+      .row
+        .col-8
+          .media.mt-4
+            img.d-flex.mr-3.img.align-self-center(src="img/NATO/MEDICAL.svg", alt="alt" height='100')
+            .media-body.text-justify
+              h5.d-inline-block.mr-2 Medical Section
+              span.text-uppercase
+                small &#8212; #{space}
+                  strong #{members[50][1]} #{members[50][2]}
+              br
+              p Medical section is the department of the unit specialised in providing first-aid to the injured during operations. They are the first help that any wounded soldier will receive, they make sure to make up for any error commited by the troop. They are commonly attached to a subsection and positioned in the most safe possible area within the formation. 
+                strong Survival is the key to victory.
+        .col-4.mt-4
+          small 
+            strong MEMBERS:
+          table.table.table-striped.table-sm
+            tbody
+              each member, index in members
+                if (index > 49 && index < 53)
+                  tr
+                    td #{member[0]}
+                    if (member[1] == '')
+                      td.text-right &#8212;&#8212;
+                    else 
+                      td.text-right 
+                        strong #{member[1]}
+                    case member[2]
+                      when 'OPEN'
+                        td
+                          .badge.badge-pill.badge-success OPEN
+                      when 'CLOSED'
+                        td
+                          .badge.badge-pill.badge-danger CLOSED
+                      default
+                        td #{member[2]}
