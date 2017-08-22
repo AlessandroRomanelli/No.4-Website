@@ -445,6 +445,19 @@ div.container {
   z-index : 10;
 }
 
+.carousel-indicators .active {
+  border: 1px solid rgba(0,0,0,.25);
+  box-shadow: 1px 1px 0px 0px rgba(255,255,255,.25),
+              1px 0px 0px 0px rgba(255,255,255,.25),
+              1px -1px 0px 0px rgba(255,255,255,.25),
+              0px 1px 0px 0px rgba(255,255,255,.25),
+              0px -1px 0px 0px rgba(255,255,255,.25),
+              -1px 1px 0px 0px rgba(255,255,255,.25),
+              -1px 0px 0px 0px rgba(255,255,255,.25),
+              -1px -1px 0px 0px rgba(255,255,255,.25);
+  background-color: #a90000;
+}
+
 .carousel-item img {
   z-index : -1;
 }

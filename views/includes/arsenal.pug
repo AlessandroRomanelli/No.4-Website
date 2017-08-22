@@ -6,7 +6,7 @@
       if index == 0
         li.active(data-target='#arsenal', data-slide-to=`${index}`)
       else
-        li.active(data-target='#arsenal', data-slide-to=`${index}`)
+        li(data-target='#arsenal', data-slide-to=`${index}`)
   .carousel-inner(role='listbox' style='height: 500px')
     each weapon, index in weapons
       if index == 0

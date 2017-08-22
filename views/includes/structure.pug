@@ -168,7 +168,7 @@
                 small &#8212; #{space}
                   strong #{members[31][1]} #{members[31][2]} & #{members[32][1]} #{members[32][2]}
               br
-              p.col-9 Weapon section is an element at disposal of Troop HQ, which decides when and how to deploy the special weapon teams according to the needs of the infantry sections. Depending on the situation, sometimes the weapons team are attached to the infantry subsections, whereas othertimes they remain independent to achieve specific tasks. The section itself is composed of specific teams:
+              p Weapon section is an element at disposal of Troop HQ, which decides when and how to deploy the special weapon teams according to the needs of the infantry sections. Depending on the situation, sometimes the weapons team are attached to the infantry subsections, whereas othertimes they remain independent to achieve specific tasks. The section itself is composed of specific teams:
       a.arrow(data-toggle="collapse" href="#wepCollapse" aria-expanded='false' aria-controls='wepCollapse' onclick='toggleButton(this)')
         img.img.d-flex.mx-auto.arrowDown(src='img/arrow.svg' width='25')
       #wepCollapse.collapse
@@ -263,14 +263,14 @@
       .row
         .col-8
           .media.mt-4
-            img.d-flex.mr-3.img.align-self-center(src="img/NATO/MEDICAL.svg", alt="alt" height='100')
+            img.d-flex.mr-3.img.align-self-top(src="img/NATO/MEDICAL.svg", alt="alt" height='100')
             .media-body.text-justify
               h5.d-inline-block.mr-2 Medical Section
               span.text-uppercase
                 small &#8212; #{space}
                   strong #{members[50][1]} #{members[50][2]}
               br
-              p Medical section is the department of the unit specialised in providing first-aid to the injured during operations. They are the first help that any wounded soldier will receive, they make sure to make up for any error commited by the troop. They are commonly attached to a subsection and positioned in the most safe possible area within the formation. 
+              p Medical section is the department of the unit specialised in providing first-aid to the injured during operations. They are the first help that any wounded soldier will receive, their main goal is to make sure that any soldier survives his wounds. They are commonly attached to a subsection and positioned in the safest possible area within the formation. 
                 strong Survival is the key to victory.
         .col-4.mt-4
           small 
@@ -279,6 +279,44 @@
             tbody
               each member, index in members
                 if (index > 49 && index < 53)
+                  tr
+                    td #{member[0]}
+                    if (member[1] == '')
+                      td.text-right &#8212;&#8212;
+                    else 
+                      td.text-right 
+                        strong #{member[1]}
+                    case member[2]
+                      when 'OPEN'
+                        td
+                          .badge.badge-pill.badge-success OPEN
+                      when 'CLOSED'
+                        td
+                          .badge.badge-pill.badge-danger CLOSED
+                      default
+                        td #{member[2]}
+      hr.bg-inverse
+      .row
+        .col-8
+          .media.mt-4
+            img.d-flex.mr-3.img.align-self-top(src="img/NATO/FLIGHT.svg", alt="alt" height='100')
+            .media-body.text-justify
+              h5.d-inline-block.mr-2 Flight Section
+              span.text-uppercase
+                small &#8212; #{space}
+                  strong #{members[54][1]} #{members[54][2]}
+              br
+              p Flight Section is a 
+                strong Royal Air Force 
+                | detachment assigned specifically to the No.4 Commando unit. It consists of three pilots who have at their disposal different kind of aircrafts, such as the popular Spitfires, the P-38 Lightnings, C-47s and other smaller planes.
+                | Their tasks can differ a lot from mission to mission, sometimes they will assigned CAS missions, whereas some other times they will be tasked with recon, CAP or transport of paratroopers. 
+        .col-4.mt-4
+          small 
+            strong MEMBERS:
+          table.table.table-striped.table-sm
+            tbody
+              each member, index in members
+                if (index > 53 && index < 57)
                   tr
                     td #{member[0]}
                     if (member[1] == '')

@@ -1,0 +1,27 @@
+<svg width="580" height="400" xmlns="http://www.w3.org/2000/svg" stroke="null" style="vector-effect: non-scaling-stroke;">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+
+ <g stroke="null">
+  <title stroke="null">background</title>
+  <rect stroke="null" x="-1" y="-1" width="582" height="402" id="canvas_background" fill="none"/>
+  <g stroke="null" id="canvasGrid" display="none">
+   <rect stroke="null" id="svg_2" width="100%" height="100%" x="0" y="0" stroke-width="0" fill="url(#gridpattern)"/>
+  </g>
+ </g>
+ <g stroke="null">
+  <title stroke="null">Layer 1</title>
+  <rect stroke="#000" fill="#6D97AB" stroke-width="3" x="78.5" y="84.109588" width="422.999988" height="231.780815" id="svg_1"/>
+  <ellipse stroke="#000" fill="#000000" stroke-width="3" stroke-opacity="null" cx="240" cy="50.5" id="svg_6" rx="16" ry="16"/>
+  <ellipse stroke="#000" fill="#000000" stroke-width="3" stroke-opacity="null" cx="340" cy="50.5" id="svg_10" rx="16" ry="16"/>
+  <ellipse stroke="#000" fill="#000000" stroke-width="3" stroke-opacity="null" cx="290" cy="50.5" id="svg_11" rx="16" ry="16"/>
+  <metadata stroke="null" transform="matrix(0.6149817193790029,0,0,0.6149817193790029,0,0) " id="svg_34">image/svg+xml</metadata>
+
+  <metadata stroke="null" transform="matrix(0.6149817193790029,0,0,0.6149817193790029,0,0) " id="svg_47">image/svg+xml</metadata>
+
+  <g stroke="null" id="svg_49">
+   <g stroke="null" transform="matrix(6.054669006112394,0,0,6.545127775077015,-748.5476862362661,-726.0489446155959) " id="svg_44">
+    <path stroke="#000000" fill="none" fill-rule="evenodd" stroke-width="1.132798" stroke-miterlimit="4" d="m171.547104,141.91079c10.42214,5.91327 11.45696,6.43067 13.37877,6.43067c1.92181,0 5.24802,-1.18265 5.24802,-6.43067c0,-5.24803 -3.32621,-6.43068 -5.24802,-6.43068c-1.92181,0 -2.95663,0.51741 -13.37877,6.43068zm-0.14783,0c-10.42214,5.91327 -11.45696,6.43067 -13.37877,6.43067c-1.92181,0 -5.24802,-1.18265 -5.24802,-6.43067c0,-5.24803 3.32621,-6.43068 5.24802,-6.43068c1.92181,0 2.95663,0.51741 13.37877,6.43068z" id="svg_45"/>
+   </g>
+  </g>
+ </g>
+</svg>
