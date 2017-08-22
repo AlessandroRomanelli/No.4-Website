@@ -76,6 +76,108 @@ keyframes color-change-3x {
   }
 }
 
+input[type=range] {
+  -webkit-appearance: none;
+  width: 150px;
+  background-color: transparent;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 150px;
+  height: 5px;
+  background: #ddd;
+  border: none;
+  border-radius: 3px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #a90000;
+  margin-top: -4px;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #ccc;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100px;
+  height: 5px;
+  background: #ddd;
+  border: none;
+  border-radius: 3px;
+}
+
+input[type=range]::-moz-range-thumb {
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #a90000;
+}
+
+
+/*hide the outline behind the border*/
+
+input[type=range]:-moz-focusring {
+  outline: 1px solid white;
+  outline-offset: -1px;
+}
+
+input[type=range]::-ms-track {
+  width: 100px;
+  height: 5px;
+  background: transparent;
+  border-color: transparent;
+  border-width: 6px 0;
+  color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+  background: #777;
+  border-radius: 10px;
+}
+
+input[type=range]::-ms-fill-upper {
+  background: #ddd;
+  border-radius: 10px;
+}
+
+input[type=range]::-ms-thumb {
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #a90000;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+  background: #888;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+  background: #ccc;
+}
+
+#volumeControl {
+  transition: 0.25s ease-in-out;
+  opacity: 0.5;
+}
+
+#volumeControl:hover {
+  transform: scale(1.1);
+  opacity: 0.85;
+  cursor: pointer;
+}
+
 .dropdown-menu {
   background-color: #292b2c;
   border-top: none;
@@ -97,8 +199,7 @@ a.dropdown-item:hover {
 }
 
 .navFont {
-  font-family : 'Lato',
-                sans-serif;
+  font-family: 'Raleway', sans-serif;
   text-transform: uppercase;
   font-weight:500;
 }
@@ -642,8 +743,62 @@ h1.headline {
   }
 }
 
+
 html {
-  font-size : 14px;
+  font-size: 14px;
 }
 
-@include media-breakpoint-up(sm);
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 2px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 28px;
+  }
+}
+
+ul.contacts {
+    list-style: none; /* Remove list bullets */
+    padding: 0;
+    margin: 0;
+    border-left: double 4px rgba(0,0,0,.1)
+}
+
+.contacts li {
+    padding-left: 16px;
+}
+
+.contacts li:first-of-type::before {
+    color: #ffca00;
+    text-shadow: 1px 1px 0 #292b2c,
+                 1px 0 0 #292b2c,
+                 1px -1px 0 #292b2c,
+                 0   1px 0 #292b2c,
+                 0   -1px 0 #292b2c,
+                 -1px 1px 0 #292b2c,
+                 -1px 0 0 #292b2c,
+                 -1px -1px 0 #292b2c;
+}
+
+.contacts li:before {
+    content: "\2605"; /* Insert content that looks like bullets */
+    padding-right: 3px;
+    color: white;
+    text-shadow: 1px 1px 0 #292b2c,
+                 1px 0 0 #292b2c,
+                 1px -1px 0 #292b2c,
+                 0   1px 0 #292b2c,
+                 0   -1px 0 #292b2c,
+                 -1px 1px 0 #292b2c,
+                 -1px 0 0 #292b2c,
+                 -1px -1px 0 #292b2c;
+}

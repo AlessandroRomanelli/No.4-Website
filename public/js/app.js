@@ -23,6 +23,35 @@ function toggleButton(element) {
   $(element).children().first().toggleClass('arrowUp arrowDown');
 }
 
+function updateSlider(value, slider) {
+  let totalVol = parseInt(document.getElementById('bgVol').value) + parseInt(document.getElementById('musVol').value);
+  console.log(totalVol, document.getElementById('bgVol').value, document.getElementById('musVol').value);
+  switch (true) {
+    case totalVol == 90:
+      $('#volumeControl').attr('src', 'img/vol3.svg');
+      break;
+    case totalVol < 90 && totalVol >= 40:
+      $('#volumeControl').attr('src', 'img/vol2.svg');
+      break;
+    case totalVol < 40 && totalVol > 0:
+      $('#volumeControl').attr('src', 'img/vol1.svg');
+      break;
+    case totalVol == 0:
+      $('#volumeControl').attr('src', 'img/vol0.svg');
+      break;
+  };
+  if (document.getElementById('bgVol').value + document.getElementById('musVol').value == 90) {
+    $('#volumeControl').attr('src', 'img/vol3.svg');
+  };
+  if ($(slider).attr('id') === 'bgVol') {
+    let myVideo = document.getElementById("bgVideo");
+    myVideo.firstChild.firstChild.volume = value/100;
+  } else {
+    let myAudio = document.getElementById("player");
+    myAudio.volume = value/100;
+  };
+};
+
 $(document).ready(() => {
   $(".animsition").animsition({
     inClass: 'fade-in-down-lg',
@@ -65,8 +94,17 @@ $(document).ready(() => {
     if (!sessionStorage.hasVisited) {
       sessionStorage.hasVisited = true;
     } else {
+      document.getElementById('musVol').value = 0;
+      $('#musVol').parent().removeClass('d-flex');
+      $('#musVol').parent().addClass('d-none');
       pauseSong();
-    }
+    };
+
+    $('nav .dropdown').hover(function() {
+      $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(250);
+      }, function() {
+      $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(250);
+    });
 
     $('.weapon-pop').popover({
       container: 'body'

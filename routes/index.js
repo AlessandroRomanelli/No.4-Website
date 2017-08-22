@@ -125,7 +125,7 @@ router.get('/unit', function(req, res, next) {
     range: 'A3:C55',
     valueRenderOption: 'FORMATTED_VALUE',
     dateTimeRenderOption: 'SERIAL_NUMBER',
-    auth: process.env.API_KEY
+    auth: process.env.API_KEY || "AIzaSyC8kYitDoc-HWLZUfN4CUYkGcZG5XFCcS0"
   };
   async.series([
     function(callback) {
