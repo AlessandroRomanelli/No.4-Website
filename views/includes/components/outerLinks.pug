@@ -1,24 +1,36 @@
 extends ../navbar
 
 block links
-  ul.navbar-nav.mr-5.mt-2.mt-md-0
-    li.nav-item
-      a.nav-link(href='/') Home 
-    li.nav-item
-      a.nav-link(href='/#about') About
-    li.nav-item
-      a.nav-link(href='/#join') Join
-  ul.navbar-nav.mr-5.mt-2.mt-md-0
-    li.nav-item
-      a.nav-link.animsition-link(href='/unit') Operations
-    li.nav-item
-      a.nav-link.animsition-link(href='/unit#structure') Structure
-    li.nav-item
-      a.nav-link.animsition-link(href='/unit#arsenal-hd') Arsenal
+  ul.navbar-nav.mr-3.mt-2.mt-md-0
+    li.nav-item.dropdown
+      a.nav-link.dropdown-toggle.navFont(href="#" data-toggle="dropdown" aria-expanded="false") 
+        strong Home
+      ul.dropdown-menu
+        li.nav-item
+          a.dropdown-item.animsition-link(href='/#about') About Us
+        li.nav-item
+          a.dropdown-item.animsition-link(href='/#join') Join
+  ul.navbar-nav.mx-2.mt-2.mt-md-0
+    li.nav-item.dropdown
+      a.nav-link.dropdown-toggle.navFont(href="#" data-toggle="dropdown" aria-expanded="false") 
+        strong Unit
+      ul.dropdown-menu
+        li.nav-item
+          a.dropdown-item.animsition-link(href='/unit#operations') Operations
+        li.nav-item
+          a.dropdown-item.animsition-link(href='/unit#structure') Structure
+        li.nav-item
+          a.dropdown-item.animsition-link(href='/unit#arsenal-hd') Arsenal
+        li.nav-item
+          a.dropdown-item.animsition-link(href='/unit#rewards') Awards
   ul.navbar-nav.mr-auto.mt-2.mt-md-0
-    li.nav-item
-      a.nav-link.animsition-link(href='/public') Server
-    li.nav-item
-      a.nav-link.animsition-link(href='/public#media') Media
-    li.nav-item
-      a.nav-link.animsition-link(href='/public#donation') Donate
+    li.nav-item.dropdown
+      a.nav-link.dropdown-toggle.navFont(href="#" data-toggle="dropdown" aria-expanded="false") 
+        strong Public
+      ul.dropdown-menu
+        li.nav-item
+          a.dropdown-item.animsition-link(href='/public') Server
+        li.nav-item
+          a.dropdown-item.animsition-link(href='/public#media') Media
+        li.nav-item
+          a.dropdown-item.animsition-link(href='/public#donation') Donate

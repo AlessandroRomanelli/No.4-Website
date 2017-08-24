@@ -144,5 +144,57 @@ const weapons = [
   }
 ];
 
+const awards = [
+  {
+    title: 'Victoria Cross Medal',
+    text: 'The Victoria Cross is the highest award of the United Kingdom honours system. It is awarded for gallantry "in the face of the enemy" to members of the British armed forces. It may be awarded posthumously.',
+  },
+  {
+    title: 'Distinguished Service Cross',
+    text: 'The Distinguished Service Cross is a third level military decoration awarded to the British Armed Forces, Royal Fleet Auxiliary and British Merchant Navy and formerly also to officers of other Commonwealth countries.'
+  },
+  {
+    title: 'Distinguished Flying Cross',
+    text: 'The Distinguished Flying Cross is the third-level military decoration awarded to personnel of the United Kingdom\'s Royal Air Force and other services, and formerly to officers of other Commonwealth countries, instituted for "an act or acts of valour, courage or devotion to duty whilst flying in active operations against the enemy.'
+  },
+  {
+    title: 'General Service Medal',
+    text: 'The General Service Medal was instituted to recognise service in minor Army and Air Force operations for which no separate medal was intended.'
+  },
+  {
+    title: 'Meritorious Service Medal',
+    text: 'The Meritorious Service Medal  is a military award presented to members of the British Armed Forces who distinguished themselves by outstanding meritorious achievement or service to the British Army.'
+  },
+  {
+    title: 'Air Medal',
+    text: 'The Air Force Medal was a military decoration, awarded to personnel of the Royal Air Force (United Kingdom) and other services, and formerly also to personnel of other Commonwealth countries, for "an act or acts of valour, courage or devotion to duty whilst flying in active operations against the enemy".'
+  },
+  {
+    title: 'War Medal',
+    text: 'The War Medal 1939–1945 is a campaign medal which was instituted by the United Kingdom on 16 August 1945, for award to subjects of the British Commonwealth who had served full-time in the Armed Forces or the Merchant Navy for at least 28 days between 3 September 1939 and 2 September 1945.'
+  },
+  {
+    title: 'Artic Star',
+    text: 'The Arctic Star is a military campaign medal which was instituted by the United Kingdom for award to subjects of the British Commonwealth for service in the Second World War, specifically those who served on the Arctic Convoys north of the Arctic Circle.'
+  },
+  {
+    title: 'Italy Star',
+    text: 'The Italy Star is a military campaign medal, instituted by the United Kingdom in May 1945 for award to subjects of the British Commonwealth who served in the Second World War, specifically in the Italian Campaign from 1943 to 1945.'
+  },
+  {
+    title: 'France and Germany Star',
+    text: 'The France and Germany Star was awarded for entry into operational service in France, Belgium, Luxembourg, Holland and Germany between 6 June 1944 and 8 May 1945.'
+  },
+  {
+    title: 'Pacific Star',
+    text: 'The Pacific Star is a military campaign medal instituted by the United Kingdom in May 1945 for award to subjects of the    British Commonwealth who served in the Second World War, specifically in the Pacific Campaign from 1941 to 1945.'
+  },
+  {
+    title: 'Africa Star',
+    text: 'The Africa Star is a military campaign medal, instituted by the United Kingdom for award to subjects of the British Commonwealth who served in the Second World War, specifically in North Africa between 10 June 1940 and 12 May 1943 inclusive.'
+  },
+];
+
 module.exports.operations = operations;
 module.exports.weapons = weapons;
+module.exports.awards = awards;

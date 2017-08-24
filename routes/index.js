@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const operations = require('../data/data').operations;
 const weapons = require('../data/data').weapons;
+const awards = require('../data/data').awards;
 const gameDig = require('gamedig');
 const async = require('async');
 const fs = require('fs');
@@ -43,7 +44,7 @@ router.get('/unit', function(req, res, next) {
     }
   ],
   function (err, response) {
-    res.render('unit', {members: response[0].values, ops: operations, weapons: weapons, weekdays: weekdays, play: false });
+    res.render('unit', {members: response[0].values, ops: operations, weapons: weapons, weekdays: weekdays, awards: awards, play: false });
   });
 });
 

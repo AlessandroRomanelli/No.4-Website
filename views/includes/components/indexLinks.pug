@@ -3,7 +3,7 @@ extends ../navbar
 block links
   ul.navbar-nav.mr-3.mt-2.mt-md-0
     li.nav-item
-      a.nav-link(href='#home')
+      a.nav-link.navFont(href='#home')
         strong(style='color: #fff') Home 
         span.sr-only (current)
     li.nav-item
@@ -12,7 +12,7 @@ block links
       a.nav-link(href='#join') Join
   ul.navbar-nav.mr-3.mt-2.mt-md-0
     li.nav-item.dropdown
-      a.nav-link.dropdown-toggle(href="#" data-toggle="dropdown" aria-expanded="false") 
+      a.nav-link.dropdown-toggle.navFont(href="#" data-toggle="dropdown" aria-expanded="false") 
         strong Unit
       ul.dropdown-menu
         li.nav-item
@@ -21,9 +21,11 @@ block links
           a.dropdown-item.animsition-link(href='/unit#structure') Structure
         li.nav-item
           a.dropdown-item.animsition-link(href='/unit#arsenal-hd') Arsenal
+        li.nav-item
+          a.dropdown-item.animsition-link(href='/unit#rewards') Awards
   ul.navbar-nav.mr-auto.mt-2.mt-md-0
     li.nav-item.dropdown
-      a.nav-link.dropdown-toggle(href="#" data-toggle="dropdown" aria-expanded="false") 
+      a.nav-link.dropdown-toggle.navFont(href="#" data-toggle="dropdown" aria-expanded="false") 
         strong Public
       ul.dropdown-menu
         li.nav-item

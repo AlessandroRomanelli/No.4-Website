@@ -167,6 +167,57 @@ input[type=range]:focus::-ms-fill-upper {
   background: #ccc;
 }
 
+.firstAdj {
+  transform: translateY(-5px) scale(1.05);
+  z-index: 14;
+}
+
+.secondAdj {
+  transform: translateY(-2px) scale(1.025);
+  z-index: 13;
+}
+
+.thirdAdj {
+  transform: scale(1.0125);
+  z-index: 12;
+}
+
+#medals {
+  border-radius: 10px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  background: url(../img/medalBG.jpg) no-repeat center;
+  background-size: cover;
+}
+
+#medals img {
+  filter: drop-shadow(5px 5px 5px #222);
+  position: relative;
+  display: inline-block;
+  transition: 0.25s ease-in-out;
+}
+
+#medals img:not(:last-of-type):not(:first-of-type) {
+  margin-left: -20.5px;
+  margin-right: -20.5px;
+}
+
+#medals img:last-of-type {
+  margin-left: -20.5px;
+}
+
+#medals img:first-of-type {
+  margin-right: -20.5px;
+}
+
+#medals img:hover,
+#medals img:not(:last-of-type):not(:first-of-type):hover {
+  z-index: 100;
+  margin: 0 10px;
+  transform: translateY(-10px) scale(1.1);
+  cursor: pointer;
+}
+
 #volumeControl {
   transition: 0.25s ease-in-out;
   opacity: 0.5;
@@ -199,9 +250,9 @@ a.dropdown-item:hover {
 }
 
 .navFont {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Asul', sans-serif;
   text-transform: uppercase;
-  font-weight:500;
+  font-weight: lighter;
 }
 
 .arrowUp {
@@ -669,6 +720,12 @@ h1.headline {
 #media-img {
   position        : relative;
   background      : url(../img/media.jpg) no-repeat 50% 50%;
+  background-size : cover;
+}
+
+#rewards-img {
+  position        : relative;
+  background      : url(../img/medals.jpg) no-repeat 50% 10%;
   background-size : cover;
 }
 
