@@ -124,9 +124,6 @@ input[type=range]::-moz-range-thumb {
   background: #a90000;
 }
 
-
-/*hide the outline behind the border*/
-
 input[type=range]:-moz-focusring {
   outline: 1px solid white;
   outline-offset: -1px;
@@ -167,6 +164,10 @@ input[type=range]:focus::-ms-fill-upper {
   background: #ccc;
 }
 
+.modal button:hover {
+  cursor: pointer;
+}
+
 .firstAdj {
   transform: translateY(-5px) scale(1.05);
   z-index: 14;
@@ -182,6 +183,10 @@ input[type=range]:focus::-ms-fill-upper {
   z-index: 12;
 }
 
+#medals a:focus {
+  outline: none;
+}
+
 #medals {
   border-radius: 10px;
   border-top-left-radius: 0px;
@@ -191,7 +196,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 #medals img {
-  filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.75));
   position: relative;
   display: inline-block;
   transition: 0.25s ease-in-out;
@@ -213,7 +218,7 @@ input[type=range]:focus::-ms-fill-upper {
 #medals img:hover,
 #medals img:not(:last-of-type):not(:first-of-type):hover {
   z-index: 100;
-  margin: 0 10px;
+  margin: 0 5px;
   transform: translateY(-10px) scale(1.1);
   cursor: pointer;
 }
@@ -762,10 +767,6 @@ h1.headline {
   height     : 50px;
   opacity    : .5;
   transition : .25s ease-in-out;
-}
-
-#useful ul {
-  border-left : double 4px rgba(0,0,0,.1);
 }
 
 #useful a:hover img {

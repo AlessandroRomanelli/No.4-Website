@@ -101,43 +101,43 @@ const operations = [
 
 const weapons = [
   {
-    img: "img/enfield.jpg",
+    img: "img/arsenal/enfield.jpg",
     name: "SMLE No. 4 Mk. I",
     title: "British Standard Rifle",
     description: "This is the standard issue rifle, it fires a .303 bullet and has an internal 10-round magazine that is reloaded via stripper clip. Effective up to 500m. Marksman mount a telescopic 3x optic on top of their rifles to increase the effective range and accuracy.",
   },
   {
-    img: "img/piat.jpg",
+    img: "img/arsenal/piat.jpg",
     name: "Projector, Infantry, Anti Tank (PIAT)",
     title: "Anti-Tank Launcher",
-    description: "Used by the Commandos to fight off armored vehicles or tanks but can also be used to destroy fortified positions and such. It fires a 2.5 pound hallow chrage. Effective range is limited to 100m, past this distance the weapon accuracy is unreliable but the charge can travel up to 300m.",
+    description: "Used by the Commandos to fight off armored vehicles or tanks but can also be used to destroy fortified positions and such. It fires a 2.5 pound hollow chrage. Effective range is limited to 100m, past this distance the weapon accuracy is unreliable but the charge can travel up to 300m.",
   },
   {
-    img: "img/bren.jpg",
+    img: "img/arsenal/bren.jpg",
     name: "Bren Mk.II",
     title: "Light Machine Gun",
     description: "This beast can deliver continuous fire without overheating as fast. It fires a .303 cartridge and is fed by a particular top-mounted 30-round detachable box magazine. Effective up to 500m.",
   },
   {
-    img: "img/vickers.jpg",
+    img: "img/arsenal/vickers.jpg",
     name: "Vickers MG",
     title: "Static Machine Gun",
     description: "A .30 caliber widely used among the British armored, air and infantry forces. Famous for its great solidity and reliability. Considerably more capable than the Bren gun when it comes to suppressing the enemy for an extended amount of time. The Vickers fits large magazines capable of holding hundred of bullets but it comes to the cost of not being able to be fired without being fully deployed.",
   },
   {
-    img: "img/thompson.jpg",
+    img: "img/arsenal/thompson.jpg",
     name: "Thompson M1928",
     title: "Sub Machine Gun",
     description: "The first SMG that the UK adopted during WW2 as part of a lend-lease program with the US. Expensive and likely to jam, it was replaced by the Sten gun as soon as it entered production. It can fit a 30 rounds .45 magazine or a drum mag capable of holding 50 rounds. It has little recoil and a good fire rate. Accurate up to 200m",
   },
   {
-    img: "img/sten.jpg",
+    img: "img/arsenal/sten.jpg",
     name: "Sten Mk.II",
     title: "Sub Machine Gun",
     description: "The standard issue full automatic 9mm SMG of the British Expeditionary Force during the late war, it comes with an unique side-mounted 32-round detachable box magazine. A suppressor can be mounted to silence the gun for stealth operations. Effective at close range.",
   },
   {
-    img: "img/explosives.jpg",
+    img: "img/arsenal/explosives.jpg",
     name: "Explosives",
     title: "Demolition Means",
     description: "The unit's sappers are equipped with a vast array of explosives, ranging from fixed charges, to anti-tank and anti-personnel mines, the first ones can be triggered by detonators or fuses, while the latters can be triggered by pressure plates. Useful for setting up ambushes or clearing the path from obstacles.",

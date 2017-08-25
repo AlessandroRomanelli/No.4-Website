@@ -28,20 +28,20 @@ function updateSlider(value, slider) {
   console.log(totalVol, document.getElementById('bgVol').value, document.getElementById('musVol').value);
   switch (true) {
     case totalVol == 90:
-      $('#volumeControl').attr('src', 'img/vol3.svg');
+      $('#volumeControl').attr('src', 'img/icons/vol3.svg');
       break;
     case totalVol < 90 && totalVol >= 40:
-      $('#volumeControl').attr('src', 'img/vol2.svg');
+      $('#volumeControl').attr('src', 'img/icons/vol2.svg');
       break;
     case totalVol < 40 && totalVol > 0:
-      $('#volumeControl').attr('src', 'img/vol1.svg');
+      $('#volumeControl').attr('src', 'img/icons/vol1.svg');
       break;
     case totalVol == 0:
-      $('#volumeControl').attr('src', 'img/vol0.svg');
+      $('#volumeControl').attr('src', 'img/icons/vol0.svg');
       break;
   };
   if (document.getElementById('bgVol').value + document.getElementById('musVol').value == 90) {
-    $('#volumeControl').attr('src', 'img/vol3.svg');
+    $('#volumeControl').attr('src', 'img/icons/vol3.svg');
   };
   if ($(slider).attr('id') === 'bgVol') {
     let myVideo = document.getElementById("bgVideo");
@@ -130,17 +130,21 @@ $(document).ready(() => {
 
     $('#medals img').hover(function() {
       let index = $.inArray($(this).parent()[0], $('#medals').children());
-      $('#medals').children().eq(index-1).children().addClass('firstAdj');
-      $('#medals').children().eq(index-2).children().addClass('secondAdj');
-      $('#medals').children().eq(index-3).children().addClass('thirdAdj');
+      if (index > 3) {
+        $('#medals').children().eq(index-1).children().addClass('firstAdj');
+        $('#medals').children().eq(index-2).children().addClass('secondAdj');
+        $('#medals').children().eq(index-3).children().addClass('thirdAdj');
+      }
       $('#medals').children().eq(index+1).children().addClass('firstAdj');
       $('#medals').children().eq(index+2).children().addClass('secondAdj');
       $('#medals').children().eq(index+3).children().addClass('thirdAdj');
     }, function() {
       let index = $.inArray($(this).parent()[0], $('#medals').children());
-      $('#medals').children().eq(index-1).children().removeClass('firstAdj');
-      $('#medals').children().eq(index-2).children().removeClass('secondAdj');
-      $('#medals').children().eq(index-3).children().removeClass('thirdAdj');
+      if (index > 3) {
+        $('#medals').children().eq(index-1).children().removeClass('firstAdj');
+        $('#medals').children().eq(index-2).children().removeClass('secondAdj');
+        $('#medals').children().eq(index-3).children().removeClass('thirdAdj');
+      }
       $('#medals').children().eq(index+1).children().removeClass('firstAdj');
       $('#medals').children().eq(index+2).children().removeClass('secondAdj');
       $('#medals').children().eq(index+3).children().removeClass('thirdAdj');

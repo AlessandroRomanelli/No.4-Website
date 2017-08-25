@@ -22,9 +22,9 @@
           .modal.fade(id=`modal${index+1}` tabindex='-1', role='dialog', aria-labelledby=`modal${index+1}Label`, aria-hidden='true')
             .modal-dialog(role='document')
               .modal-content
-                .media
+                .media.rounded(style='background: url(../img/medalBG.jpg) no-repeat center; background-size: cover;')
                   img.d-flex.mx-3(src=`img/awards/${index+1}.png` height="250px" style='filter: drop-shadow(5px 5px 5px rgba(0,0,0,.25));')
-                  .media-body.bg-inverse.text-white
+                  .media-body.bg-inverse.text-white.rounded
                     .modal-header(style='border-color: #a90000')
                       h5#modal1Label.modal-title=award.title
                     .modal-body
