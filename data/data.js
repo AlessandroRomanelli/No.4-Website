@@ -47,7 +47,7 @@ const operations = [
     title: "Libyan Desert Campaign",
     date: "10th June 1940 — 13th May 1943",
     description: "The Italians sided with Germany and declared war on the Allies, a few days later the British Army was already crossing the border from Egypt into Lybia, where Italy had its colonial interests. It was the start of a series of brutal fights, before the formidable Deutsches Afrika Korps stepped in, led by Erwin Rommel, known as 'The Desert Fox'.",
-    status: 0
+    status: 1
   },
   {
     id: "svalbard",
@@ -63,7 +63,7 @@ const operations = [
     title: "Battle of Greece",
     date: "March 1941 — April 1941",
     description: "Also known as Operation Marita, it's the common name for the invasion of Allied Greece by Italy and Nazi Germany. The Italian began in late 1940 with an invasion which was followed months later by a German one, on a different front. The Greeks found themselves outnumbered and surrounded, their only hope was a special English detachment.",
-    status: 1
+    status: 0
   },
   {
     id: "french",
@@ -141,7 +141,13 @@ const weapons = [
     name: "Explosives",
     title: "Demolition Means",
     description: "The unit's sappers are equipped with a vast array of explosives, ranging from fixed charges, to anti-tank and anti-personnel mines, the first ones can be triggered by detonators or fuses, while the latters can be triggered by pressure plates. Useful for setting up ambushes or clearing the path from obstacles.",
-  }
+  },
+  {
+    img: "img/arsenal/spitfire.jpg",
+    name: "Supermarine Spitfire",
+    title: "Mk.II (CAP) & Mk. VIII (CAS)",
+    description: "The iconic Supermarine Spitfire is the workhorse of the Royal Air Force detachment assigned to the No.4 Commandos, Able Flight. It comes in two different versions, a light armed version with 8x .303 Brownings and a ground strike version, armed with two 20mm AP & HE cannons, 4x .303 Brownings and a 250kg bomb.",
+  },
 ];
 
 const awards = [
