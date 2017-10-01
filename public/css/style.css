@@ -848,7 +848,7 @@ ul.contacts {
     padding-left: 16px;
 }
 
-.contacts li:first-of-type::before {
+.contacts li:nth-of-type(-n+2)::before {
     color: #ffca00;
     text-shadow: 1px 1px 0 #292b2c,
                  1px 0 0 #292b2c,
