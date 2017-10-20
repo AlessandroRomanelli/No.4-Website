@@ -76,19 +76,26 @@ $(document).ready(() => {
     transition: function(url){ window.location.href = url; }
   });
 
-  $('#bgVideo').vide('video/bg',
+  $('#bgVideo').vide({
+    mp4: "video/bg.mp4",
+    webm: "video/bg.webm",
+    poster: "video/bg.jpg"
+  },
     {
     volume: 0.4,
     playbackRate: 1,
     muted: false,
     loop: true,
-    autoplay: true,
+    autoplay: false,
     position: '0% 0%', // Similar to the CSS `background-position` property.
-    posterType: 'none', // Poster image type. "detect" — auto-detection; "none" — no poster; "jpg", "png", "gif",... - extensions.
+    posterType: 'jpg', // Poster image type. "detect" — auto-detection; "none" — no poster; "jpg", "png", "gif",... - extensions.
     resizing: true, // Auto-resizing, read: https://github.com/VodkaBears/Vide#resizing
     bgColor: 'transparent', // Allow custom background-color for Vide div,
     className: '' // Add custom CSS class to Vide div
   });
+
+  $('#bgVideo').data('vide').getVideoObject().play();
+  $('#bgVideo').get(0).play();
 
   $(() => {
     if (!sessionStorage.hasVisited) {
