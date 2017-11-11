@@ -1,4 +1,4 @@
-#rewards.bg-inverse.text-white.py-1.pl-3.pl-lg-5
+#rewards.bg-dark.text-white.py-1.pl-3.pl-lg-5
   h1.header Awards
 #rewards-img.img.img-fluid.my-0.trans-img
 #rewards-text.about-text.mb-5.pt-3.pb-0.px-3.px-lg-5
@@ -11,7 +11,7 @@
         h5 When and how:
         p At the end of almost every operation, recommendations are gathered about who performed above and beyond the call of duty. Those who the leaders consider having performed more than others are in front of all the members awarded with ribbons or, in more special cases, medals. 
       .col-6.mt-3
-        .display-4.mt-3-mb-0.bg-inverse.pl-3.py-1.header.text-white.rounded(style='border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; border: 1px solid #292b2c; border-bottom: 1px solid white') The Medals:
+        .display-4.mt-3-mb-0.bg-dark.pl-3.py-1.header.text-white.rounded(style='border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; border: 1px solid #292b2c; border-bottom: 1px solid white') The Medals:
         #medals.mt-0.py-4.text-center(style='border: 1px solid #292b2c;')
           - var i = 1;
           while i < 13 
@@ -24,10 +24,10 @@
               .modal-content
                 .media.rounded(style='background: url(../img/medalBG.jpg) no-repeat center; background-size: cover;')
                   img.d-flex.mx-3(src=`img/awards/${index+1}.png` height="250px" style='filter: drop-shadow(5px 5px 5px rgba(0,0,0,.25));')
-                  .media-body.bg-inverse.text-white.rounded
+                  .media-body.bg-dark.text-white.rounded
                     .modal-header(style='border-color: #a90000')
                       h5#modal1Label.modal-title=award.title
                     .modal-body
                       p=award.text
                     .modal-footer(style='border-color: #a90000')
-                      button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+                      button.btn.btn-light(type='button', data-dismiss='modal') Close

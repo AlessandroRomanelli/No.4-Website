@@ -1,6 +1,6 @@
-#arsenal-hd.bg-inverse.text-white.mt-5.py-1.mb-0.pl-3.pl-lg-5
+#arsenal-hd.bg-dark.text-white.mt-5.py-1.mb-0.pl-3.pl-lg-5
   h1.header Our Arsenal
-#arsenal.carousel.slide.mt-0.py-0.bg-inverse(data-ride='carousel')
+#arsenal.carousel.slide.mt-0.py-0.bg-dark(data-ride='carousel')
   ol.carousel-indicators
     each weapon, index in weapons
       if index == 0
@@ -14,13 +14,13 @@
           img.d-block.img-fluid.mx-auto(src=`${weapon.img}`, alt='Slide')
           .carousel-caption.d-none.d-md-block
             h5=weapon.name
-            a.btn.btn-md.btn-secondary.weapon-pop(tabindex='0', role='button', data-trigger='focus', data-toggle='popover', data-placement='right', title=`${weapon.title}`, data-content=`${weapon.description}`) Learn more
+            a.btn.btn-md.btn-light.weapon-pop(tabindex='0', role='button', data-trigger='focus', data-toggle='popover', data-placement='right', title=`${weapon.title}`, data-content=`${weapon.description}`) Learn more
       else 
         .carousel-item(style='height: 500px')
           img.d-block.img-fluid.mx-auto(src=`${weapon.img}`, alt='Slide')
           .carousel-caption.d-none.d-md-block
             h5=weapon.name
-            a.btn.btn-md.btn-secondary.weapon-pop(tabindex='0', role='button', data-trigger='focus', data-toggle='popover', data-placement='right', title=`${weapon.title}`, data-content=`${weapon.description}`) Learn more
+            a.btn.btn-md.btn-light.weapon-pop(tabindex='0', role='button', data-trigger='focus', data-toggle='popover', data-placement='right', title=`${weapon.title}`, data-content=`${weapon.description}`) Learn more
           
     a.carousel-control-prev(href='#arsenal', role='button', data-slide='prev')
       span.carousel-control-prev-icon.p-2.p-md-4(aria-hidden='true')
