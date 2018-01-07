@@ -239,7 +239,7 @@ input[type="range"]:focus::-ms-fill-upper {
 }
 
 .dropdown-menu {
-  background-color: #292b2c;
+  background-color: #343a40;
   border-top: none;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
@@ -262,6 +262,27 @@ a.dropdown-item:hover {
   font-family: "Asul", sans-serif;
   text-transform: uppercase;
   font-weight: lighter;
+}
+
+.arrow {
+  display: block;
+  position: relative;
+}
+
+.arrow small {
+  font-size: 0.6em;
+}
+
+.arrow-hint {
+}
+
+.arrow-hint {
+  display: inline;
+  position: absolute;
+  color: initial;
+  left: 50%;
+  top: -5px;
+  transform: translate(-50%, -50%);
 }
 
 .arrowUp {
@@ -289,6 +310,12 @@ a.dropdown-item:hover {
   border-radius: 20px;
   transform: scale(1.1);
   transition: 0.25s ease-in-out;
+}
+
+#enrollnow {
+  width: 120%;
+  border-radius: 20px;
+  transform: scale(1.6);
 }
 
 #clickme:hover {
@@ -837,14 +864,9 @@ ul.contacts {
   list-style: none; /* Remove list bullets */
   padding: 0;
   margin: 0;
-  border-left: double 4px rgba(0, 0, 0, 0.1);
 }
 
-.contacts li {
-  padding-left: 16px;
-}
-
-.contacts li:nth-of-type(-n + 2)::before {
+.contacts li:nth-of-type(-n + 1)::before {
   color: #ffca00;
   text-shadow: 1px 1px 0 #292b2c, 1px 0 0 #292b2c, 1px -1px 0 #292b2c,
     0 1px 0 #292b2c, 0 -1px 0 #292b2c, -1px 1px 0 #292b2c, -1px 0 0 #292b2c,
@@ -858,4 +880,79 @@ ul.contacts {
   text-shadow: 1px 1px 0 #292b2c, 1px 0 0 #292b2c, 1px -1px 0 #292b2c,
     0 1px 0 #292b2c, 0 -1px 0 #292b2c, -1px 1px 0 #292b2c, -1px 0 0 #292b2c,
     -1px -1px 0 #292b2c;
+}
+
+.heartbeat {
+  -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
+  animation: heartbeat 1.5s ease-in-out infinite both;
+}
+
+@-webkit-keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1.6);
+    transform: scale(1.6);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    -webkit-transform: scale(1.506);
+    transform: scale(1.506);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  17% {
+    -webkit-transform: scale(1.568);
+    transform: scale(1.568);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(1.492);
+    transform: scale(1.492);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1.6);
+    transform: scale(1.6);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1.6);
+    transform: scale(1.6);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    -webkit-transform: scale(1.506);
+    transform: scale(1.506);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  17% {
+    -webkit-transform: scale(1.568);
+    transform: scale(1.568);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(1.492);
+    transform: scale(1.492);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1.6);
+    transform: scale(1.6);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
 }

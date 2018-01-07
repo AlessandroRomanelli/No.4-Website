@@ -9,6 +9,7 @@
       strong 1st Troop 
       | of said battalion.
       a.arrow(data-toggle="collapse" href="#structureCollapse" aria-expanded='false' aria-controls='structureCollapse' onclick='toggleButton(this)')
+        small.arrow-hint CLICK ME
         img.img.d-flex.mx-auto.arrowDown(src='img/icons/arrow.svg' width='35' style="border-bottom: none")
     #structureCollapse.collapse
       h3 The unit composition:
@@ -108,6 +109,7 @@
                   | &#8212; armed with the Bren gun and counting three men;
               p Normally the subsections moves together unless the situation requires the two teams to split up momentarily and bound towards the objective. The subsections are the two tactical elements that the section leader coordinates to carry out his strategy.
       a.arrow(data-toggle="collapse" href="#subsCollapse" aria-expanded='false' aria-controls='subsCollapse' onclick='toggleButton(this)')
+        small.arrow-hint CLICK ME
         img.img.d-flex.mx-auto.arrowDown(src='img/icons/arrow.svg' width='25')
       #subsCollapse.collapse
         .row
@@ -170,6 +172,7 @@
               br
               p Weapon section is an element at disposal of Troop HQ, which decides when and how to deploy the special weapon teams according to the needs of the infantry sections. Depending on the situation, sometimes the weapons team are attached to the infantry subsections, whereas othertimes they remain independent to achieve specific tasks. The section itself is composed of specific teams:
       a.arrow(data-toggle="collapse" href="#wepCollapse" aria-expanded='false' aria-controls='wepCollapse' onclick='toggleButton(this)')
+        small.arrow-hint CLICK ME
         img.img.d-flex.mx-auto.arrowDown(src='img/icons/arrow.svg' width='25')
       #wepCollapse.collapse
         ul(style='list-style: none')
@@ -192,7 +195,7 @@
         .row
           .col-4.mt-4
             .text-center
-              strong VICKERS TEAM:
+              strong HEAVY WEAPONS TEAM:
             table.table.table-striped.table-sm
               tbody
                 each member, index in members
@@ -238,11 +241,11 @@
                           td #{member[2]}
           .col-4.mt-4
             .text-center
-              strong MARKSMAN & SAPPERS TEAM:
+              strong DEMOLITION TEAM:
             table.table.table-striped.table-sm
               tbody
                 each member, index in members
-                  if ((index > 43 && index < 46) || (index > 46 && index < 49))
+                  if ((index > 45 && index < 46) || (index > 46 && index < 49))
                     tr
                       td #{member[0]}
                       if (member[1] == '')
@@ -279,6 +282,41 @@
             tbody
               each member, index in members
                 if (index > 49 && index < 53)
+                  tr
+                    td #{member[0]}
+                    if (member[1] == '')
+                      td.text-right &#8212;&#8212;
+                    else 
+                      td.text-right 
+                        strong #{member[1]}
+                    case member[2]
+                      when 'OPEN'
+                        td
+                          .badge.badge-pill.badge-success OPEN
+                      when 'CLOSED'
+                        td
+                          .badge.badge-pill.badge-danger CLOSED
+                      default
+                        td #{member[2]}
+      hr.bg-dark
+      .row
+        .col-8
+          .media.mt-4
+            img.d-flex.mr-3.img.align-self-top(src="img/NATO/RECON.svg", alt="alt" height='100')
+            .media-body.text-justify
+              h5.d-inline-block.mr-2 Scout Section
+              span.text-uppercase
+                small &#8212; #{space}
+                  strong #{members[58][1]} #{members[58][2]}
+              br
+              p Scout is the forward recon element of the unit, they are responsible for navigating and being on point of most unit level formations. They also can be tasked with observing specific areas and can on occassion be tasked with objectives suited to their skillset.
+        .col-4.mt-4
+          small 
+            strong MEMBERS:
+          table.table.table-striped.table-sm
+            tbody
+              each member, index in members
+                if (index > 58 && index < 62)
                   tr
                     td #{member[0]}
                     if (member[1] == '')

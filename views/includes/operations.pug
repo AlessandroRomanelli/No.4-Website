@@ -47,19 +47,20 @@
 
   hr.bg-dark.mx-5
   .px-3.px-lg-5.mt-4
-    h5 Click the arrow below to explore the status of our campaigns:
+    h4 Our Campaigns:
     a.arrow(data-toggle="collapse" href="#opsCollapse" aria-expanded='false' aria-controls='opsCollapse' onclick='toggleButton(this)')
+      small.arrow-hint CLICK ME
       img.img.d-flex.mx-auto.arrowDown(src='img/icons/arrow.svg' width='35' style="border-bottom: none")
   #opsCollapse.collapse
     .px-3.px-lg-5.mt-4
-      p.text-center (You can click on the images to learn more about the campaign)
+      p.text-center (You can click on the images to learn more about a specific campaign)
     each op, index in ops
       if (index % 3 == 0)
         | <div class="card-group px-lg-5 px-3 mt-4">
       .card.col-md-4.px-0
         a(data-toggle='collapse', href=`#${op.id}`, aria-expanded='false')
           img.card-img-top.img-fluid.d-block(src=`${op.img}`, alt='Card image cap')
-        .card-block
+        .card-body
           h4.card-title=op.title
           .collapse(id=`${op.id}`)
             small.text-muted=op.date
@@ -74,5 +75,7 @@
               small.badge.badge-primary COMING UP
             when 3
               small.badge.badge-danger TO BE ANNOUNCED
+            when 4
+              small.badge.badge-dark ON HOLD
       if (index % 3 == 2 || index == ops.length-1)
         | </div>

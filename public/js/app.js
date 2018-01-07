@@ -27,6 +27,10 @@ function toggleButton(element) {
   $(element)
     .children()
     .first()
+    .hide();
+  $(element)
+    .children()
+    .last()
     .toggleClass("arrowUp arrowDown");
 }
 
