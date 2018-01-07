@@ -68,8 +68,9 @@ router.get("/public", function(req, res, next) {
   let publicServer = {},
     privateServer = {},
     servers = [
-      ["arma3", "37.59.43.226", 2312],
-      ["arma3", "37.59.43.226", 2302]
+      ["arma3", "195.140.215.20", 2312],
+      ["arma3", "195.140.215.20", 2302],
+      ["teamspeak3", "195.140.215.20", 9987]
     ];
   function getServer(connectData, callback) {
     let response = {};
@@ -96,12 +97,16 @@ router.get("/public", function(req, res, next) {
       },
       privateServer: function(callback) {
         getServer(servers[1], callback);
+      },
+      teamspeakServer: function(callback) {
+        getServer(servers[2], callback);
       }
     },
     function(err, results) {
       res.render("public", {
         public: results.publicServer,
         private: results.privateServer,
+        ts3: results.teamspeakServer,
         play: false
       });
     }

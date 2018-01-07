@@ -21,22 +21,25 @@
         strong PRIVATE 
         | Gameserver
       button.btn.btn-outline-danger(type='button', data-toggle='collapse', data-target='#teamspeakServer', aria-expanded='false', aria-controls='collapseExample')
-        .d-inline-block.mr-2(style='background-color: #5cb85c; width: 16px; height: 16px; border-radius: 50%; vertical-align: top')
+        if ts3.status == 0
+          .d-inline-block.mr-2(style='background-color: #5cb85c; width: 16px; height: 16px; border-radius: 50%; vertical-align: top')
+        else 
+          .d-inline-block.mr-2(style='background-color: #d9534f; width: 16px; height: 16px; border-radius: 50%; vertical-align: top')
         strong TS3 
-        | Voiceserver
+        | Voice Server
     .row.mt-3
       .col-4
         #publicServer.collapse
-          .card.card-block
+          .card.card-body
             h4 
-              a(href='http://www.gametracker.com/server_info/37.59.43.226:2312/' target='_blank') Public Server
+              a(href='http://www.gametracker.com/server_info/195.140.215.20:2312/' target='_blank') Public Server
             span
               if public.name
                 strong Name: 
                 | #{public.name}
                 br
               strong IP: 
-              | 37.59.43.226
+              | 195.140.215.20
               br
               strong Port: 
               | 2312   
@@ -47,9 +50,7 @@
               strong Mods:
               ul.mb-0
                 li 
-                  a(href="https://steamcommunity.com/sharedfiles/filedetails/?id=660460283" target="_blank") Iron Front ArmA3
-                li
-                  a(href="https://steamcommunity.com/sharedfiles/filedetails/?id=583496184" target="_blank") CUP Terrains - Core
+                  a(href="https://steamcommunity.com/sharedfiles/filedetails/?id=891433622" target="_blank") Faces Of War
               strong Status: 
               case public.status
                 when 0
@@ -65,7 +66,7 @@
                 | #{public.players.length}/#{public.maxplayers}
       .col-4
         #privateServer.collapse
-          .card.card-block
+          .card.card-body
             h4 Private Server
             span
               if private.name
@@ -73,7 +74,7 @@
                 | #{private.name}
                 br
               strong IP: 
-              | 37.59.43.226
+              | 195.140.215.20
               br
               strong Port: 
               | 2302   
@@ -101,18 +102,20 @@
                 | #{private.players.length}/#{private.maxplayers}
       .col-4
         #teamspeakServer.collapse
-          .card.card-block
+          .card.card-body
             h4 Voice Server
             span
-              | IP: 85.236.101.154
+              | Address: 
+              strong ts3.no4commando.com
               br
-              | Port: 11727
+              | Port: 9987
+              br
+              | Connections: #{ts3.players.length} out of #{ts3.maxplayers}
               br
               br
               p.text-justify On your first visit you won't be able to navigates freely. You will however have access to the recruitment waiting room where you can wait for a recruiter.
-              br
               .text-center.mt-3
-                a(href='ts3server://85.236.101.154/?port=11727&nickname=Web Guest')
+                a(href='ts3server://195.140.215.20/?port=9987&nickname=Web Visitor')
                   button.mx-auto.btn.btn-outline-danger
                     strong Connect now!
                 br
