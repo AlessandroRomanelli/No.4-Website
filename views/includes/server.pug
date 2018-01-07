@@ -109,8 +109,9 @@
               strong ts3.no4commando.com
               br
               | Port: 9987
-              br
-              | Connections: #{ts3.players.length} out of #{ts3.maxplayers}
+              if ts3
+                br
+                | Connections: #{ts3.players.length} out of #{ts3.maxplayers}
               br
               br
               p.text-justify On your first visit you won't be able to navigates freely. You will however have access to the recruitment waiting room where you can wait for a recruiter.
