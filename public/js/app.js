@@ -23,16 +23,26 @@ function togglePlayback() {
   }
 }
 
-function toggleButton(element) {
+function collapseCard(element) {
+  $(element).addClass("collapsed");
   $(element)
-    .children()
-    .first()
-    .hide();
-  $(element)
+    .next()
     .children()
     .last()
-    .toggleClass("arrowUp arrowDown");
+    .collapse("hide");
 }
+
+//
+// function toggleButton(element) {
+//   $(element)
+//     .children()
+//     .first()
+//     .hide();
+//   $(element)
+//     .children()
+//     .last()
+//     .toggleClass("arrowUp arrowDown");
+// }
 
 function updateSlider(value, slider) {
   let totalVol =
@@ -153,6 +163,87 @@ $(document).ready(function() {
 
   $("#time").on("click", function() {
     setInterval(getBritishTime, 1000, this);
+  });
+
+  $(".weapon-pop").popover();
+
+  $(".popover-dismiss").popover();
+
+  $("#medals img").hover(
+    function() {
+      let index = $.inArray($(this).parent()[0], $("#medals").children());
+      if (index > 3) {
+        $("#medals")
+          .children()
+          .eq(index - 1)
+          .children()
+          .addClass("firstAdj");
+        $("#medals")
+          .children()
+          .eq(index - 2)
+          .children()
+          .addClass("secondAdj");
+        $("#medals")
+          .children()
+          .eq(index - 3)
+          .children()
+          .addClass("thirdAdj");
+      }
+      $("#medals")
+        .children()
+        .eq(index + 1)
+        .children()
+        .addClass("firstAdj");
+      $("#medals")
+        .children()
+        .eq(index + 2)
+        .children()
+        .addClass("secondAdj");
+      $("#medals")
+        .children()
+        .eq(index + 3)
+        .children()
+        .addClass("thirdAdj");
+    },
+    function() {
+      let index = $.inArray($(this).parent()[0], $("#medals").children());
+      if (index > 3) {
+        $("#medals")
+          .children()
+          .eq(index - 1)
+          .children()
+          .removeClass("firstAdj");
+        $("#medals")
+          .children()
+          .eq(index - 2)
+          .children()
+          .removeClass("secondAdj");
+        $("#medals")
+          .children()
+          .eq(index - 3)
+          .children()
+          .removeClass("thirdAdj");
+      }
+      $("#medals")
+        .children()
+        .eq(index + 1)
+        .children()
+        .removeClass("firstAdj");
+      $("#medals")
+        .children()
+        .eq(index + 2)
+        .children()
+        .removeClass("secondAdj");
+      $("#medals")
+        .children()
+        .eq(index + 3)
+        .children()
+        .removeClass("thirdAdj");
+    }
+  );
+
+  $("#operations-cards a").blur(function() {
+    setTimeout(collapseCard, 300, this);
   });
 
   // $('#navbarNav ul li a[href="#"]').click(function(event) {

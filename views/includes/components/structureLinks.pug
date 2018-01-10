@@ -1,10 +1,9 @@
 extends ../navbar
 
 block links
-  ul.navbar-nav.mr-3.mt-2.mt-md-0
+  ul.navbar-nav
     li.nav-item
-      a.nav-link.navFont.animsition-link(href="/") 
-        strong Home
+      a.nav-link.navFont.animsition-link(href="/") Home
       //- ul.dropdown-menu
         li.nav-item
           a.dropdown-item.animsition-link(href='/#about') About Us
@@ -12,8 +11,7 @@ block links
           a.dropdown-item.animsition-link(href='/#join') Join
     //- ul.navbar-nav.mr-3.mt-2.mt-md-0
     li.nav-item
-      a.nav-link.navFont.animsition-link(href="/unit") 
-        strong Unit
+      a.nav-link.navFont.animsition-link(href="/unit") Unit
         //- ul.dropdown-menu
           li.nav-item
             a.dropdown-item.animsition-link(href='/unit#operations') Operations
@@ -27,8 +25,7 @@ block links
         strong Structure    
         span.sr-only (current)
     li.nav-item
-      a.nav-link.navFont.animsition-link(href="/public") 
-        strong Public
+      a.nav-link.navFont.animsition-link(href="/public") Public
         //- ul.dropdown-menu
           li.nav-item
             a.dropdown-item.animsition-link(href='/public') Server
