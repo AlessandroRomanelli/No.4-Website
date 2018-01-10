@@ -1,81 +1,30 @@
 #operations.bg-dark.text-white.py-1.mt-0.pl-3.pl-lg-5
-  h1.header Operations
+  h1.header Our Campaigns
 #operations-cards
-  .px-3.px-lg-5.mt-4.border-bottom-0
-    h4 Schedule:
-    p(style='margin: 0')
-      | All of our operations begin at 
-      strong 7:30PM
-      |  and normally last until 
-      strong 10:00PM
-      |  (
-      a#time.time-pop.text-inverse(href='#operations', role='button') British Time
-      | )
-    p
-      | Our operation days are the followings: 
-      strong Tuesday
-      | , 
-      strong Thursday
-      | , 
-      strong Saturday
-      |  and 
-      strong Sunday
-      | .
-    #weekdays.d-flex.justify-content-between.bg-faded.mb-4
-      each day in weekdays
-        case day
-          when "Saturday"
-            div(style='background-color: rgba(169, 0, 0, 1); width:14.285%;')
-              button.btn.w-100.text-white.py-1(type='button', style='background-color: rgba(0,0,0,0)' data-container='body',data-trigger="hover", data-toggle='popover', data-placement='bottom', title="MAIN OPERATION" data-content='Saturday is the day dedicated to the big scale combat, where the units gets to experience the best creations of the mission makers.')
-                | #{day}
-          when "Tuesday"
-            div(style='background-color: rgba(169, 0, 0, 0.9); width:14.285%;')
-              button.btn.w-100.text-white.py-1(type='button', style='background-color: rgba(0,0,0,0)' data-container='body',data-trigger="hover", data-toggle='popover', data-placement='bottom', title="SIDE OPERATION" data-content='On this day we organize smaller scale operations, better tailored to our numbers and intended to fit the reduced members\' presence during the week.')
-                | #{day}
-          when "Thursday"
-            div(style='background-color: rgba(169, 0, 0, 0.9); width:14.285%;')
-              button.btn.w-100.text-white.py-1(type='button', style='background-color: rgba(0,0,0,0)' data-container='body',data-trigger="hover", data-toggle='popover', data-placement='bottom', title="SIDE OPERATION" data-content='On this day we organize smaller scale operations, better tailored to our numbers and intended to fit the reduced members\' presence during the week.')
-                | #{day}
-          when "Sunday"
-            div(style='background-color: rgba(169, 0, 0, 0.75); width:14.285%;')
-              button.btn.w-100.text-white.py-1(type='button', style='background-color: rgba(0,0,0,0)' data-container='body',data-trigger="hover", data-toggle='popover', data-placement='bottom', title="TRAINING DAY" data-content='On sundays the units get to train together. On this day new recruits are usually instructed with the BCT programm, while the rest of the unit get to train topics that are usually picked by the senior leaders.')
-                | #{day}
-          default
-            div.bg-light(style='width:14.28%;')
-              button.btn.w-100.py-1(type='button', style='background-color: rgba(0,0,0,0)' data-container='body', data-trigger="hover", data-toggle='popover', data-placement='bottom', title="DAY OFF" data-content='On these days no events are planned and the members are left free to organize something by themselves or just enjoy a break from the unit activities.')
-                | #{day}
-
-  hr.bg-dark.mx-5
-  .px-3.px-lg-5.mt-4
-    h4 Our Campaigns:
-    a.arrow(data-toggle="collapse" href="#opsCollapse" aria-expanded='false' aria-controls='opsCollapse' onclick='toggleButton(this)')
-      small.arrow-hint CLICK ME
-      img.img.d-flex.mx-auto.arrowDown(src='img/icons/arrow.svg' width='35' style="border-bottom: none")
-  #opsCollapse.collapse
-    .px-3.px-lg-5.mt-4
-      p.text-center (You can click on the images to learn more about a specific campaign)
-    each op, index in ops
-      if (index % 3 == 0)
-        | <div class="card-group px-lg-5 px-3 mt-4">
-      .card.col-md-4.px-0
-        a(data-toggle='collapse', href=`#${op.id}`, aria-expanded='false')
-          img.card-img-top.img-fluid.d-block(src=`${op.img}`, alt='Card image cap')
-        .card-body
-          h4.card-title=op.title
-          .collapse(id=`${op.id}`)
-            small.text-muted=op.date
-            p.card-text.text-justify=op.description
-        .card-footer
-          case op.status
-            when 0
-              small.badge.badge-success COMPLETED
-            when 1
-              small.badge.badge-warning ONGOING
-            when 2
-              small.badge.badge-primary COMING UP
-            when 3
-              small.badge.badge-danger TO BE ANNOUNCED
-            when 4
-              small.badge.badge-dark ON HOLD
-      if (index % 3 == 2 || index == ops.length-1)
-        | </div>
+  .px-3.px-lg-5.mt-3
+    p.lead.text-center (You can click on the images to learn more about a specific campaign)
+  each op, index in ops
+    if (index % 3 == 0)
+      | <div class="card-group px-lg-5 px-3 mt-4">
+    .card.col-md-4.px-0
+      a(data-toggle='collapse', href=`#${op.id}`, aria-expanded='false')
+        img.card-img-top.img-fluid.d-block(src=`${op.img}`, alt='Card image cap')
+      .card-body
+        h4.card-title=op.title
+        .collapse(id=`${op.id}`)
+          small.text-muted=op.date
+          p.card-text.text-justify=op.description
+      .card-footer
+        case op.status
+          when 0
+            small.badge.badge-success COMPLETED
+          when 1
+            small.badge.badge-warning ONGOING
+          when 2
+            small.badge.badge-primary COMING UP
+          when 3
+            small.badge.badge-danger TO BE ANNOUNCED
+          when 4
+            small.badge.badge-dark ON HOLD
+    if (index % 3 == 2 || index == ops.length-1)
+      | </div>

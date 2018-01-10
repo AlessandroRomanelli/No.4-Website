@@ -133,12 +133,19 @@ const weapons = [
     description:
       "This beast can deliver continuous fire without overheating as fast. It fires a .303 cartridge and is fed by a particular top-mounted 30-round detachable box magazine. Effective up to 500m."
   },
+  // {
+  //   img: "img/arsenal/vickers.jpg",
+  //   name: "Vickers MG",
+  //   title: "Static Machine Gun",
+  //   description:
+  //     "A .30 caliber widely used among the British armored, air and infantry forces. Famous for its great solidity and reliability. Considerably more capable than the Bren gun when it comes to suppressing the enemy for an extended amount of time. The Vickers fits large magazines capable of holding hundred of bullets but it comes to the cost of not being able to be fired without being fully deployed."
+  // },
   {
-    img: "img/arsenal/vickers.jpg",
-    name: "Vickers MG",
+    img: "img/arsenal/m1919.jpg",
+    name: "M1919 Browning",
     title: "Static Machine Gun",
     description:
-      "A .30 caliber widely used among the British armored, air and infantry forces. Famous for its great solidity and reliability. Considerably more capable than the Bren gun when it comes to suppressing the enemy for an extended amount of time. The Vickers fits large magazines capable of holding hundred of bullets but it comes to the cost of not being able to be fired without being fully deployed."
+      "A .30 caliber medium machine gun that was widely used during the 20th century, especially during World War II by the US Forces, but also by British Forces as part of the Lend-Lease program which saw the M1919 side by side with the MG Vickers. Its 50-Rounds magazines can keep the enemy suppressed for a long time if used properly. Must be carried around by a two-man machine gun team."
   },
   {
     img: "img/arsenal/thompson.jpg",

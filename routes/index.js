@@ -17,10 +17,6 @@ var unit = {};
 
 /* GET home page. */
 router.get("/", function(req, res, next) {
-  res.render("index", { play: true });
-});
-
-router.get("/unit", function(req, res, next) {
   var weekdays = [
     "Monday",
     "Tuesday",
@@ -30,38 +26,16 @@ router.get("/unit", function(req, res, next) {
     "Saturday",
     "Sunday"
   ];
-  debugger;
-  var request = {
-    spreadsheetId: "1fACPJarTwBQ0Ld0N_LAfuM91D8s5fVu587o7Ymq9tDA",
-    range: "A3:C64",
-    valueRenderOption: "FORMATTED_VALUE",
-    dateTimeRenderOption: "SERIAL_NUMBER",
-    auth: process.env.API_KEY || "AIzaSyC8kYitDoc-HWLZUfN4CUYkGcZG5XFCcS0"
-  };
-  async.series(
-    [
-      function(callback) {
-        sheets.spreadsheets.values.get(request, function(err, response) {
-          if (err) {
-            console.error(err);
-            return;
-          }
-          debugger;
-          callback(null, response);
-        });
-      }
-    ],
-    function(err, response) {
-      res.render("unit", {
-        members: response[0].values,
-        ops: operations,
-        weapons: weapons,
-        weekdays: weekdays,
-        awards: awards,
-        play: false
-      });
-    }
-  );
+  res.render("index", { play: true, weekdays: weekdays });
+});
+
+router.get("/unit", function(req, res, next) {
+  res.render("unit", {
+    ops: operations,
+    weapons: weapons,
+    awards: awards,
+    play: false
+  });
 });
 
 router.get("/public", function(req, res, next) {
@@ -141,6 +115,35 @@ router.get("/screenshots", function(req, res, next) {
       play: false
     });
   });
+});
+
+router.get("/structure", function(req, res, next) {
+  var request = {
+    spreadsheetId: "1fACPJarTwBQ0Ld0N_LAfuM91D8s5fVu587o7Ymq9tDA",
+    range: "A3:C64",
+    valueRenderOption: "FORMATTED_VALUE",
+    dateTimeRenderOption: "SERIAL_NUMBER",
+    auth: process.env.API_KEY || "AIzaSyC8kYitDoc-HWLZUfN4CUYkGcZG5XFCcS0"
+  };
+  async.series(
+    [
+      function(callback) {
+        sheets.spreadsheets.values.get(request, function(err, response) {
+          if (err) {
+            console.error(err);
+            return;
+          }
+          callback(null, response);
+        });
+      }
+    ],
+    function(err, response) {
+      res.render("structure", {
+        members: response[0].values,
+        play: false
+      });
+    }
+  );
 });
 
 module.exports = router;

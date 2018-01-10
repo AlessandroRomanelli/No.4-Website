@@ -73,12 +73,22 @@ function updateSlider(value, slider) {
   }
 }
 
-$(document).ready(() => {
+function getBritishTime(element) {
+  var options = {
+      timeZone: "Europe/London",
+      hour: "numeric",
+      minute: "numeric"
+    },
+    formatter = new Intl.DateTimeFormat([], options);
+  $(element).text(formatter.format(new Date()));
+}
+
+$(document).ready(function() {
   $(".animsition").animsition({
     inClass: "fade-in-down-lg",
-    outClass: "fade-out-down-lg",
-    inDuration: 1500,
-    outDuration: 800,
+    outClass: "fade-out-up-lg",
+    inDuration: 1000,
+    outDuration: 1000,
     linkElement: ".animsition-link",
     // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
     loading: true,
@@ -86,7 +96,7 @@ $(document).ready(() => {
     loadingClass: "animsition-loading",
     loadingInner: "", // e.g '<img src="loading.svg" />'
     timeout: true,
-    timeoutCountdown: 3500,
+    timeoutCountdown: 1000,
     onLoadEvent: true,
     browser: ["animation-duration", "-webkit-animation-duration"],
     // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
@@ -123,145 +133,31 @@ $(document).ready(() => {
     .data("vide")
     .getVideoObject()
     .play();
-  $("#bgVideo")
-    .get(0)
-    .play();
 
-  $(() => {
-    if (!sessionStorage.hasVisited) {
-      sessionStorage.hasVisited = true;
-    } else {
-      document.getElementById("musVol").value = 0;
-      $("#musVol")
-        .parent()
-        .removeClass("d-flex");
-      $("#musVol")
-        .parent()
-        .addClass("d-none");
-      pauseSong();
-    }
+  if (!sessionStorage.hasVisited) {
+    sessionStorage.hasVisited = true;
+  } else {
+    document.getElementById("musVol").value = 0;
+    $("#musVol")
+      .parent()
+      .removeClass("d-flex");
+    $("#musVol")
+      .parent()
+      .addClass("d-none");
+    pauseSong();
+  }
 
-    $("nav .dropdown").hover(
-      function() {
-        $(this)
-          .find(".dropdown-menu")
-          .stop(true, true)
-          .delay(200)
-          .fadeIn(250);
-      },
-      function() {
-        $(this)
-          .find(".dropdown-menu")
-          .stop(true, true)
-          .delay(200)
-          .fadeOut(250);
-      }
-    );
+  $("#weekdays button").popover();
 
-    $(".weapon-pop").popover();
+  // $("body").scrollspy({ target: "#navbarNav" });
 
-    $("#weekdays button").popover();
-
-    $(".popover-dismiss").popover();
-
-    $("body").scrollspy({ target: "#navbarNav" });
-
-    $("#time").one("click", function() {
-      setInterval(() => {
-        let now = new Date();
-        let curTime = formatAMPM(now);
-        $(this).text(curTime);
-      }, 1000);
-    });
-
-    $("#medals img").hover(
-      function() {
-        let index = $.inArray($(this).parent()[0], $("#medals").children());
-        if (index > 3) {
-          $("#medals")
-            .children()
-            .eq(index - 1)
-            .children()
-            .addClass("firstAdj");
-          $("#medals")
-            .children()
-            .eq(index - 2)
-            .children()
-            .addClass("secondAdj");
-          $("#medals")
-            .children()
-            .eq(index - 3)
-            .children()
-            .addClass("thirdAdj");
-        }
-        $("#medals")
-          .children()
-          .eq(index + 1)
-          .children()
-          .addClass("firstAdj");
-        $("#medals")
-          .children()
-          .eq(index + 2)
-          .children()
-          .addClass("secondAdj");
-        $("#medals")
-          .children()
-          .eq(index + 3)
-          .children()
-          .addClass("thirdAdj");
-      },
-      function() {
-        let index = $.inArray($(this).parent()[0], $("#medals").children());
-        if (index > 3) {
-          $("#medals")
-            .children()
-            .eq(index - 1)
-            .children()
-            .removeClass("firstAdj");
-          $("#medals")
-            .children()
-            .eq(index - 2)
-            .children()
-            .removeClass("secondAdj");
-          $("#medals")
-            .children()
-            .eq(index - 3)
-            .children()
-            .removeClass("thirdAdj");
-        }
-        $("#medals")
-          .children()
-          .eq(index + 1)
-          .children()
-          .removeClass("firstAdj");
-        $("#medals")
-          .children()
-          .eq(index + 2)
-          .children()
-          .removeClass("secondAdj");
-        $("#medals")
-          .children()
-          .eq(index + 3)
-          .children()
-          .removeClass("thirdAdj");
-      }
-    );
+  $("#time").on("click", function() {
+    setInterval(getBritishTime, 1000, this);
   });
 
-  $("#operations-cards a").blur(function() {
-    setTimeout(() => {
-      $(this).addClass("collapsed");
-      $(this)
-        .next()
-        .children()
-        .last()
-        .collapse("hide");
-    }, 300);
-  });
-
-  $('#navbarNav ul li a[href="#"]').click(function(event) {
-    event.preventDefault();
-  });
+  // $('#navbarNav ul li a[href="#"]').click(function(event) {
+  //   event.preventDefault();
+  // });
 
   // Select all links with hashes
   $('#navbarNav ul li a[href*="#"]')
@@ -307,16 +203,3 @@ $(document).ready(() => {
       }
     });
 });
-
-function formatAMPM(date) {
-  var hours = date.getUTCHours() + 1;
-  var minutes = date.getUTCMinutes();
-  var seconds = date.getUTCSeconds();
-  var ampm = hours >= 12 ? "PM" : "AM";
-  hours = hours % 12;
-  hours = hours ? hours : 12; // the hour '0' should be '12'
-  minutes = minutes < 10 ? "0" + minutes : minutes;
-  seconds = seconds < 10 ? "0" + seconds : seconds;
-  var strTime = `${hours}:${minutes}:${seconds} ${ampm}`;
-  return strTime;
-}

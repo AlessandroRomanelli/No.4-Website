@@ -2,35 +2,36 @@ extends ../navbar
 
 block links
   ul.navbar-nav.mr-3.mt-2.mt-md-0
-    li.nav-item.dropdown
-      a.nav-link.dropdown-toggle.navFont(href="#" data-toggle="dropdown" aria-expanded="false") 
+    li.nav-item
+      a.nav-link.navFont.animsition-link(href="/") 
         strong Home
-      ul.dropdown-menu
+      //- ul.dropdown-menu
         li.nav-item
           a.dropdown-item.animsition-link(href='/#about') About Us
         li.nav-item
           a.dropdown-item.animsition-link(href='/#join') Join
-  ul.navbar-nav.mr-3.mt-2.mt-md-0
-    li.nav-item.dropdown
-      a.nav-link.dropdown-toggle.navFont(href="#" data-toggle="dropdown" aria-expanded="false") 
-        strong Unit
-      ul.dropdown-menu
-        li.nav-item
-          a.dropdown-item.animsition-link(href='/unit#operations') Operations
-        li.nav-item
-          a.dropdown-item.animsition-link(href='/unit#structure') Structure
-        li.nav-item
-          a.dropdown-item.animsition-link(href='/unit#arsenal-hd') Arsenal
-        li.nav-item
-          a.dropdown-item.animsition-link(href='/unit#rewards') Awards
-  ul.navbar-nav.mr-auto.mt-2.mt-md-0
+    //- ul.navbar-nav.mr-3.mt-2.mt-md-0
     li.nav-item
+      a.nav-link.navFont.animsition-link(href="/unit") 
+        strong Unit
+        //- ul.dropdown-menu
+          li.nav-item
+            a.dropdown-item.animsition-link(href='/unit#operations') Operations
+          li.nav-item
+            a.dropdown-item.animsition-link(href='/unit#arsenal-hd') Arsenal
+          li.nav-item
+            a.dropdown-item.animsition-link(href='/unit#rewards') Awards
+    //- ul.navbar-nav.mr-auto.mt-2.mt-md-0
+    li.nav-item
+      a.nav-link.navFont.animsition-link(href="/structure") 
+        strong Structure
+    li.nav-item.active
       a.nav-link.navFont(href='#')
         strong(style='color: #fff') Public
         span.sr-only (current)
-    li.nav-item
-      a.nav-link(href='#server') Servers
-    li.nav-item
-      a.nav-link(href='#media') Media
-    li.nav-item
-      a.nav-link(href='#donation') Help us
+      //- li.nav-item
+      //-   a.nav-link(href='#server') Servers
+      //- li.nav-item
+      //-   a.nav-link(href='#media') Media
+      //- li.nav-item
+      //-   a.nav-link(href='#donation') Help us

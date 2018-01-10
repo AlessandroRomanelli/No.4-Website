@@ -2,35 +2,36 @@ extends ../navbar
 
 block links
   ul.navbar-nav.mr-3.mt-2.mt-md-0
-    li.nav-item.dropdown
-      a.nav-link.dropdown-toggle.navFont(href="#" data-toggle="dropdown" aria-expanded="false") 
+    li.nav-item
+      a.nav-link.navFont.animsition-link(href="/") 
         strong Home
-      ul.dropdown-menu
+      //- ul.dropdown-menu
         li.nav-item
           a.dropdown-item.animsition-link(href='/#about') About Us
         li.nav-item
           a.dropdown-item.animsition-link(href='/#join') Join
-  ul.navbar-nav.mr-3.mt-2.mt-md-0
-    li.nav-item
-      a.nav-link.navFont(href='/unit#') 
+    //- ul.navbar-nav.mr-3.mt-2.mt-md-0
+    li.nav-item.active
+      a.nav-link.navFont.animsition-link(href='#') 
         strong(style='color: #fff') Unit
         span.sr-only (current)
+      //- li.nav-item
+      //-   a.nav-link(href='#operations') Operations
+      //- li.nav-item
+      //-   a.nav-link(href='#arsenal-hd') Arsenal
+      //- li.nav-item
+      //-   a.nav-link(href='#rewards') Awards
     li.nav-item
-      a.nav-link(href='#operations') Operations
+      a.nav-link.navFont.animsition-link(href="/structure") 
+        strong Structure    
     li.nav-item
-      a.nav-link(href='#structure') Structure
-    li.nav-item
-      a.nav-link(href='#arsenal-hd') Arsenal
-    li.nav-item
-      a.nav-link(href='#rewards') Awards
-  ul.navbar-nav.mr-auto.mt-2.mt-md-0
-    li.nav-item.dropdown
-      a.nav-link.dropdown-toggle.navFont(href="#" data-toggle="dropdown" aria-expanded="false") 
+      a.nav-link.navFont.animsition-link(href="/public") 
         strong Public
-      ul.dropdown-menu
+      //- ul.dropdown-menu
         li.nav-item
           a.dropdown-item.animsition-link(href='/public') Server
         li.nav-item
           a.dropdown-item.animsition-link(href='/public#media') Media
         li.nav-item
           a.dropdown-item.animsition-link(href='/public#donation') Donate
+      

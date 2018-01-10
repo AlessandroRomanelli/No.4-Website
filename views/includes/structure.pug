@@ -1,5 +1,5 @@
-#structure.bg-dark.text-white.py-1.pl-3.pl-lg-5.mt-5
-  h1.header Structure
+#structure.bg-dark.text-white.py-1.pl-3.pl-lg-5
+  h1.header Unit Structure
 #structure-img.img.img-fluid.my-0.trans-img
 #structure-text.about-text.mb-5.pt-3.pb-0.px-3.px-lg-5
   .container-fluid.px-0
@@ -8,11 +8,8 @@
       | Our unit is mainly based on the 
       strong 1st Troop 
       | of said battalion.
-      a.arrow(data-toggle="collapse" href="#structureCollapse" aria-expanded='false' aria-controls='structureCollapse' onclick='toggleButton(this)')
-        small.arrow-hint CLICK ME
-        img.img.d-flex.mx-auto.arrowDown(src='img/icons/arrow.svg' width='35' style="border-bottom: none")
-    #structureCollapse.collapse
-      h3 The unit composition:
+
+      h3 The unit elements:
       .row
         .col-8
           .media.mt-4
@@ -23,7 +20,14 @@
                 small &#8212; #{space}
                   strong #{members[0][1]} #{members[0][2]} & #{members[1][1]} #{members[1][2]}
               br
-              p It's the most important element of the unit, composed by the Commanding Officers of the commandos and their closest helpers, their duty is to coordinate the whole unit towards the objective and to look after their members. They usually stay in cover behind other elements or fill the gap where it's most needed, while trying to preserve the overall view of the action.  
+              p It's the most important element of the unit, composed by the Commanding Officers of the 
+                | commandos and their closest helpers, their duty is to 
+                strong coordinate 
+                | the whole unit towards 
+                | the objective and to look after their members. They usually stay in cover behind other 
+                | elements or fill the gap where it's most needed, while trying to preserve the 
+                strong overall view of the action
+                | .  
         .col-4
           small 
             strong AUXILIARY MEMBERS:
@@ -34,7 +38,7 @@
                   tr
                     td #{member[0]}
                     if (member[1] == '')
-                      td.text-right &#8212;&#8212;
+                      td.text-right &#8212;
                     else 
                       td.text-right 
                         strong #{member[1]}
@@ -73,7 +77,7 @@
                   tr
                     td #{member[0]}
                     if (member[1] == '')
-                      td.text-right &#8212;&#8212;
+                      td.text-right &#8212;
                     else 
                       td.text-right 
                         strong #{member[1]}
@@ -107,8 +111,13 @@
                   img(src="img/NATO/TEAM.svg", alt="alt" height='25') 
                   b Bren Team 
                   | &#8212; armed with the Bren gun and counting three men;
-              p Normally the subsections moves together unless the situation requires the two teams to split up momentarily and bound towards the objective. The subsections are the two tactical elements that the section leader coordinates to carry out his strategy.
-      a.arrow(data-toggle="collapse" href="#subsCollapse" aria-expanded='false' aria-controls='subsCollapse' onclick='toggleButton(this)')
+              p Normally the subsections 
+                strong moves together 
+                | unless the situation requires the two teams to split up momentarily and bound towards the objective. 
+                | The subsections are the two 
+                strong tactical elements 
+                | that the section leader coordinates to carry out his vision.
+      a.arrow.mt-2(data-toggle="collapse" href="#subsCollapse" aria-expanded='false' aria-controls='subsCollapse' onclick='toggleButton(this)')
         small.arrow-hint CLICK ME
         img.img.d-flex.mx-auto.arrowDown(src='img/icons/arrow.svg' width='25')
       #subsCollapse.collapse
@@ -123,7 +132,7 @@
                     tr
                       td #{member[0]}
                       if (member[1] == '')
-                        td.text-right &#8212;&#8212;
+                        td.text-right &#8212;
                       else 
                         td.text-right 
                           strong #{member[1]}
@@ -146,7 +155,7 @@
                     tr
                       td #{member[0]}
                       if (member[1] == '')
-                        td.text-right &#8212;&#8212;
+                        td.text-right &#8212;
                       else 
                         td.text-right 
                           strong #{member[1]}
@@ -170,8 +179,15 @@
                 small &#8212; #{space}
                   strong #{members[31][1]} #{members[31][2]} & #{members[32][1]} #{members[32][2]}
               br
-              p Weapon section is an element at disposal of Troop HQ, which decides when and how to deploy the special weapon teams according to the needs of the infantry sections. Depending on the situation, sometimes the weapons team are attached to the infantry subsections, whereas othertimes they remain independent to achieve specific tasks. The section itself is composed of specific teams:
-      a.arrow(data-toggle="collapse" href="#wepCollapse" aria-expanded='false' aria-controls='wepCollapse' onclick='toggleButton(this)')
+              p Weapon section is an element at disposal of Troop HQ, which decides 
+                strong when and how 
+                | to deploy the special weapon teams according to the needs of the infantry sections. 
+                | Depending on the situation, sometimes the weapons team are 
+                strong attached to the infantry 
+                | subsections, whereas othertimes they remain independent to achieve specific tasks. 
+                br 
+                | The section itself is composed of specific teams:
+      a.arrow.mt-2(data-toggle="collapse" href="#wepCollapse" aria-expanded='false' aria-controls='wepCollapse' onclick='toggleButton(this)')
         small.arrow-hint CLICK ME
         img.img.d-flex.mx-auto.arrowDown(src='img/icons/arrow.svg' width='25')
       #wepCollapse.collapse
@@ -203,7 +219,7 @@
                     tr
                       td #{member[0]}
                       if (member[1] == '')
-                        td.text-right &#8212;&#8212;
+                        td.text-right &#8212;
                       else 
                         td.text-right 
                           strong #{member[1]}
@@ -226,7 +242,7 @@
                     tr
                       td #{member[0]}
                       if (member[1] == '')
-                        td.text-right &#8212;&#8212;
+                        td.text-right &#8212;
                       else 
                         td.text-right 
                           strong #{member[1]}
@@ -249,7 +265,7 @@
                     tr
                       td #{member[0]}
                       if (member[1] == '')
-                        td.text-right &#8212;&#8212;
+                        td.text-right &#8212;
                       else 
                         td.text-right 
                           strong #{member[1]}
@@ -285,7 +301,7 @@
                   tr
                     td #{member[0]}
                     if (member[1] == '')
-                      td.text-right &#8212;&#8212;
+                      td.text-right &#8212;
                     else 
                       td.text-right 
                         strong #{member[1]}
@@ -320,7 +336,7 @@
                   tr
                     td #{member[0]}
                     if (member[1] == '')
-                      td.text-right &#8212;&#8212;
+                      td.text-right &#8212;
                     else 
                       td.text-right 
                         strong #{member[1]}
@@ -358,7 +374,7 @@
                   tr
                     td #{member[0]}
                     if (member[1] == '')
-                      td.text-right &#8212;&#8212;
+                      td.text-right &#8212;
                     else 
                       td.text-right 
                         strong #{member[1]}

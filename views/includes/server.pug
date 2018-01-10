@@ -109,7 +109,7 @@
               strong ts3.no4commando.com
               br
               | Port: 9987
-              if ts3
+              if ts3.status == 0
                 br
                 | Connections: #{ts3.players.length} out of #{ts3.maxplayers}
               br
