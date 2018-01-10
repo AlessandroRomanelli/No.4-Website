@@ -1,24 +1,22 @@
-nav.navbar.navbar-expand-sm.navbar-dark.bg-dark.fixed-top.container.pl-lg-5
+nav.navbar.navbar-expand-sm.navbar-dark.fixed-top.container.p-0
   button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
     span.navbar-toggler-icon
-  .navbar-brand
-    a(href="/")
-      img.d-inline-block.align-top(src='icons/favicon-32x32.png', width='35', height='35', alt='')
-  #navbarNav.collapse.navbar-collapse.text-uppercase
+  #navbarNav.collapse.navbar-collapse.text-uppercase.d-flex
     block links
-  .dropdown
-    img#volumeControl.img.mr-4.dropdown-toggle(src='img/icons/vol3.svg' height='25' data-toggle="dropdown" aria-expanded='false')
-    .dropdown-menu.dropdown-menu-right
-      li.dropdown-item.d-flex.justify-content-end
-        span.text-white
-          strong SFX
-        input#bgVol.ml-3.slider(type='range', min='0', max='40', step='0.5', value='40', onchange='updateSlider(this.value, this)',oninput='updateSlider(this.value, this)')
-      li.dropdown-item.d-flex.justify-content-end
-        span.text-white
-          strong MUSIC
-        if play
-          input#musVol.ml-3.slider(type='range', min='0', max='50', step='0.5', value='50', onchange='updateSlider(this.value, this)', oninput='updateSlider(this.value, this)')
-        else
-          input#musVol.ml-3.slider(type='range', min='0', max='50', step='0.5', value='0', onchange='updateSlider(this.value, this)', oninput='updateSlider(this.value, this)')
-  a.navbar-brand.mx-auto.d-inline-block.align-top.float-md-right(href='https://arma3.com/', target='_blank')
-    img(src='img/social/a3logo.png')
+    .d-inline-flex.ml-auto
+      .dropdown.align-self-center
+        img#volumeControl.img.mr-4.dropdown-toggle(src='img/icons/vol3.svg' height='25' data-toggle="dropdown" aria-expanded='false')
+        .dropdown-menu.dropdown-menu-right
+          li.dropdown-item.d-flex.justify-content-end
+            span.text-white
+              strong SFX
+            input#bgVol.ml-3.slider(type='range', min='0', max='40', step='0.5', value='40', onchange='updateSlider(this.value, this)',oninput='updateSlider(this.value, this)')
+          li.dropdown-item.d-flex.justify-content-end
+            span.text-white
+              strong MUSIC
+            if play
+              input#musVol.ml-3.slider(type='range', min='0', max='50', step='0.5', value='50', onchange='updateSlider(this.value, this)', oninput='updateSlider(this.value, this)')
+            else
+              input#musVol.ml-3.slider(type='range', min='0', max='50', step='0.5', value='0', onchange='updateSlider(this.value, this)', oninput='updateSlider(this.value, this)')
+      a.navbar-brand(href='https://arma3.com/', target='_blank')
+        img(src='img/social/a3logo.png')

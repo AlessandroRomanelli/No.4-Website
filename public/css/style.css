@@ -8,6 +8,11 @@
   src: url("../font/headers.ttf");
 }
 
+@font-face {
+  font-family: "lightheaders";
+  src: url("../font/lightheaders.otf");
+}
+
 @-webkit-keyframes flip-in-hor-bottom {
   0% {
     opacity: 0;
@@ -268,9 +273,9 @@ a.dropdown-item:hover {
 }
 
 .navFont {
-  font-family: "Asul", sans-serif;
+  font-family: "lightheaders", sans-serif;
   text-transform: uppercase;
-  font-weight: lighter;
+  font-size: 1.25em;
 }
 
 .arrow {
@@ -393,7 +398,54 @@ a.dropdown-item:hover {
 }
 
 nav.navbar {
-  box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.5);
+  top: 10px;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.1);
+  /*box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.25);*/
+  border-top: 1px solid rgba(0, 0, 0, 0.35);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+  transition: 0.25s ease-in-out;
+}
+
+nav.navbar:hover {
+  background-color: rgba(40, 40, 40, 0.85);
+}
+
+div#navbarNav,
+ul.navbar-nav,
+li.nav-item {
+  height: 100%;
+}
+
+li.nav-item {
+  padding: 0 20px;
+  transition: 0.25s ease-in-out;
+}
+
+li.nav-item > a {
+  padding: 0;
+  line-height: 60px;
+}
+
+li.nav-item:not(.active):hover {
+  background-color: rgba(230, 160, 160, 0.35);
+}
+
+li.nav-item:not(.active):hover a {
+  transform: scale(1.1);
+}
+
+li.nav-item.active {
+  background-color: rgba(230, 0, 0, 0.45);
+  font-weight: bold;
+}
+
+li.nav-item.active a {
+  transform: scale(1.2);
+}
+
+li.nav-item.active > a:hover {
+  cursor: default;
 }
 
 #video {
@@ -527,7 +579,6 @@ body {
 }
 
 div.container {
-  padding-top: 55px;
   background-color: rgba(255, 245, 235, 0.7);
   box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.75),
     0 0 30px 25px rgba(0, 0, 0, 0.35);
@@ -697,6 +748,9 @@ h1.headline {
 }
 
 #home {
+  position: relative;
+  height: 375px;
+  padding-bottom: 0;
   background: url(../img/background-1.jpg) no-repeat 0% 66%;
   background-size: cover;
 }
@@ -715,16 +769,19 @@ h1.headline {
   animation: text-focus-in 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0s both;*/
 }
 
+.light-header {
+  font-family: "lightheaders";
+}
+
 #home p {
   text-shadow: -1px 1px 0 rgba(0, 0, 0, 0.25), 0 1px 0 rgba(0, 0, 0, 0.25),
     1px 1px 0 rgba(0, 0, 0, 0.25), -1px 0 0px rgba(0, 0, 0, 0.25),
     1px 0 0px rgba(0, 0, 0, 0.25), -1px -1px 0px rgba(0, 0, 0, 0.25),
     0 -1px 0px rgba(0, 0, 0, 0.25), 1px -1px 0px rgba(0, 0, 0, 0.25),
     0 0 5px rgba(0, 0, 0, 0.5);
-
-  letter-spacing: 3px;
+  letter-spacing: 5px;
   text-transform: uppercase;
-  font-size: 1.15em;
+  font-size: 1.25em;
   /*-webkit-animation: text-focus-in 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0s
     both;
   animation: text-focus-in 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0s both;*/

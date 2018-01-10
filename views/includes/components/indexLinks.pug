@@ -1,7 +1,7 @@
 extends ../navbar
 
 block links
-  ul.navbar-nav.mr-3.mt-2.mt-md-0
+  ul.navbar-nav.d-flex.align-content-begin
     li.nav-item.active
       a.nav-link.navFont(href='#')
         strong(style='color: #fff') Home 
@@ -26,7 +26,7 @@ block links
       a.nav-link.navFont.animsition-link(href="/structure") 
         strong Structure
     li.nav-item
-      a.nav-link.navFont.animsition-link(href="/public") 
+      a.nav-link.navFont.animsition-link(href="/public")
         strong Public
         //- ul.dropdown-menu
           li.nav-item
