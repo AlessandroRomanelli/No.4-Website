@@ -120,7 +120,7 @@ router.get("/screenshots", function(req, res, next) {
 router.get("/structure", function(req, res, next) {
   var request = {
     spreadsheetId: "1fACPJarTwBQ0Ld0N_LAfuM91D8s5fVu587o7Ymq9tDA",
-    range: "A3:C64",
+    range: "A3:C65",
     valueRenderOption: "FORMATTED_VALUE",
     dateTimeRenderOption: "SERIAL_NUMBER",
     auth: process.env.API_KEY || "AIzaSyC8kYitDoc-HWLZUfN4CUYkGcZG5XFCcS0"
