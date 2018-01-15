@@ -70,7 +70,7 @@
       ul.contacts.text-center.text-sm-left
         li
           strong 2Lt. 
-          a(href='http://steamcommunity.com/id/Hydefinition/', target='_blank') A. Hyde
+          a(href='http://steamcommunity.com/id/Hydefinition/', target='_blank', onclick="trackOutboundLink('http://steamcommunity.com/id/Hydefinition/'); return false;") A. Hyde
         br
         //- li
         //-   strong Cpt. 
@@ -78,7 +78,7 @@
         //- br
         li
           strong Sgt. 
-          a(href='http://steamcommunity.com/id/LordNigelOfFarage', target='_blank') N. Farage
+          a(href='http://steamcommunity.com/id/LordNigelOfFarage', target='_blank', onclick="trackOutboundLink('http://steamcommunity.com/id/LordNigelOfFarage'); return false;") N. Farage
 .about-text.px-3.px-lg-5.my-3
   .row
     .col-md-8
@@ -96,17 +96,17 @@
       h4.py-2.mb-4 Useful links:
       ul.pl-0
         li.media.mb-4
-          a.d-flex(href='http://steamcommunity.com/groups/No4Commando', target='_blank')
+          a.d-flex(href='http://steamcommunity.com/groups/No4Commando', target='_blank', onclick="trackOutboundLink('http://steamcommunity.com/groups/No4Commando'); return false;")
             img.mr-3(src='img/social/steam-square.svg', alt='')
             .media-body
               h3.lead.hidden-sm-down.my-auto Steam Group
         li.media.mb-4
-          a.d-flex(href='https://discord.gg/GxTEsRb', target='_blank')
+          a.d-flex(href='https://discord.gg/GxTEsRb', target='_blank', onclick="trackOutboundLink('https://discord.gg/GxTEsRb'); return false;")
             img.mr-3(src='img/social/discord.svg', alt='')
             .media-body
               h3.lead.hidden-sm-down.my-auto Discord Server
         li.media
-          a.d-flex(href='ts3server://85.236.101.154/?port=11727&nickname=Web Guest')
+          a.d-flex(href='ts3server://195.140.215.20/?port=9987&nickname=Web Guest', onclick="trackOutboundLink('ts3server://195.140.215.20/?port=9987&nickname=Web Guest'); return false;")
             img.mr-3(src='img/social/ts3.png', alt='')
             .media-body
               h3.lead.hidden-sm-down.my-auto Join Teamspeak
