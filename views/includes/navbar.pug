@@ -5,18 +5,6 @@ nav.navbar.navbar-expand-sm.navbar-dark.fixed-top.container.p-0
     block links
     .d-inline-flex.ml-auto
       .dropdown.align-self-center
-        img#volumeControl.img.mr-4.dropdown-toggle(src='img/icons/vol3.svg' height='25' data-toggle="dropdown" aria-expanded='false')
-        .dropdown-menu.dropdown-menu-right
-          li.dropdown-item.d-flex.justify-content-end
-            span.text-white
-              strong SFX
-            input#bgVol.ml-3.slider(type='range', min='0', max='40', step='0.5', value='40', onchange='updateSlider(this.value, this)',oninput='updateSlider(this.value, this)')
-          li.dropdown-item.d-flex.justify-content-end
-            span.text-white
-              strong MUSIC
-            if play
-              input#musVol.ml-3.slider(type='range', min='0', max='50', step='0.5', value='50', onchange='updateSlider(this.value, this)', oninput='updateSlider(this.value, this)')
-            else
-              input#musVol.ml-3.slider(type='range', min='0', max='50', step='0.5', value='0', onchange='updateSlider(this.value, this)', oninput='updateSlider(this.value, this)')
+        img#volumeControl.img.mr-4.dropdown-toggle(src='img/icons/vol3.svg' height='25' onclick="toggleSound()")
       a.navbar-brand(href='https://arma3.com/', target='_blank')
         img(src='img/social/a3logo.png')

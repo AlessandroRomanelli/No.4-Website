@@ -18,11 +18,8 @@ head
     gtag('js', new Date());
     gtag('config', 'UA-112441483-1');
   link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css', integrity='sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb', crossorigin='anonymous')
-  link(rel='stylesheet', href='css/animsition.min.css')
-  //- link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Lato")
-  //- link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Asul")
   link(rel="stylesheet" href="https://use.typekit.net/nsm2ywq.css")
-  link(rel='stylesheet', href='css/style.css')
+  link(rel='stylesheet', href='css/style.min.css')
   script.
     var trackOutboundLink = function(url) {
       gtag('event', 'click', {
@@ -31,9 +28,4 @@ head
         'transport_type': 'beacon',
         'event_callback': function(){document.location = url;}
       });
-    }
-  script(type='text/javascript').
-    function setHalfVolume() {
-      var myAudio = document.getElementById("player");
-      myAudio.volume = 0.1;
     }
