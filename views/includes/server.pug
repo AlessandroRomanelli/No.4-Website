@@ -116,7 +116,7 @@
               br
               p.text-justify On your first visit you won't be able to navigates freely. You will however have access to the recruitment waiting room where you can wait for a recruiter.
               .text-center.mt-3
-                a(href='ts3server://195.140.215.20/?port=9987&nickname=Web Visitor')
+                a(href='ts3server://195.140.215.20/?port=9987&nickname=Web Guest', onclick="trackOutboundLink('ts3server://195.140.215.20/?port=9987&nickname=Web Guest'); return false;")
                   button.mx-auto.btn.btn-outline-danger
                     strong Connect now!
                 br

@@ -1,6 +1,5 @@
 #structure.bg-dark.text-white.py-1.pl-3.pl-lg-5
   h1.header Unit Structure
-#structure-img.img.img-fluid.my-0.trans-img
 #structure-text.about-text.mb-5.pt-3.pb-0.px-3.px-lg-5
   .container-fluid.px-0
     p The real No.4 Commando was a battalion sized unit which consisted of approximately 500 highly trained soldiers. 
@@ -194,7 +193,7 @@
         ul(style='list-style: none')
           li
             img(src="img/NATO/TEAM.svg", alt="alt" height='25')
-            b Vickers Team 
+            b Heavy Weapons Team 
             | &#8212; armed with a powerful HMG and counting four men;
           li 
             img(src="img/NATO/TEAM.svg", alt="alt" height='25') 
@@ -323,7 +322,7 @@
               h5.d-inline-block.mr-2 Scout Section
               span.text-uppercase
                 small &#8212; #{space}
-                  strong #{members[58][1]} #{members[58][2]}
+                  strong #{members[59][1]} #{members[59][2]}
               br
               p Scout is the forward recon element of the unit, they are responsible for navigating and being on point of most unit level formations. They also can be tasked with observing specific areas and can on occassion be tasked with objectives suited to their skillset.
         .col-4.mt-4
@@ -332,7 +331,7 @@
           table.table.table-striped.table-sm
             tbody
               each member, index in members
-                if (index > 58 && index < 62)
+                if (index > 59 && index < 63)
                   tr
                     td #{member[0]}
                     if (member[1] == '')
@@ -370,7 +369,7 @@
           table.table.table-striped.table-sm
             tbody
               each member, index in members
-                if (index > 53 && index < 57)
+                if (index > 53 && index < 58)
                   tr
                     td #{member[0]}
                     if (member[1] == '')
@@ -387,3 +386,5 @@
                           .badge.badge-pill.badge-danger CLOSED
                       default
                         td #{member[2]}
+#structure-img.img.img-fluid.my-0.trans-img
+                      

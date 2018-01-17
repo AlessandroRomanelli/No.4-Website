@@ -10,11 +10,28 @@ head
   link(rel='manifest', href='icons/manifest.json')
   link(rel='mask-icon', href='icons/safari-pinned-tab.svg', color='#5bbad5')
   link(rel='shortcut icon', href='icons/favicon.ico')  
+  // Global site tag (gtag.js) - Google Analytics
+  script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-112441483-1')
+  script.
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-112441483-1');
   link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css', integrity='sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb', crossorigin='anonymous')
   link(rel='stylesheet', href='css/animsition.min.css')
-  link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Lato")
-  link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Asul")
+  //- link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Lato")
+  //- link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Asul")
+  link(rel="stylesheet" href="https://use.typekit.net/nsm2ywq.css")
   link(rel='stylesheet', href='css/style.css')
+  script.
+    var trackOutboundLink = function(url) {
+      gtag('event', 'click', {
+        'event_category': 'outbound',
+        'event_label': url,
+        'transport_type': 'beacon',
+        'event_callback': function(){document.location = url;}
+      });
+    }
   script(type='text/javascript').
     function setHalfVolume() {
       var myAudio = document.getElementById("player");

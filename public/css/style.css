@@ -1,16 +1,6 @@
 @font-face {
-  font-family: "headline";
-  src: url("../font/headline.ttf");
-}
-
-@font-face {
-  font-family: "headers";
-  src: url("../font/headers.ttf");
-}
-
-@font-face {
-  font-family: "lightheaders";
-  src: url("../font/lightheaders.otf");
+  font-family: "maintitle";
+  src: url(../font/headline.ttf);
 }
 
 @-webkit-keyframes flip-in-hor-bottom {
@@ -201,6 +191,10 @@ input[type="range"]:focus::-ms-fill-upper {
   z-index: 12;
 }
 
+.futura-pt {
+  font-family: "futura-pt";
+}
+
 #medals a:focus {
   outline: none;
 }
@@ -253,10 +247,15 @@ input[type="range"]:focus::-ms-fill-upper {
 }
 
 .dropdown-menu {
-  background-color: #343a40;
+  background-color: rgba(0, 0, 0, 0.5);
   border-top: none;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
+}
+
+.dropdown-menu-right {
+  top: 40px;
+  left: -100px;
 }
 
 a.dropdown-item:link,
@@ -273,7 +272,7 @@ a.dropdown-item:hover {
 }
 
 .navFont {
-  font-family: "lightheaders", sans-serif;
+  font-family: "futura-pt", sans-serif;
   text-transform: uppercase;
   font-size: 1.25em;
 }
@@ -400,15 +399,20 @@ a.dropdown-item:hover {
 nav.navbar {
   top: 10px;
   height: 60px;
-  background-color: rgba(0, 0, 0, 0.1);
-  /*box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.25);*/
+  background-color: rgba(52, 58, 64, 0.1);
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1);
   border-top: 1px solid rgba(0, 0, 0, 0.35);
   border-bottom: 1px solid rgba(0, 0, 0, 0.35);
   transition: 0.25s ease-in-out;
 }
 
 nav.navbar:hover {
-  background-color: rgba(40, 40, 40, 0.85);
+  background-color: rgba(52, 58, 64, 1);
+  box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.35);
+}
+
+nav.navbar:hover li.nav-item.active {
+  background-color: rgba(200, 0, 0, 1);
 }
 
 div#navbarNav,
@@ -428,16 +432,22 @@ li.nav-item > a {
 }
 
 li.nav-item:not(.active):hover {
-  background-color: rgba(230, 160, 160, 0.35);
+  background-color: rgba(230, 0, 0, 0.45);
 }
 
-li.nav-item:not(.active):hover a {
+li.nav-item:not(.active):hover a,
+li.nav-item:not(.active):hover a:link {
   transform: scale(1.1);
+  color: white;
 }
 
 li.nav-item.active {
-  background-color: rgba(230, 0, 0, 0.45);
-  font-weight: bold;
+  background-color: rgba(230, 0, 0, 0.35);
+  font-weight: 600;
+  text-shadow: -1px 1px 0 rgba(0, 0, 0, 0.15), 0 1px 0 rgba(0, 0, 0, 0.15),
+    1px 1px 0 rgba(0, 0, 0, 0.15), -1px 0 0px rgba(0, 0, 0, 0.15),
+    1px 0 0px rgba(0, 0, 0, 0.15), -1px -1px 0px rgba(0, 0, 0, 0.15),
+    0 -1px 0px rgba(0, 0, 0, 0.15), 1px -1px 0px rgba(0, 0, 0, 0.15);
 }
 
 li.nav-item.active a {
@@ -519,7 +529,7 @@ li.nav-item.active > a:hover {
     2px -2px 1px rgba(0, 0, 0, 0.25), 0px -2px 1px rgba(0, 0, 0, 0.25),
     0px 2px 1px rgba(0, 0, 0, 0.25), -2px -2px 1px rgba(0, 0, 0, 0.25),
     -2px 2px 1px rgba(0, 0, 0, 0.25), -2px 0 1px rgba(0, 0, 0, 0.25);
-  font-family: "headers";
+  font-family: "futura-pt";
   font-size: 2rem;
 }
 
@@ -554,7 +564,6 @@ li {
 }
 
 body {
-  font-family: "Helvetica Neue";
   position: relative;
 }
 
@@ -670,10 +679,10 @@ a.nav-link:link {
 
 h1.headline {
   font-size: 4em;
-  font-family: "headers";
+  font-family: "futura-pt";
   text-transform: uppercase;
   letter-spacing: 0px;
-  font-weight: 100;
+  font-weight: bolder;
 }
 
 .cdo-color {
@@ -688,10 +697,10 @@ h1.headline {
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
 }
 
-#home.btn-outline-danger {
+#home a.btn-outline-danger {
   -webkit-animation: flip-in-hor-bottom 0.5s
     cubic-bezier(0.25, 0.46, 0.45, 0.94) 3s both;
-  animation: flip-in-hor-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 3s
+  animation: flip-in-hor-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s
     both;
 }
 
@@ -762,15 +771,17 @@ h1.headline {
     0 -1px 0px rgba(0, 0, 0, 0.15), 1px -1px 0px rgba(0, 0, 0, 0.15),
     0 0 2px rgba(0, 0, 0, 0.45), 0 0 5px rgba(0, 0, 0, 0.2);
   /*line-height: 85px;*/
-  height: 60px;
-  letter-spacing: 2px;
+  height: 65px;
+  letter-spacing: 3px;
+  font-family: "futura-pt";
+  font-size: 4.5em;
   /*-webkit-animation: text-focus-in 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0s
     both;
   animation: text-focus-in 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0s both;*/
 }
 
 .light-header {
-  font-family: "lightheaders";
+  font-family: "futura-pt";
 }
 
 #home p {
