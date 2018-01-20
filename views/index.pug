@@ -2,9 +2,5 @@ extends layout
 
 block content
   include ./includes/components/indexLinks
-  audio#player(autoplay='')
-    source(src='music/we_ll_meet_again.mp3', type='audio/mp3')
-  script.
-    document.getElementById('player').volume = 0.01;
   include ./includes/about
   include ./includes/join

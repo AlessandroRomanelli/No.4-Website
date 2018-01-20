@@ -146,4 +146,8 @@ router.get("/structure", function(req, res, next) {
   );
 });
 
+router.get("/donations", function(req, res, next) {
+  res.render("donations", { play: false });
+});
+
 module.exports = router;
