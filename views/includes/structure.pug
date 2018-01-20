@@ -68,11 +68,11 @@
                 | . Each subsection follows the orders of the section leader, who receives orders from HQ and carries them out by coming up with his own strategic initiative. The section leader is also responsible for the training and well-being of the section.
         .col-4.mt-4
           small
-            strong AUXILIARY MEMBERS:
+            strong MEMBERS:
           table.table.table-striped.table-sm
             tbody
               each member, index in members
-                if (index > 8 && index < 12)
+                if ((index > 7 && index < 10) || (index == 13))
                   tr
                     td #{member[0]}
                     if (member[1] == '')
@@ -95,10 +95,10 @@
           .media.mt-4
             img.d-flex.mr-3.img.align-self-top(src="img/NATO/SUB.svg", alt="alt" height='100')
             .media-body.text-justify
-              h5.d-inline-block.mr-2 Subsections One & Two
+              h5.d-inline-block.mr-2 Subsections One, Two & Three
               span.text-uppercase
                 small &#8212; #{space}
-                  strong #{members[9][1]} #{members[9][2]} & #{members[10][1]} #{members[10][2]}
+                  strong #{members[10][1]} #{members[10][2]}, #{members[11][1]} #{members[11][2]} & #{members[12][1]} #{members[12][2]}
               br
               p Each subsection is composed by 8 men divided into two teams:
               ul(style='list-style: none')
@@ -110,6 +110,10 @@
                   img(src="img/NATO/TEAM.svg", alt="alt" height='25') 
                   b Bren Team 
                   | &#8212; armed with the Bren gun and counting three men;
+                li 
+                  img(src="img/NATO/TEAM.svg", alt="alt" height='25') 
+                  b PIAT Team 
+                  | &#8212; armed with the PIAT and counting two men;
               p Normally the subsections 
                 strong moves together 
                 | unless the situation requires the two teams to split up momentarily and bound towards the objective. 
@@ -121,13 +125,13 @@
         img.img.d-flex.mx-auto.arrowDown(src='img/icons/arrow.svg' width='25')
       #subsCollapse.collapse
         .row
-          .col-6.mt-4
+          .col-4.mt-4
             .text-center
               strong SUBSECTION ONE:
             table.table.table-striped.table-sm
               tbody
                 each member, index in members
-                  if (index > 12 && index < 21)
+                  if (index > 14 && index < 25)
                     tr
                       td #{member[0]}
                       if (member[1] == '')
@@ -144,77 +148,13 @@
                             .badge.badge-pill.badge-danger CLOSED
                         default
                           td #{member[2]}
-          .col-6.mt-4
+          .col-4.mt-4
             .text-center
               strong SUBSECTION TWO:
             table.table.table-striped.table-sm
               tbody
                 each member, index in members
-                  if (index > 21 && index < 30)
-                    tr
-                      td #{member[0]}
-                      if (member[1] == '')
-                        td.text-right &#8212;
-                      else 
-                        td.text-right 
-                          strong #{member[1]}
-                      case member[2]
-                        when 'OPEN'
-                          td
-                            .badge.badge-pill.badge-success OPEN
-                        when 'CLOSED'
-                          td
-                            .badge.badge-pill.badge-danger CLOSED
-                        default
-                          td #{member[2]}
-      hr.bg-dark
-      .row
-        .col-12
-          .media.mt-4
-            img.d-flex.mr-3.img.align-self-top(src="img/NATO/SECTION.svg", alt="alt" height='100')
-            .media-body.text-justify
-              h5.d-inline-block.mr-2 Weapon Section
-              span.text-uppercase
-                small &#8212; #{space}
-                  strong #{members[31][1]} #{members[31][2]} & #{members[32][1]} #{members[32][2]}
-              br
-              p Weapon section is an element at disposal of Troop HQ, which decides 
-                strong when and how 
-                | to deploy the special weapon teams according to the needs of the infantry sections. 
-                | Depending on the situation, sometimes the weapons team are 
-                strong attached to the infantry 
-                | subsections, whereas othertimes they remain independent to achieve specific tasks. 
-                br 
-                | The section itself is composed of specific teams:
-      a.arrow.mt-2(data-toggle="collapse" href="#wepCollapse" aria-expanded='false' aria-controls='wepCollapse' onclick='toggleButton(this)')
-        small.arrow-hint CLICK ME
-        img.img.d-flex.mx-auto.arrowDown(src='img/icons/arrow.svg' width='25')
-      #wepCollapse.collapse
-        ul(style='list-style: none')
-          li
-            img(src="img/NATO/TEAM.svg", alt="alt" height='25')
-            b Heavy Weapons Team 
-            | &#8212; armed with a powerful HMG and counting four men;
-          li 
-            img(src="img/NATO/TEAM.svg", alt="alt" height='25') 
-            b Anti-Tank Team 
-            | &#8212; armed with the spring-loaded two PIAT launchers and counting four men;
-          li 
-            img(src="img/NATO/TEAM.svg", alt="alt" height='25') 
-            b Marksman Team 
-            | &#8212; issued with a 3x sight mounted on the standard SMLE Mk. I, only two men;
-          li 
-            img(src="img/NATO/TEAM.svg", alt="alt" height='25') 
-            b Sappers Team 
-            | &#8212; carrying the explosives for demolition, counting two men;
-        .row
-          .col-4.mt-4
-            .text-center
-              strong HEAVY WEAPONS TEAM:
-            table.table.table-striped.table-sm
-              tbody
-                each member, index in members
-                  if (index > 33 && index < 38)
+                  if (index > 25 && index < 36)
                     tr
                       td #{member[0]}
                       if (member[1] == '')
@@ -233,34 +173,11 @@
                           td #{member[2]}
           .col-4.mt-4
             .text-center
-              strong ANTI-TANK TEAM:
+              strong SUBSECTION THREE:
             table.table.table-striped.table-sm
               tbody
                 each member, index in members
-                  if (index > 38 && index < 43)
-                    tr
-                      td #{member[0]}
-                      if (member[1] == '')
-                        td.text-right &#8212;
-                      else 
-                        td.text-right 
-                          strong #{member[1]}
-                      case member[2]
-                        when 'OPEN'
-                          td
-                            .badge.badge-pill.badge-success OPEN
-                        when 'CLOSED'
-                          td
-                            .badge.badge-pill.badge-danger CLOSED
-                        default
-                          td #{member[2]}
-          .col-4.mt-4
-            .text-center
-              strong DEMOLITION TEAM:
-            table.table.table-striped.table-sm
-              tbody
-                each member, index in members
-                  if ((index > 45 && index < 46) || (index > 46 && index < 49))
+                  if (index > 36 && index < 47)
                     tr
                       td #{member[0]}
                       if (member[1] == '')
@@ -286,7 +203,7 @@
               h5.d-inline-block.mr-2 Medical Section
               span.text-uppercase
                 small &#8212; #{space}
-                  strong #{members[50][1]} #{members[50][2]}
+                  strong #{members[42][1]} #{members[42][2]}
               br
               p Medical section is the department of the unit specialised in providing first-aid to the injured during operations. They are the first help that any wounded soldier will receive, their main goal is to make sure that any soldier survives his wounds. They are commonly attached to a subsection and positioned in the safest possible area within the formation. 
                 strong Survival is the key to victory.
@@ -296,7 +213,7 @@
           table.table.table-striped.table-sm
             tbody
               each member, index in members
-                if (index > 49 && index < 53)
+                if (index > 47 && index < 51)
                   tr
                     td #{member[0]}
                     if (member[1] == '')
@@ -322,7 +239,7 @@
               h5.d-inline-block.mr-2 Scout Section
               span.text-uppercase
                 small &#8212; #{space}
-                  strong #{members[59][1]} #{members[59][2]}
+                  strong #{members[57][1]} #{members[57][2]}
               br
               p Scout is the forward recon element of the unit, they are responsible for navigating and being on point of most unit level formations. They also can be tasked with observing specific areas and can on occassion be tasked with objectives suited to their skillset.
         .col-4.mt-4
@@ -331,7 +248,7 @@
           table.table.table-striped.table-sm
             tbody
               each member, index in members
-                if (index > 59 && index < 63)
+                if (index > 56 && index < 61)
                   tr
                     td #{member[0]}
                     if (member[1] == '')
@@ -357,7 +274,7 @@
               h5.d-inline-block.mr-2 Flight Section
               span.text-uppercase
                 small &#8212; #{space}
-                  strong #{members[54][1]} #{members[54][2]}
+                  strong #{members[52][1]} #{members[52][2]}
               br
               p Flight Section is a 
                 strong Royal Air Force 
@@ -369,7 +286,7 @@
           table.table.table-striped.table-sm
             tbody
               each member, index in members
-                if (index > 53 && index < 58)
+                if (index > 51 && index < 56)
                   tr
                     td #{member[0]}
                     if (member[1] == '')
