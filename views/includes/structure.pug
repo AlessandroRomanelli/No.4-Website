@@ -98,7 +98,9 @@
               h5.d-inline-block.mr-2 Subsections One, Two & Three
               span.text-uppercase
                 small &#8212; #{space}
-                  strong #{members[10][1]} #{members[10][2]}, #{members[11][1]} #{members[11][2]} & #{members[12][1]} #{members[12][2]}
+                  strong #{members[10][1]} #{members[10][2]}, #{members[11][1]} #{members[11][2]}
+                  if ((members[12][2] != 'OPEN') && (members[12][2] != 'CLOSED')) 
+                    | #{members[12][1]} #{members[12][2]}
               br
               p Each subsection is composed by 8 men divided into two teams:
               ul(style='list-style: none')
