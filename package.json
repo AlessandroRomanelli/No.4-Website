@@ -14,7 +14,6 @@
     "gamedig": "^1.0.36",
     "google-auth-library": "^0.10.0",
     "googleapis": "^20.1.0",
-    "gulp": "^3.9.1",
     "morgan": "~1.8.1",
     "promise": "^8.0.1",
     "pug": "~2.0.0-beta11",
