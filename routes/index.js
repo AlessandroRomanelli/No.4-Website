@@ -16,7 +16,7 @@ var googleAuth = require("google-auth-library");
 var unit = {};
 
 /* GET home page. */
-router.get("/node/express/no4/", function(req, res, next) {
+router.get("/", function(req, res, next) {
   var weekdays = [
     "Monday",
     "Tuesday",
@@ -29,7 +29,7 @@ router.get("/node/express/no4/", function(req, res, next) {
   res.render("index", { play: true, weekdays: weekdays });
 });
 
-router.get("/node/express/no4/unit", function(req, res, next) {
+router.get("/unit", function(req, res, next) {
   res.render("unit", {
     ops: operations,
     weapons: weapons,
@@ -38,7 +38,7 @@ router.get("/node/express/no4/unit", function(req, res, next) {
   });
 });
 
-router.get("/node/express/no4/public", function(req, res, next) {
+router.get("/public", function(req, res, next) {
   let publicServer = {},
     privateServer = {},
     servers = [
@@ -87,19 +87,19 @@ router.get("/node/express/no4/public", function(req, res, next) {
   );
 });
 
-router.get("/node/express/no4/paypal/return", function(req, res, next) {
+router.get("/paypal/return", function(req, res, next) {
   res.render("thankyou", {
     play: false
   });
 });
 
-router.get("/node/express/no4/videos", function(req, res, next) {
+router.get("/videos", function(req, res, next) {
   res.render("videos", {
     play: false
   });
 });
 
-router.get("/node/express/no4/screenshots", function(req, res, next) {
+router.get("/screenshots", function(req, res, next) {
   let screenshots = [];
   let p = "./public/img/screenshots";
   fs.readdir(p, (err, files) => {
@@ -117,7 +117,7 @@ router.get("/node/express/no4/screenshots", function(req, res, next) {
   });
 });
 
-router.get("/node/express/no4/structure", function(req, res, next) {
+router.get("/structure", function(req, res, next) {
   var request = {
     spreadsheetId: "1fACPJarTwBQ0Ld0N_LAfuM91D8s5fVu587o7Ymq9tDA",
     range: "A3:C65",
@@ -146,7 +146,7 @@ router.get("/node/express/no4/structure", function(req, res, next) {
   );
 });
 
-router.get("/node/express/no4/donations", function(req, res, next) {
+router.get("/donations", function(req, res, next) {
   res.render("donations", { play: false });
 });
 
