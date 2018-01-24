@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-var app = require("./app");
+var app = require("./app.njs");
 var debug = require("debug")("no.4-website:server");
 var http = require("http");
 
