@@ -38,15 +38,6 @@ router.get("/unit", function(req, res, next) {
   });
 });
 
-router.get("/unit-info", function(req, res, next) {
-  res.render("unit", {
-    ops: operations,
-    weapons: weapons,
-    awards: awards,
-    play: false
-  });
-});
-
 router.get("/public", function(req, res, next) {
   let publicServer = {},
     privateServer = {},
