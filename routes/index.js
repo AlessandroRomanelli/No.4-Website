@@ -29,6 +29,15 @@ router.get("/", function(req, res, next) {
   res.render("index", { play: true, weekdays: weekdays });
 });
 
+router.get("/unit", function(req, res, next) {
+  res.render("unit", {
+    ops: operations,
+    weapons: weapons,
+    awards: awards,
+    play: false
+  });
+});
+
 router.get("/unit-info", function(req, res, next) {
   res.render("unit", {
     ops: operations,
