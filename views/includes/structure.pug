@@ -2,22 +2,22 @@
   h1.header Unit Structure
 #structure-text.about-text.mb-5.pt-3.pb-0.px-3.px-lg-5
   .container-fluid.px-0
-    p The real No.4 Commando was a battalion sized unit which consisted of approximately 500 highly trained soldiers. 
+    p.lead The real No.4 Commando was a battalion sized unit which consisted of approximately 500 highly trained soldiers. 
       br
       | Our unit is mainly based on the 
       strong 1st Troop 
       | of said battalion.
 
-      h3 The unit elements:
       .row
         .col-8
           .media.mt-4
             img.d-flex.mr-3.img.align-self-top(src="img/NATO/HQ.svg", alt="alt" height='100')
             .media-body.text-justify
-              h5.d-inline-block.mr-2 Troop HQ
-              span.text-uppercase
-                small &#8212; #{space}
-                  strong #{members[0][1]} #{members[0][2]} & #{members[1][1]} #{members[1][2]}
+              h4.d-inline-block.mr-2.light-header TROOP HQ &#8212;
+              span.text-uppercase #{space}
+                strong.light-header #{members[0][1]} #{members[0][2]} 
+                  if (members[1][2] != 'CLOSED') 
+                    | & #{members[1][1]} #{members[1][2]}
               br
               p It's the most important element of the unit, composed by the Commanding Officers of the 
                 | commandos and their closest helpers, their duty is to 
@@ -56,15 +56,16 @@
           .media.mt-4
             img.d-flex.mr-3.img.align-self-top(src="img/NATO/SECTION.svg", alt="alt" height='100')
             .media-body.text-justify
-              h5.d-inline-block.mr-2 Able Section
+              h4.d-inline-block.mr-2.light-header ABLE SECTION &#8212;
               span.text-uppercase
-                small &#8212; #{space}
-                  strong #{members[8][1]} #{members[8][2]}
+                strong.light-header #{members[8][1]} #{members[8][2]}
               br
-              p Able Section is the main element of the unit where most of the members are found. It is composed by two subsections, called 
-                b ONE 
+              p Able Section is the main element of the unit where most of the members are found. It is composed by three subsections, called 
+                b ONE
+                | , 
+                b TWO 
                 | and 
-                b TWO
+                b THREE
                 | . Each subsection follows the orders of the section leader, who receives orders from HQ and carries them out by coming up with his own strategic initiative. The section leader is also responsible for the training and well-being of the section.
         .col-4.mt-4
           small
@@ -95,19 +96,18 @@
           .media.mt-4
             img.d-flex.mr-3.img.align-self-top(src="img/NATO/SUB.svg", alt="alt" height='100')
             .media-body.text-justify
-              h5.d-inline-block.mr-2 Subsections One, Two & Three
+              h4.d-inline-block.mr-2.light-header.text-uppercase Able Sub-sections &#8212;
               span.text-uppercase
-                small &#8212; #{space}
-                  strong #{members[10][1]} #{members[10][2]}, #{members[11][1]} #{members[11][2]}
-                  if ((members[12][2] != 'OPEN') && (members[12][2] != 'CLOSED')) 
-                    | #{members[12][1]} #{members[12][2]}
+                strong.light-header #{members[10][1]} #{members[10][2]}, #{members[11][1]} #{members[11][2]}
+                if ((members[12][2] != 'OPEN') && (members[12][2] != 'CLOSED')) 
+                  | #{members[12][1]} #{members[12][2]}
               br
-              p Each subsection is composed by 8 men divided into two teams:
+              p Each sub-section is led by a subsection leader, who is in charge of 10 men divided into three teams:
               ul(style='list-style: none')
                 li
                   img(src="img/NATO/TEAM.svg", alt="alt" height='25')
                   b Assault Team 
-                  | &#8212; armed with SMGs and counting four men;
+                  | &#8212; armed with SMGs and counting five men;
                 li 
                   img(src="img/NATO/TEAM.svg", alt="alt" height='25') 
                   b Bren Team 
@@ -118,8 +118,8 @@
                   | &#8212; armed with the PIAT and counting two men;
               p Normally the subsections 
                 strong moves together 
-                | unless the situation requires the two teams to split up momentarily and bound towards the objective. 
-                | The subsections are the two 
+                | unless the situation requires the three teams to split up momentarily and bound towards the objective. 
+                | The sub-sections are the three 
                 strong tactical elements 
                 | that the section leader coordinates to carry out his vision.
       a.arrow.mt-2(data-toggle="collapse" href="#subsCollapse" aria-expanded='false' aria-controls='subsCollapse' onclick='toggleButton(this)')
@@ -129,11 +129,12 @@
         .row
           .col-4.mt-4
             .text-center
-              strong SUBSECTION ONE:
-            table.table.table-striped.table-sm
+              .light-header(style='font-size:1.5em') SUBSECTION 
+                strong ONE:
+            table.table.table-striped.table-sm.subsection-table
               tbody
                 each member, index in members
-                  if (index > 14 && index < 25)
+                  if (index > 14 && index < 26)
                     tr
                       td #{member[0]}
                       if (member[1] == '')
@@ -152,11 +153,12 @@
                           td #{member[2]}
           .col-4.mt-4
             .text-center
-              strong SUBSECTION TWO:
-            table.table.table-striped.table-sm
+              .light-header(style='font-size:1.5em') SUBSECTION 
+                strong TWO:
+            table.table.table-striped.table-sm.subsection-table
               tbody
                 each member, index in members
-                  if (index > 25 && index < 36)
+                  if (index > 26 && index < 38)
                     tr
                       td #{member[0]}
                       if (member[1] == '')
@@ -175,11 +177,12 @@
                           td #{member[2]}
           .col-4.mt-4
             .text-center
-              strong SUBSECTION THREE:
-            table.table.table-striped.table-sm
+              .light-header(style='font-size:1.5em') SUBSECTION 
+                strong THREE:
+            table.table.table-striped.table-sm.subsection-table
               tbody
                 each member, index in members
-                  if (index > 36 && index < 47)
+                  if (index > 38 && index < 50)
                     tr
                       td #{member[0]}
                       if (member[1] == '')
@@ -202,10 +205,9 @@
           .media.mt-4
             img.d-flex.mr-3.img.align-self-top(src="img/NATO/MEDICAL.svg", alt="alt" height='100')
             .media-body.text-justify
-              h5.d-inline-block.mr-2 Medical Section
-              span.text-uppercase
-                small &#8212; #{space}
-                  strong #{members[48][1]} #{members[48][2]}
+              h4.d-inline-block.mr-2.light-header.text-uppercase Medical Section
+              span.text-uppercase &#8212; 
+                strong.light-header #{members[51][1]} #{members[51][2]}
               br
               p Medical section is the department of the unit specialised in providing first-aid to the injured during operations. They are the first help that any wounded soldier will receive, their main goal is to make sure that any soldier survives his wounds. They are commonly attached to a subsection and positioned in the safest possible area within the formation. 
                 strong Survival is the key to victory.
@@ -215,7 +217,7 @@
           table.table.table-striped.table-sm
             tbody
               each member, index in members
-                if (index > 47 && index < 51)
+                if (index > 50 && index < 54)
                   tr
                     td #{member[0]}
                     if (member[1] == '')
@@ -238,10 +240,9 @@
           .media.mt-4
             img.d-flex.mr-3.img.align-self-top(src="img/NATO/RECON.svg", alt="alt" height='100')
             .media-body.text-justify
-              h5.d-inline-block.mr-2 Scout Section
-              span.text-uppercase
-                small &#8212; #{space}
-                  strong #{members[57][1]} #{members[57][2]}
+              h4.d-inline-block.mr-2.light-header.text-uppercase Scout Section
+              span.text-uppercase &#8212; 
+                strong #{members[60][1]} #{members[60][2]}
               br
               p Scout is the forward recon element of the unit, they are responsible for navigating and being on point of most unit level formations. They also can be tasked with observing specific areas and can on occassion be tasked with objectives suited to their skillset.
         .col-4.mt-4
@@ -250,7 +251,7 @@
           table.table.table-striped.table-sm
             tbody
               each member, index in members
-                if (index > 56 && index < 61)
+                if (index > 59 && index < 64)
                   tr
                     td #{member[0]}
                     if (member[1] == '')
@@ -273,10 +274,9 @@
           .media.mt-4
             img.d-flex.mr-3.img.align-self-top(src="img/NATO/FLIGHT.svg", alt="alt" height='100')
             .media-body.text-justify
-              h5.d-inline-block.mr-2 Flight Section
-              span.text-uppercase
-                small &#8212; #{space}
-                  strong #{members[52][1]} #{members[52][2]}
+              h4.d-inline-block.mr-2.text-uppercase.light-header Flight Section &#8212;
+              span.text-uppercase 
+                strong #{members[55][1]} #{members[55][2]}
               br
               p Flight Section is a 
                 strong Royal Air Force 
@@ -288,7 +288,7 @@
           table.table.table-striped.table-sm
             tbody
               each member, index in members
-                if (index > 51 && index < 56)
+                if (index > 54 && index < 59)
                   tr
                     td #{member[0]}
                     if (member[1] == '')
