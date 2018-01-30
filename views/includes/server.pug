@@ -2,10 +2,9 @@
   h1.header OUR SERVERS
 #server-img.img.img-fluid.my-0.trans-img
 #server-text.about-text.mb-5.pt-3.pb-0.px-3.px-lg-5
-  br
   .container-fluid.px-0
-    p.text-center Here below you can find all the information that you need to connect to our servers, click the buttons to learn more:
-    p.d-flex.justify-content-around.mt-3
+    p.text-center.mt-3 Here below you can find all the information that you need to connect to our servers, click the buttons to learn more:
+    p.d-flex.justify-content-around.mb-3
       button.btn.btn-outline-danger(type='button', data-toggle='collapse', data-target='#publicServer', aria-expanded='false', aria-controls='collapseExample')
         if public.status == 0
           .d-inline-block.mr-2(style='background-color: #5cb85c; width: 16px; height: 16px; border-radius: 50%; vertical-align: top')
@@ -31,8 +30,7 @@
       .col-4
         #publicServer.collapse
           .card.card-body
-            h4 
-              a(href='http://www.gametracker.com/server_info/195.140.215.20:2312/' target='_blank') Public Server
+            h4 Public Server
             span
               if public.name
                 strong Name: 
@@ -107,8 +105,6 @@
             span
               | Address: 
               strong ts3.no4commando.com
-              br
-              | Port: 9987
               if ts3.status == 0
                 br
                 | Connections: #{ts3.players.length} out of #{ts3.maxplayers}
@@ -116,7 +112,7 @@
               br
               p.text-justify On your first visit you won't be able to navigates freely. You will however have access to the recruitment waiting room where you can wait for a recruiter.
               .text-center.mt-3
-                a(href='ts3server://195.140.215.20/?port=9987&nickname=Web Guest', onclick="trackOutboundLink('ts3server://195.140.215.20/?port=9987&nickname=Web Guest'); return false;")
+                a(href='ts3server://ts3.no4commando.com&nickname=Web Guest', onclick="trackOutboundLink('ts3server://ts3.no4commando.com&nickname=Web Guest'); return false;")
                   button.mx-auto.btn.btn-outline-danger
                     strong Connect now!
                 br
