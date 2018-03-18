@@ -242,9 +242,9 @@ $(document).ready(function() {
                 window.location.href = e
             }
         }), $("#bgVideo").vide({
-            mp4: "video/bg.mp4",
-            webm: "video/bg.webm",
-            poster: "video/bg.jpg"
+            mp4: "/video/bg.mp4",
+            webm: "/video/bg.webm",
+            poster: "/video/bg.jpg"
         }, {
             volume: 0,
             playbackRate: 1,
@@ -259,7 +259,7 @@ $(document).ready(function() {
         }), $("#bgVideo").data("vide").getVideoObject().play(), "false" != sessionStorage.isPaused && sessionStorage.isPaused) $("#bgVideo").data("vide").getVideoObject().volume = 0, $("#volumeControl").attr("src", "img/icons/vol0.svg");
     else {
         var e = document.getElementById("player");
-        $("#bgVideo").data("vide").getVideoObject().volume = .015, $("#volumeControl").attr("src", "img/icons/vol3.svg"), sessionStorage.musicTime && (e.currentTime = parseFloat(sessionStorage.musicTime)), e.play()
+        $("#bgVideo").data("vide").getVideoObject().volume = .015, $("#volumeControl").attr("src", "/img/icons/vol3.svg"), sessionStorage.musicTime && (e.currentTime = parseFloat(sessionStorage.musicTime)), e.play()
     }
     $("#weekdays button").popover(), $("#time").on("click", function() {
         setInterval(getBritishTime, 1e3, this)

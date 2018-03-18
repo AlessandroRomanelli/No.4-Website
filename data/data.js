@@ -1,4 +1,4 @@
-// 0 = COMPLETE, 1 = ONGOING, 2 = COMING UP, 3 = TBA
+// 0 = COMPLETE, 1 = ONGOING, 2 = COMING UP, 3 = TBA, 4 = ON HOLD
 
 const operations = [
   {
@@ -8,7 +8,7 @@ const operations = [
     date: "Between campaigns",
     description:
       "The unit undergoes periods of intensive training to perfect and fine-tune its elements. Commandos trained in the Scottish Highlands before being deployed in any of their major campaigns.",
-    status: 0
+    status: 1
   },
   {
     id: "poland",
@@ -49,11 +49,11 @@ const operations = [
   {
     id: "africa",
     img: "img/thumbnails/africa.jpg",
-    title: "Libyan Desert Campaign",
+    title: "Africa Campaign",
     date: "10th June 1940 — 13th May 1943",
     description:
       "The Italians sided with Germany and declared war on the Allies, a few days later the British Army was already crossing the border from Egypt into Lybia, where Italy had its colonial interests. It was the start of a series of brutal fights, before the formidable Deutsches Afrika Korps stepped in, led by Erwin Rommel, known as 'The Desert Fox'.",
-    status: 4
+    status: 1
   },
   {
     id: "svalbard",
