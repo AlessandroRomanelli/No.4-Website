@@ -15,9 +15,9 @@
             .media-body.text-justify
               h4.d-inline-block.mr-2.light-header TROOP HQ &#8212;
               span.text-uppercase #{space}
-                strong.light-header #{members[0][1]} #{members[0][2]} 
-                  if (members[1][2] != 'CLOSED') 
-                    | & #{members[1][1]} #{members[1][2]}
+                strong.light-header #{members.hq[0][1]} #{members.hq[0][2]} 
+                  if (members.hq[1][2] != 'CLOSED') 
+                    | & #{members.hq[1][1]} #{members.hq[1][2]}
               br
               p It's the most important element of the unit, composed by the Commanding Officers of the 
                 | commandos and their closest helpers, their duty is to 
@@ -32,8 +32,43 @@
             strong AUXILIARY MEMBERS:
           table.table.table-striped.table-sm
             tbody
-              each member, index in members
-                if (index > 1 && index < 7)
+              each member, index in members.hq
+                if (index >= 2 && index < 7)
+                  tr
+                    td #{member[0]}
+                    if (member[1] == '')
+                      td.text-right &#8212;
+                    else 
+                      td.text-right 
+                        strong #{member[1]}
+                    case member[2]
+                      when 'OPEN'
+                        td
+                          .badge.badge-pill.badge-success OPEN
+                      when 'CLOSED'
+                        td
+                          .badge.badge-pill.badge-danger CLOSED
+                      default
+                        td #{member[2]}
+      hr.bg-dark
+      .row
+        .col-8
+          .media.mt-4
+            img.d-flex.mr-3.img.align-self-top(src="img/NATO/MEDICAL.svg", alt="alt" height='100')
+            .media-body.text-justify
+              h4.d-inline-block.mr-2.light-header.text-uppercase Medical Section
+              span.text-uppercase &#8212; 
+                strong.light-header #{members.medical[0][1]} #{members.medical[0][2]}
+              br
+              p Medical section is the department of the unit specialised in providing first-aid to the injured during operations. They are the first help that any wounded soldier will receive, their main goal is to make sure that any soldier survives his wounds. They are commonly attached to a subsection and positioned in the safest possible area within the formation. 
+                strong Survival is the key to victory.
+        .col-4.mt-4
+          small 
+            strong MEMBERS:
+          table.table.table-striped.table-sm
+            tbody
+              each member, index in members.medical
+                if (index >= 0 && index < 4)
                   tr
                     td #{member[0]}
                     if (member[1] == '')
@@ -58,22 +93,20 @@
             .media-body.text-justify
               h4.d-inline-block.mr-2.light-header ABLE SECTION &#8212;
               span.text-uppercase
-                strong.light-header #{members[8][1]} #{members[8][2]}
+                strong.light-header #{members.ablehq[0][1]} #{members.ablehq[0][2]}
               br
-              p Able Section is the main element of the unit where most of the members are found. It is composed by three subsections, called 
-                b ONE
-                | , 
-                b TWO 
+              p Able Section is the main element of the unit where most of the members are found. It is composed by two subsections, called 
+                b ONE 
                 | and 
-                b THREE
+                b TWO
                 | . Each subsection follows the orders of the section leader, who receives orders from HQ and carries them out by coming up with his own strategic initiative. The section leader is also responsible for the training and well-being of the section.
         .col-4.mt-4
           small
             strong MEMBERS:
           table.table.table-striped.table-sm
             tbody
-              each member, index in members
-                if ((index > 7 && index < 10) || (index == 13))
+              each member, index in members.ablehq
+                if (index >= 0 && index < 4)
                   tr
                     td #{member[0]}
                     if (member[1] == '')
@@ -90,51 +123,51 @@
                           .badge.badge-pill.badge-danger CLOSED
                       default
                         td #{member[2]}
-      hr.bg-dark
-      .row
-        .col-12
-          .media.mt-4
-            img.d-flex.mr-3.img.align-self-top(src="img/NATO/SUB.svg", alt="alt" height='100')
-            .media-body.text-justify
-              h4.d-inline-block.mr-2.light-header.text-uppercase Able Sub-sections &#8212;
-              span.text-uppercase
-                strong.light-header #{members[10][1]} #{members[10][2]}, #{members[11][1]} #{members[11][2]} 
-                  if ((members[12][2] != 'OPEN') && (members[12][2] != 'CLOSED')) 
-                    | & #{members[12][1]} #{members[12][2]}
-              br
-              p Each sub-section is led by a subsection leader, who is in charge of 10 men divided into three teams:
-              ul(style='list-style: none')
-                li
-                  img(src="img/NATO/TEAM.svg", alt="alt" height='25')
-                  b Assault Team 
-                  | &#8212; armed with SMGs and counting five men;
-                li 
-                  img(src="img/NATO/TEAM.svg", alt="alt" height='25') 
-                  b Bren Team 
-                  | &#8212; armed with the Bren gun and counting three men;
-                li 
-                  img(src="img/NATO/TEAM.svg", alt="alt" height='25') 
-                  b PIAT Team 
-                  | &#8212; armed with the PIAT and counting two men;
-              p Normally the subsections 
-                strong moves together 
-                | unless the situation requires the three teams to split up momentarily and bound towards the objective. 
-                | The sub-sections are the three 
-                strong tactical elements 
-                | that the section leader coordinates to carry out his vision.
-      a.arrow.mt-2(data-toggle="collapse" href="#subsCollapse" aria-expanded='false' aria-controls='subsCollapse' onclick='toggleButton(this)')
-        small.arrow-hint CLICK ME
-        img.img.d-flex.mx-auto.arrowDown(src='img/icons/arrow.svg' width='25')
-      #subsCollapse.collapse
+      //- hr.bg-dark
+      //- .row
+      //-   .col-12
+      //-     .media.mt-4
+      //-       img.d-flex.mr-3.img.align-self-top(src="img/NATO/SUB.svg", alt="alt" height='100')
+      //-       .media-body.text-justify
+      //-         h4.d-inline-block.mr-2.light-header.text-uppercase Able Sub-sections &#8212;
+      //-         span.text-uppercase
+      //-           strong.light-header #{members[10][1]} #{members[10][2]}, #{members[11][1]} #{members[11][2]} 
+      //-             if ((members[12][2] != 'OPEN') && (members[12][2] != 'CLOSED')) 
+      //-               | & #{members[12][1]} #{members[12][2]}
+      //-         br
+      //-         p Each sub-section is led by a subsection leader, who is in charge of 10 men divided into three teams:
+      //-         ul(style='list-style: none')
+      //-           li
+      //-             img(src="img/NATO/TEAM.svg", alt="alt" height='25')
+      //-             b Assault Team 
+      //-             | &#8212; armed with SMGs and counting five men;
+      //-           li 
+      //-             img(src="img/NATO/TEAM.svg", alt="alt" height='25') 
+      //-             b Bren Team 
+      //-             | &#8212; armed with the Bren gun and counting three men;
+      //-           li 
+      //-             img(src="img/NATO/TEAM.svg", alt="alt" height='25') 
+      //-             b PIAT Team 
+      //-             | &#8212; armed with the PIAT and counting two men;
+      //-         p Normally the subsections 
+      //-           strong moves together 
+      //-           | unless the situation requires the three teams to split up momentarily and bound towards the objective. 
+      //-           | The sub-sections are the three 
+      //-           strong tactical elements 
+      //-           | that the section leader coordinates to carry out his vision.
+      //- a.arrow.mt-2(members-toggle="collapse" href="#subsCollapse" aria-expanded='false' aria-controls='subsCollapse' onclick='toggleButton(this)')
+      //-   small.arrow-hint CLICK ME
+      //-   img.img.d-flex.mx-auto.arrowDown(src='img/icons/arrow.svg' width='25')
+      #subsCollapse
         .row
-          .col-4.mt-4
+          .col-6.mt-4
             .text-center
               .light-header(style='font-size:1.5em') SUBSECTION 
                 strong ONE:
             table.table.table-striped.table-sm.subsection-table
               tbody
-                each member, index in members
-                  if (index > 14 && index < 26)
+                each member, index in members.ablesubone
+                  if (index >= 0 && index < 8)
                     tr
                       td #{member[0]}
                       if (member[1] == '')
@@ -151,38 +184,14 @@
                             .badge.badge-pill.badge-danger CLOSED
                         default
                           td #{member[2]}
-          .col-4.mt-4
+          .col-6.mt-4
             .text-center
               .light-header(style='font-size:1.5em') SUBSECTION 
                 strong TWO:
             table.table.table-striped.table-sm.subsection-table
               tbody
-                each member, index in members
-                  if (index > 26 && index < 38)
-                    tr
-                      td #{member[0]}
-                      if (member[1] == '')
-                        td.text-right &#8212;
-                      else 
-                        td.text-right 
-                          strong #{member[1]}
-                      case member[2]
-                        when 'OPEN'
-                          td
-                            .badge.badge-pill.badge-success OPEN
-                        when 'CLOSED'
-                          td
-                            .badge.badge-pill.badge-danger CLOSED
-                        default
-                          td #{member[2]}
-          .col-4.mt-4
-            .text-center
-              .light-header(style='font-size:1.5em') SUBSECTION 
-                strong THREE:
-            table.table.table-striped.table-sm.subsection-table
-              tbody
-                each member, index in members
-                  if (index > 38 && index < 50)
+                each member, index in members.ablesubtwo
+                  if (index >= 0 && index < 8)
                     tr
                       td #{member[0]}
                       if (member[1] == '')
@@ -203,21 +212,22 @@
       .row
         .col-8
           .media.mt-4
-            img.d-flex.mr-3.img.align-self-top(src="img/NATO/MEDICAL.svg", alt="alt" height='100')
+            img.d-flex.mr-3.img.align-self-top(src="img/NATO/SECTION.svg", alt="alt" height='100')
             .media-body.text-justify
-              h4.d-inline-block.mr-2.light-header.text-uppercase Medical Section
-              span.text-uppercase &#8212; 
-                strong.light-header #{members[51][1]} #{members[51][2]}
+              h4.d-inline-block.mr-2.light-header BAKER SECTION &#8212;
+              span.text-uppercase
+                strong.light-header #{members.bakerhq[0][1]} #{members.bakerhq[0][2]}
               br
-              p Medical section is the department of the unit specialised in providing first-aid to the injured during operations. They are the first help that any wounded soldier will receive, their main goal is to make sure that any soldier survives his wounds. They are commonly attached to a subsection and positioned in the safest possible area within the formation. 
-                strong Survival is the key to victory.
+              p Baker Section is the second element of the unit built with the same structure as 
+                b Able 
+                | section. By coordinating with the other main section, they are able to carry out swift and deadly incursions.
         .col-4.mt-4
-          small 
+          small
             strong MEMBERS:
           table.table.table-striped.table-sm
             tbody
-              each member, index in members
-                if (index > 50 && index < 54)
+              each member, index in members.bakerhq
+                if (index >= 0 && index < 4)
                   tr
                     td #{member[0]}
                     if (member[1] == '')
@@ -234,24 +244,208 @@
                           .badge.badge-pill.badge-danger CLOSED
                       default
                         td #{member[2]}
+      //- hr.bg-dark
+      //- .row
+      //-   .col-12
+      //-     .media.mt-4
+      //-       img.d-flex.mr-3.img.align-self-top(src="img/NATO/SUB.svg", alt="alt" height='100')
+      //-       .media-body.text-justify
+      //-         h4.d-inline-block.mr-2.light-header.text-uppercase Able Sub-sections &#8212;
+      //-         span.text-uppercase
+      //-           strong.light-header #{members[10][1]} #{members[10][2]}, #{members[11][1]} #{members[11][2]} 
+      //-             if ((members[12][2] != 'OPEN') && (members[12][2] != 'CLOSED')) 
+      //-               | & #{members[12][1]} #{members[12][2]}
+      //-         br
+      //-         p Each sub-section is led by a subsection leader, who is in charge of 10 men divided into three teams:
+      //-         ul(style='list-style: none')
+      //-           li
+      //-             img(src="img/NATO/TEAM.svg", alt="alt" height='25')
+      //-             b Assault Team 
+      //-             | &#8212; armed with SMGs and counting five men;
+      //-           li 
+      //-             img(src="img/NATO/TEAM.svg", alt="alt" height='25') 
+      //-             b Bren Team 
+      //-             | &#8212; armed with the Bren gun and counting three men;
+      //-           li 
+      //-             img(src="img/NATO/TEAM.svg", alt="alt" height='25') 
+      //-             b PIAT Team 
+      //-             | &#8212; armed with the PIAT and counting two men;
+      //-         p Normally the subsections 
+      //-           strong moves together 
+      //-           | unless the situation requires the three teams to split up momentarily and bound towards the objective. 
+      //-           | The sub-sections are the three 
+      //-           strong tactical elements 
+      //-           | that the section leader coordinates to carry out his vision.
+      //- a.arrow.mt-2(members-toggle="collapse" href="#subsCollapse" aria-expanded='false' aria-controls='subsCollapse' onclick='toggleButton(this)')
+      //-   small.arrow-hint CLICK ME
+      //-   img.img.d-flex.mx-auto.arrowDown(src='img/icons/arrow.svg' width='25')
+      #subsCollapse
+        .row
+          .col-6.mt-4
+            .text-center
+              .light-header(style='font-size:1.5em') SUBSECTION 
+                strong ONE:
+            table.table.table-striped.table-sm.subsection-table
+              tbody
+                each member, index in members.bakersubone
+                  if (index >= 0 && index < 8)
+                    tr
+                      td #{member[0]}
+                      if (member[1] == '')
+                        td.text-right &#8212;
+                      else 
+                        td.text-right 
+                          strong #{member[1]}
+                      case member[2]
+                        when 'OPEN'
+                          td
+                            .badge.badge-pill.badge-success OPEN
+                        when 'CLOSED'
+                          td
+                            .badge.badge-pill.badge-danger CLOSED
+                        default
+                          td #{member[2]}
+          .col-6.mt-4
+            .text-center
+              .light-header(style='font-size:1.5em') SUBSECTION 
+                strong TWO:
+            table.table.table-striped.table-sm.subsection-table
+              tbody
+                each member, index in members.bakersubtwo
+                  if (index >= 0 && index < 8)
+                    tr
+                      td #{member[0]}
+                      if (member[1] == '')
+                        td.text-right &#8212;
+                      else 
+                        td.text-right 
+                          strong #{member[1]}
+                      case member[2]
+                        when 'OPEN'
+                          td
+                            .badge.badge-pill.badge-success OPEN
+                        when 'CLOSED'
+                          td
+                            .badge.badge-pill.badge-danger CLOSED
+                        default
+                          td #{member[2]}
+          //- .col-4.mt-4
+          //-   .text-center
+          //-     .light-header(style='font-size:1.5em') SUBSECTION 
+          //-       strong THREE:
+          //-   table.table.table-striped.table-sm.subsection-table
+          //-     tbody
+          //-       each member, index in members
+          //-         if (index > 38 && index < 50)
+          //-           tr
+          //-             td #{member[0]}
+          //-             if (member[1] == '')
+          //-               td.text-right &#8212;
+          //-             else 
+          //-               td.text-right 
+          //-                 strong #{member[1]}
+          //-             case member[2]
+          //-               when 'OPEN'
+          //-                 td
+          //-                   .badge.badge-pill.badge-success OPEN
+          //-               when 'CLOSED'
+          //-                 td
+          //-                   .badge.badge-pill.badge-danger CLOSED
+          //-               default
+          //-                 td #{member[2]}
       hr.bg-dark
       .row
         .col-8
           .media.mt-4
             img.d-flex.mr-3.img.align-self-top(src="img/NATO/RECON.svg", alt="alt" height='100')
             .media-body.text-justify
-              h4.d-inline-block.mr-2.light-header.text-uppercase Scout Section
+              h4.d-inline-block.mr-2.light-header.text-uppercase Weapons Section
               span.text-uppercase &#8212; 
-                strong #{members[60][1]} #{members[60][2]}
+                strong #{members.weaponshq[0][1]} #{members.weaponshq[0][2]}
               br
               p Scout is the forward recon element of the unit, they are responsible for navigating and being on point of most unit level formations. They also can be tasked with observing specific areas and can on occassion be tasked with objectives suited to their skillset.
-        .col-4.mt-4
-          small 
-            strong MEMBERS:
+      .row.mt-4
+        .col-6
+          .text-center
+            .light-header(style='font-size:1.5em') TEAM 
+              strong ONE:
           table.table.table-striped.table-sm
             tbody
-              each member, index in members
-                if (index > 59 && index < 64)
+              each member, index in members.weapon1
+                if (index >= 0 && index < 4)
+                  tr
+                    td #{member[0]}
+                    if (member[1] == '')
+                      td.text-right &#8212;
+                    else 
+                      td.text-right 
+                        strong #{member[1]}
+                    case member[2]
+                      when 'OPEN'
+                        td
+                          .badge.badge-pill.badge-success OPEN
+                      when 'CLOSED'
+                        td
+                          .badge.badge-pill.badge-danger CLOSED
+                      default
+                        td #{member[2]}
+        .col-6
+          .text-center
+            .light-header(style='font-size:1.5em') TEAM 
+              strong TWO:
+          table.table.table-striped.table-sm
+            tbody
+              each member, index in members.weapon2
+                if (index >= 0 && index < 4)
+                  tr
+                    td #{member[0]}
+                    if (member[1] == '')
+                      td.text-right &#8212;
+                    else 
+                      td.text-right 
+                        strong #{member[1]}
+                    case member[2]
+                      when 'OPEN'
+                        td
+                          .badge.badge-pill.badge-success OPEN
+                      when 'CLOSED'
+                        td
+                          .badge.badge-pill.badge-danger CLOSED
+                      default
+                        td #{member[2]}
+      .row
+        .col-6
+          .text-center
+            .light-header(style='font-size:1.5em') TEAM 
+              strong THREE:
+          table.table.table-striped.table-sm
+            tbody
+              each member, index in members.weapon3
+                if (index >= 0 && index < 4)
+                  tr
+                    td #{member[0]}
+                    if (member[1] == '')
+                      td.text-right &#8212;
+                    else 
+                      td.text-right 
+                        strong #{member[1]}
+                    case member[2]
+                      when 'OPEN'
+                        td
+                          .badge.badge-pill.badge-success OPEN
+                      when 'CLOSED'
+                        td
+                          .badge.badge-pill.badge-danger CLOSED
+                      default
+                        td #{member[2]}
+        .col-6
+          .text-center
+            .light-header(style='font-size:1.5em') TEAM 
+              strong FOUR:
+          table.table.table-striped.table-sm
+            tbody
+              each member, index in members.weapon4
+                if (index >= 0 && index < 4)
                   tr
                     td #{member[0]}
                     if (member[1] == '')
@@ -276,7 +470,7 @@
             .media-body.text-justify
               h4.d-inline-block.mr-2.text-uppercase.light-header Flight Section &#8212;
               span.text-uppercase 
-                strong #{members[55][1]} #{members[55][2]}
+                strong #{members.flight[0][1]} #{members.flight[0][2]}
               br
               p Flight Section is a 
                 strong Royal Air Force 
@@ -287,8 +481,8 @@
             strong MEMBERS:
           table.table.table-striped.table-sm
             tbody
-              each member, index in members
-                if (index > 54 && index < 59)
+              each member, index in members.flight
+                if (index >= 0 && index < 4)
                   tr
                     td #{member[0]}
                     if (member[1] == '')

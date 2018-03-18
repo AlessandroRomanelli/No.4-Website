@@ -15,6 +15,41 @@ var readline = require("readline");
 var googleAuth = require("google-auth-library");
 var unit = {};
 
+function reorderSpreadsheetArray(array, row1, row2, column) {
+  column *= 3;
+  var res = [];
+  for (i = row1; i < row2; i++) {
+    var data = [column, column + 1, column + 2];
+    data = data.map(function(x) {
+      if (array[i][x]) {
+        return array[i][x]
+      } else {
+        return null
+      }
+    });
+    res.push(data)
+  }
+  return res
+}
+
+function groupSections(data, array) {
+  data.hq = reorderSpreadsheetArray(array, 0, 12, 0);
+  data.medical = reorderSpreadsheetArray(array, 0, 12, 1);
+  data.ablehq = reorderSpreadsheetArray(array, 0, 12, 2);
+  data.ablesubone = reorderSpreadsheetArray(array, 0, 12, 3);
+  data.ablesubtwo = reorderSpreadsheetArray(array, 0, 12, 4);
+  data.bakerhq = reorderSpreadsheetArray(array, 13, 23, 2);
+  data.bakersubone = reorderSpreadsheetArray(array, 13, 23, 3);
+  data.bakersubtwo = reorderSpreadsheetArray(array, 13, 23, 4);
+  data.flight = reorderSpreadsheetArray(array, 13, 23, 0);
+  data.weaponshq = reorderSpreadsheetArray(array, 25, 28, 0);
+  data.weapon1 = reorderSpreadsheetArray(array, 25, 28, 1);
+  data.weapon2 = reorderSpreadsheetArray(array, 25, 28, 2);
+  data.weapon3 = reorderSpreadsheetArray(array, 25, 28, 3);
+  data.weapon4 = reorderSpreadsheetArray(array, 25, 28, 4);
+  return data;
+}
+
 /* GET home page. */
 router.get("/", function(req, res, next) {
   var weekdays = [
@@ -120,7 +155,7 @@ router.get("/screenshots", function(req, res, next) {
 router.get("/structure", function(req, res, next) {
   var request = {
     spreadsheetId: "1fACPJarTwBQ0Ld0N_LAfuM91D8s5fVu587o7Ymq9tDA",
-    range: "A3:C65",
+    range: "Development!A2:O29",
     valueRenderOption: "FORMATTED_VALUE",
     dateTimeRenderOption: "SERIAL_NUMBER",
     auth: process.env.API_KEY || "AIzaSyC8kYitDoc-HWLZUfN4CUYkGcZG5XFCcS0"
@@ -128,18 +163,22 @@ router.get("/structure", function(req, res, next) {
   async.series(
     [
       function(callback) {
-        sheets.spreadsheets.values.get(request, function(err, response) {
+        sheets.spreadsheets.values.get(request, function(err, res) {
           if (err) {
             console.error(err);
             return;
           }
-          callback(null, response);
+          callback(null, res);
         });
       }
     ],
     function(err, response) {
+      response = response[0].values;
+      var data = {}
+      data = groupSections(data, response);
+      // reorderSpreadsheetArray(array, row1, row2, column)
       res.render("structure", {
-        members: response[0].values,
+        members: data,
         play: false
       });
     }

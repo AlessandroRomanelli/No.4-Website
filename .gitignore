@@ -30,6 +30,5 @@ node_modules
 npm-debug.log
 
 build
-src
 
 client_secret.json
