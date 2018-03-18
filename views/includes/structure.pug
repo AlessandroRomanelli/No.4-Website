@@ -208,6 +208,53 @@
                             .badge.badge-pill.badge-danger CLOSED
                         default
                           td #{member[2]}
+        .row
+          .col-6
+            .text-center
+              .light-header(style='font-size:1.5em') WEAPONS TEAM 
+            table.table.table-striped.table-sm
+              tbody
+                each member, index in members.weapon1
+                  if (index >= 0 && index < 4)
+                    tr
+                      td #{member[0]}
+                      if (member[1] == '')
+                        td.text-right &#8212;
+                      else 
+                        td.text-right 
+                          strong #{member[1]}
+                      case member[2]
+                        when 'OPEN'
+                          td
+                            .badge.badge-pill.badge-success OPEN
+                        when 'CLOSED'
+                          td
+                            .badge.badge-pill.badge-danger CLOSED
+                        default
+                          td #{member[2]}
+          .col-6
+            .text-center
+              .light-header(style='font-size:1.5em') WEAPONS TEAM 
+            table.table.table-striped.table-sm
+              tbody
+                each member, index in members.weapon2
+                  if (index >= 0 && index < 4)
+                    tr
+                      td #{member[0]}
+                      if (member[1] == '')
+                        td.text-right &#8212;
+                      else 
+                        td.text-right 
+                          strong #{member[1]}
+                      case member[2]
+                        when 'OPEN'
+                          td
+                            .badge.badge-pill.badge-success OPEN
+                        when 'CLOSED'
+                          td
+                            .badge.badge-pill.badge-danger CLOSED
+                        default
+                          td #{member[2]}
       hr.bg-dark
       .row
         .col-8
@@ -329,6 +376,53 @@
                             .badge.badge-pill.badge-danger CLOSED
                         default
                           td #{member[2]}
+        .row
+          .col-6
+            .text-center
+              .light-header(style='font-size:1.5em') WEAPONS TEAM 
+            table.table.table-striped.table-sm
+              tbody
+                each member, index in members.weapon3
+                  if (index >= 0 && index < 4)
+                    tr
+                      td #{member[0]}
+                      if (member[1] == '')
+                        td.text-right &#8212;
+                      else 
+                        td.text-right 
+                          strong #{member[1]}
+                      case member[2]
+                        when 'OPEN'
+                          td
+                            .badge.badge-pill.badge-success OPEN
+                        when 'CLOSED'
+                          td
+                            .badge.badge-pill.badge-danger CLOSED
+                        default
+                          td #{member[2]}
+          .col-6
+            .text-center
+              .light-header(style='font-size:1.5em') WEAPONS TEAM 
+            table.table.table-striped.table-sm
+              tbody
+                each member, index in members.weapon4
+                  if (index >= 0 && index < 4)
+                    tr
+                      td #{member[0]}
+                      if (member[1] == '')
+                        td.text-right &#8212;
+                      else 
+                        td.text-right 
+                          strong #{member[1]}
+                      case member[2]
+                        when 'OPEN'
+                          td
+                            .badge.badge-pill.badge-success OPEN
+                        when 'CLOSED'
+                          td
+                            .badge.badge-pill.badge-danger CLOSED
+                        default
+                          td #{member[2]}
           //- .col-4.mt-4
           //-   .text-center
           //-     .light-header(style='font-size:1.5em') SUBSECTION 
@@ -353,115 +447,6 @@
           //-                   .badge.badge-pill.badge-danger CLOSED
           //-               default
           //-                 td #{member[2]}
-      hr.bg-dark
-      .row
-        .col-8
-          .media.mt-4
-            img.d-flex.mr-3.img.align-self-top(src="img/NATO/RECON.svg", alt="alt" height='100')
-            .media-body.text-justify
-              h4.d-inline-block.mr-2.light-header.text-uppercase Weapons Section
-              span.text-uppercase &#8212; 
-                strong #{members.weaponshq[0][1]} #{members.weaponshq[0][2]}
-              br
-              p Scout is the forward recon element of the unit, they are responsible for navigating and being on point of most unit level formations. They also can be tasked with observing specific areas and can on occassion be tasked with objectives suited to their skillset.
-      .row.mt-4
-        .col-6
-          .text-center
-            .light-header(style='font-size:1.5em') TEAM 
-              strong ONE:
-          table.table.table-striped.table-sm
-            tbody
-              each member, index in members.weapon1
-                if (index >= 0 && index < 4)
-                  tr
-                    td #{member[0]}
-                    if (member[1] == '')
-                      td.text-right &#8212;
-                    else 
-                      td.text-right 
-                        strong #{member[1]}
-                    case member[2]
-                      when 'OPEN'
-                        td
-                          .badge.badge-pill.badge-success OPEN
-                      when 'CLOSED'
-                        td
-                          .badge.badge-pill.badge-danger CLOSED
-                      default
-                        td #{member[2]}
-        .col-6
-          .text-center
-            .light-header(style='font-size:1.5em') TEAM 
-              strong TWO:
-          table.table.table-striped.table-sm
-            tbody
-              each member, index in members.weapon2
-                if (index >= 0 && index < 4)
-                  tr
-                    td #{member[0]}
-                    if (member[1] == '')
-                      td.text-right &#8212;
-                    else 
-                      td.text-right 
-                        strong #{member[1]}
-                    case member[2]
-                      when 'OPEN'
-                        td
-                          .badge.badge-pill.badge-success OPEN
-                      when 'CLOSED'
-                        td
-                          .badge.badge-pill.badge-danger CLOSED
-                      default
-                        td #{member[2]}
-      .row
-        .col-6
-          .text-center
-            .light-header(style='font-size:1.5em') TEAM 
-              strong THREE:
-          table.table.table-striped.table-sm
-            tbody
-              each member, index in members.weapon3
-                if (index >= 0 && index < 4)
-                  tr
-                    td #{member[0]}
-                    if (member[1] == '')
-                      td.text-right &#8212;
-                    else 
-                      td.text-right 
-                        strong #{member[1]}
-                    case member[2]
-                      when 'OPEN'
-                        td
-                          .badge.badge-pill.badge-success OPEN
-                      when 'CLOSED'
-                        td
-                          .badge.badge-pill.badge-danger CLOSED
-                      default
-                        td #{member[2]}
-        .col-6
-          .text-center
-            .light-header(style='font-size:1.5em') TEAM 
-              strong FOUR:
-          table.table.table-striped.table-sm
-            tbody
-              each member, index in members.weapon4
-                if (index >= 0 && index < 4)
-                  tr
-                    td #{member[0]}
-                    if (member[1] == '')
-                      td.text-right &#8212;
-                    else 
-                      td.text-right 
-                        strong #{member[1]}
-                    case member[2]
-                      when 'OPEN'
-                        td
-                          .badge.badge-pill.badge-success OPEN
-                      when 'CLOSED'
-                        td
-                          .badge.badge-pill.badge-danger CLOSED
-                      default
-                        td #{member[2]}
       hr.bg-dark
       .row
         .col-8
