@@ -32,21 +32,40 @@ function reorderSpreadsheetArray(array, row1, row2, column) {
   return res
 }
 
+function countArray(array) {
+  var counter = 0;
+  for(k=0; k < array.length; i++) {
+    if (array[k][0]  != null) {
+      counter ++;
+    }
+  }
+  return counter;
+}
+
+
 function groupSections(data, array) {
-  data.hq = reorderSpreadsheetArray(array, 0, 12, 0);
-  data.medical = reorderSpreadsheetArray(array, 0, 12, 1);
-  data.ablehq = reorderSpreadsheetArray(array, 0, 12, 2);
-  data.ablesubone = reorderSpreadsheetArray(array, 0, 12, 3);
-  data.ablesubtwo = reorderSpreadsheetArray(array, 0, 12, 4);
-  data.bakerhq = reorderSpreadsheetArray(array, 13, 23, 2);
-  data.bakersubone = reorderSpreadsheetArray(array, 13, 23, 3);
-  data.bakersubtwo = reorderSpreadsheetArray(array, 13, 23, 4);
-  data.flight = reorderSpreadsheetArray(array, 13, 23, 0);
-  data.weaponshq = reorderSpreadsheetArray(array, 25, 28, 0);
-  data.weapon1 = reorderSpreadsheetArray(array, 25, 28, 1);
-  data.weapon2 = reorderSpreadsheetArray(array, 25, 28, 2);
-  data.weapon3 = reorderSpreadsheetArray(array, 25, 28, 3);
-  data.weapon4 = reorderSpreadsheetArray(array, 25, 28, 4);
+  var sections = ["hq", "medical", "ablehq", "ablesubone", "ablesubtwo",
+  "bakerhq", "bakersubone", "bakersubtwo", "flight",
+  "weaponshq", "weapon1", "weapon2", "weapon3", "weapon4"];
+  for (j=0; j < sections.length; j++) {
+    if (j < 5) {
+      data[sections[j]] = reorderSpreadsheetArray(array, 0, 13, j);
+    }
+    if (j >= 5 && j < 8) {
+      data[sections[j]] = reorderSpreadsheetArray(array, 14, 27, j-3);
+    }
+    if (j == 8) {
+      data[sections[j]] = reorderSpreadsheetArray(array, 14, 27, 0);
+    }
+    if (j > 8){
+      data[sections[j]] = reorderSpreadsheetArray(array, 28, 36, j-9);
+    }
+  }
+
+  for (var propertyName in data) {
+    data[propertyName] = [data[propertyName], data[propertyName].pop()[2]]
+  }
+
   return data;
 }
 
@@ -164,7 +183,7 @@ router.get("/screenshots", function(req, res, next) {
 router.get("/structure", function(req, res, next) {
   var request = {
     spreadsheetId: "1fACPJarTwBQ0Ld0N_LAfuM91D8s5fVu587o7Ymq9tDA",
-    range: "Development!A2:O29",
+    range: "Production!A2:O37",
     valueRenderOption: "FORMATTED_VALUE",
     dateTimeRenderOption: "SERIAL_NUMBER",
     auth: process.env.API_KEY || "AIzaSyC8kYitDoc-HWLZUfN4CUYkGcZG5XFCcS0"

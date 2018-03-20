@@ -15,9 +15,9 @@
             .media-body.text-justify
               h4.d-inline-block.mr-2.light-header TROOP HQ &#8212;
               span.text-uppercase #{space}
-                strong.light-header #{members.hq[0][1]} #{members.hq[0][2]} 
-                  if (members.hq[1][2] != 'CLOSED') 
-                    | & #{members.hq[1][1]} #{members.hq[1][2]}
+                strong.light-header #{members.hq[0][0][1]} #{members.hq[0][0][2]} 
+                  if (members.hq[0][1][2] != 'CLOSED') 
+                    | & #{members.hq[0][1][1]} #{members.hq[0][1][2]}
               br
               p It's the most important element of the unit, composed by the Commanding Officers of the 
                 | commandos and their closest helpers, their duty is to 
@@ -32,8 +32,8 @@
             strong AUXILIARY MEMBERS:
           table.table.table-striped.table-sm
             tbody
-              each member, index in members.hq
-                if (index >= 2 && index < 7)
+              each member, index in members.hq[0]
+                if (index >= 2 && index < members.hq[1])
                   tr
                     td #{member[0]}
                     if (member[1] == '')
@@ -58,7 +58,7 @@
             .media-body.text-justify
               h4.d-inline-block.mr-2.light-header.text-uppercase Medical Section
               span.text-uppercase &#8212; 
-                strong.light-header #{members.medical[0][1]} #{members.medical[0][2]}
+                strong.light-header #{members.medical[0][0][1]} #{members.medical[0][0][2]}
               br
               p Medical section is the department of the unit specialised in providing first-aid to the injured during operations. They are the first help that any wounded soldier will receive, their main goal is to make sure that any soldier survives his wounds. They are commonly attached to a subsection and positioned in the safest possible area within the formation. 
                 strong Survival is the key to victory.
@@ -67,8 +67,8 @@
             strong MEMBERS:
           table.table.table-striped.table-sm
             tbody
-              each member, index in members.medical
-                if (index >= 0 && index < 4)
+              each member, index in members.medical[0]
+                if (index >= 0 && index < members.medical[1])
                   tr
                     td #{member[0]}
                     if (member[1] == '')
@@ -93,7 +93,7 @@
             .media-body.text-justify
               h4.d-inline-block.mr-2.light-header ABLE SECTION &#8212;
               span.text-uppercase
-                strong.light-header #{members.ablehq[0][1]} #{members.ablehq[0][2]}
+                strong.light-header #{members.ablehq[0][0][1]} #{members.ablehq[0][0][2]}
               br
               p Able Section is the main element of the unit where most of the members are found. It is composed by two subsections, called 
                 b ONE 
@@ -105,8 +105,8 @@
             strong MEMBERS:
           table.table.table-striped.table-sm
             tbody
-              each member, index in members.ablehq
-                if (index >= 0 && index < 4)
+              each member, index in members.ablehq[0]
+                if (index >= 0 && index < members.ablehq[1])
                   tr
                     td #{member[0]}
                     if (member[1] == '')
@@ -123,138 +123,102 @@
                           .badge.badge-pill.badge-danger CLOSED
                       default
                         td #{member[2]}
-      //- hr.bg-dark
-      //- .row
-      //-   .col-12
-      //-     .media.mt-4
-      //-       img.d-flex.mr-3.img.align-self-top(src="img/NATO/SUB.svg", alt="alt" height='100')
-      //-       .media-body.text-justify
-      //-         h4.d-inline-block.mr-2.light-header.text-uppercase Able Sub-sections &#8212;
-      //-         span.text-uppercase
-      //-           strong.light-header #{members[10][1]} #{members[10][2]}, #{members[11][1]} #{members[11][2]} 
-      //-             if ((members[12][2] != 'OPEN') && (members[12][2] != 'CLOSED')) 
-      //-               | & #{members[12][1]} #{members[12][2]}
-      //-         br
-      //-         p Each sub-section is led by a subsection leader, who is in charge of 10 men divided into three teams:
-      //-         ul(style='list-style: none')
-      //-           li
-      //-             img(src="img/NATO/TEAM.svg", alt="alt" height='25')
-      //-             b Assault Team 
-      //-             | &#8212; armed with SMGs and counting five men;
-      //-           li 
-      //-             img(src="img/NATO/TEAM.svg", alt="alt" height='25') 
-      //-             b Bren Team 
-      //-             | &#8212; armed with the Bren gun and counting three men;
-      //-           li 
-      //-             img(src="img/NATO/TEAM.svg", alt="alt" height='25') 
-      //-             b PIAT Team 
-      //-             | &#8212; armed with the PIAT and counting two men;
-      //-         p Normally the subsections 
-      //-           strong moves together 
-      //-           | unless the situation requires the three teams to split up momentarily and bound towards the objective. 
-      //-           | The sub-sections are the three 
-      //-           strong tactical elements 
-      //-           | that the section leader coordinates to carry out his vision.
-      //- a.arrow.mt-2(members-toggle="collapse" href="#subsCollapse" aria-expanded='false' aria-controls='subsCollapse' onclick='toggleButton(this)')
-      //-   small.arrow-hint CLICK ME
-      //-   img.img.d-flex.mx-auto.arrowDown(src='img/icons/arrow.svg' width='25')
-      #subsCollapse
-        .row
-          .col-6.mt-4
-            .text-center
-              .light-header(style='font-size:1.5em') SUBSECTION 
-                strong ONE:
-            table.table.table-striped.table-sm.subsection-table
-              tbody
-                each member, index in members.ablesubone
-                  if (index >= 0 && index < 8)
-                    tr
-                      td #{member[0]}
-                      if (member[1] == '')
-                        td.text-right &#8212;
-                      else 
-                        td.text-right 
-                          strong #{member[1]}
-                      case member[2]
-                        when 'OPEN'
-                          td
-                            .badge.badge-pill.badge-success OPEN
-                        when 'CLOSED'
-                          td
-                            .badge.badge-pill.badge-danger CLOSED
-                        default
-                          td #{member[2]}
-          .col-6.mt-4
-            .text-center
-              .light-header(style='font-size:1.5em') SUBSECTION 
-                strong TWO:
-            table.table.table-striped.table-sm.subsection-table
-              tbody
-                each member, index in members.ablesubtwo
-                  if (index >= 0 && index < 8)
-                    tr
-                      td #{member[0]}
-                      if (member[1] == '')
-                        td.text-right &#8212;
-                      else 
-                        td.text-right 
-                          strong #{member[1]}
-                      case member[2]
-                        when 'OPEN'
-                          td
-                            .badge.badge-pill.badge-success OPEN
-                        when 'CLOSED'
-                          td
-                            .badge.badge-pill.badge-danger CLOSED
-                        default
-                          td #{member[2]}
-        .row
-          .col-6
-            .text-center
-              .light-header(style='font-size:1.5em') WEAPONS TEAM 
-            table.table.table-striped.table-sm
-              tbody
-                each member, index in members.weapon1
-                  if (index >= 0 && index < 4)
-                    tr
-                      td #{member[0]}
-                      if (member[1] == '')
-                        td.text-right &#8212;
-                      else 
-                        td.text-right 
-                          strong #{member[1]}
-                      case member[2]
-                        when 'OPEN'
-                          td
-                            .badge.badge-pill.badge-success OPEN
-                        when 'CLOSED'
-                          td
-                            .badge.badge-pill.badge-danger CLOSED
-                        default
-                          td #{member[2]}
-          .col-6
-            .text-center
-              .light-header(style='font-size:1.5em') WEAPONS TEAM 
-            table.table.table-striped.table-sm
-              tbody
-                each member, index in members.weapon2
-                  if (index >= 0 && index < 4)
-                    tr
-                      td #{member[0]}
-                      if (member[1] == '')
-                        td.text-right &#8212;
-                      else 
-                        td.text-right 
-                          strong #{member[1]}
-                      case member[2]
-                        when 'OPEN'
-                          td
-                            .badge.badge-pill.badge-success OPEN
-                        when 'CLOSED'
-                          td
-                            .badge.badge-pill.badge-danger CLOSED
-                        default
-                          td #{member[2]}
+      .row
+        .col-6.mt-4
+          .text-center
+            .light-header(style='font-size:1.5em') SUBSECTION 
+              strong ONE:
+          table.table.table-striped.table-sm.subsection-table
+            tbody
+              each member, index in members.ablesubone[0]
+                if (index >= 0 && index < members.ablesubone[1])
+                  tr
+                    td #{member[0]}
+                    if (member[1] == '')
+                      td.text-right &#8212;
+                    else 
+                      td.text-right 
+                        strong #{member[1]}
+                    case member[2]
+                      when 'OPEN'
+                        td
+                          .badge.badge-pill.badge-success OPEN
+                      when 'CLOSED'
+                        td
+                          .badge.badge-pill.badge-danger CLOSED
+                      default
+                        td #{member[2]}
+        .col-6.mt-4
+          .text-center
+            .light-header(style='font-size:1.5em') SUBSECTION 
+              strong TWO:
+          table.table.table-striped.table-sm.subsection-table
+            tbody
+              each member, index in members.ablesubtwo[0]
+                if (index >= 0 && index < members.ablesubtwo[1])
+                  tr
+                    td #{member[0]}
+                    if (member[1] == '')
+                      td.text-right &#8212;
+                    else 
+                      td.text-right 
+                        strong #{member[1]}
+                    case member[2]
+                      when 'OPEN'
+                        td
+                          .badge.badge-pill.badge-success OPEN
+                      when 'CLOSED'
+                        td
+                          .badge.badge-pill.badge-danger CLOSED
+                      default
+                        td #{member[2]}
+      .row
+        .col-6
+          .text-center
+            .light-header(style='font-size:1.5em') WEAPONS TEAM 
+          table.table.table-striped.table-sm
+            tbody
+              each member, index in members.weapon1[0]
+                if (index >= 0 && index < members.weapon1[1])
+                  tr
+                    td #{member[0]}
+                    if (member[1] == '')
+                      td.text-right &#8212;
+                    else 
+                      td.text-right 
+                        strong #{member[1]}
+                    case member[2]
+                      when 'OPEN'
+                        td
+                          .badge.badge-pill.badge-success OPEN
+                      when 'CLOSED'
+                        td
+                          .badge.badge-pill.badge-danger CLOSED
+                      default
+                        td #{member[2]}
+        .col-6
+          .text-center
+            .light-header(style='font-size:1.5em') WEAPONS TEAM 
+          table.table.table-striped.table-sm
+            tbody
+              each member, index in members.weapon2[0]
+                if (index >= 0 && index < members.weapon2[1])
+                  tr
+                    td #{member[0]}
+                    if (member[1] == '')
+                      td.text-right &#8212;
+                    else 
+                      td.text-right 
+                        strong #{member[1]}
+                    case member[2]
+                      when 'OPEN'
+                        td
+                          .badge.badge-pill.badge-success OPEN
+                      when 'CLOSED'
+                        td
+                          .badge.badge-pill.badge-danger CLOSED
+                      default
+                        td #{member[2]}
       hr.bg-dark
       .row
         .col-8
@@ -263,7 +227,7 @@
             .media-body.text-justify
               h4.d-inline-block.mr-2.light-header BAKER SECTION &#8212;
               span.text-uppercase
-                strong.light-header #{members.bakerhq[0][1]} #{members.bakerhq[0][2]}
+                strong.light-header #{members.bakerhq[0][0][1]} #{members.bakerhq[0][0][2]}
               br
               p Baker Section is the second element of the unit built with the same structure as 
                 b Able 
@@ -273,8 +237,8 @@
             strong MEMBERS:
           table.table.table-striped.table-sm
             tbody
-              each member, index in members.bakerhq
-                if (index >= 0 && index < 4)
+              each member, index in members.bakerhq[0]
+                if (index >= 0 && index < members.bakerhq[1])
                   tr
                     td #{member[0]}
                     if (member[1] == '')
@@ -291,163 +255,102 @@
                           .badge.badge-pill.badge-danger CLOSED
                       default
                         td #{member[2]}
-      //- hr.bg-dark
-      //- .row
-      //-   .col-12
-      //-     .media.mt-4
-      //-       img.d-flex.mr-3.img.align-self-top(src="img/NATO/SUB.svg", alt="alt" height='100')
-      //-       .media-body.text-justify
-      //-         h4.d-inline-block.mr-2.light-header.text-uppercase Able Sub-sections &#8212;
-      //-         span.text-uppercase
-      //-           strong.light-header #{members[10][1]} #{members[10][2]}, #{members[11][1]} #{members[11][2]} 
-      //-             if ((members[12][2] != 'OPEN') && (members[12][2] != 'CLOSED')) 
-      //-               | & #{members[12][1]} #{members[12][2]}
-      //-         br
-      //-         p Each sub-section is led by a subsection leader, who is in charge of 10 men divided into three teams:
-      //-         ul(style='list-style: none')
-      //-           li
-      //-             img(src="img/NATO/TEAM.svg", alt="alt" height='25')
-      //-             b Assault Team 
-      //-             | &#8212; armed with SMGs and counting five men;
-      //-           li 
-      //-             img(src="img/NATO/TEAM.svg", alt="alt" height='25') 
-      //-             b Bren Team 
-      //-             | &#8212; armed with the Bren gun and counting three men;
-      //-           li 
-      //-             img(src="img/NATO/TEAM.svg", alt="alt" height='25') 
-      //-             b PIAT Team 
-      //-             | &#8212; armed with the PIAT and counting two men;
-      //-         p Normally the subsections 
-      //-           strong moves together 
-      //-           | unless the situation requires the three teams to split up momentarily and bound towards the objective. 
-      //-           | The sub-sections are the three 
-      //-           strong tactical elements 
-      //-           | that the section leader coordinates to carry out his vision.
-      //- a.arrow.mt-2(members-toggle="collapse" href="#subsCollapse" aria-expanded='false' aria-controls='subsCollapse' onclick='toggleButton(this)')
-      //-   small.arrow-hint CLICK ME
-      //-   img.img.d-flex.mx-auto.arrowDown(src='img/icons/arrow.svg' width='25')
-      #subsCollapse
-        .row
-          .col-6.mt-4
-            .text-center
-              .light-header(style='font-size:1.5em') SUBSECTION 
-                strong ONE:
-            table.table.table-striped.table-sm.subsection-table
-              tbody
-                each member, index in members.bakersubone
-                  if (index >= 0 && index < 8)
-                    tr
-                      td #{member[0]}
-                      if (member[1] == '')
-                        td.text-right &#8212;
-                      else 
-                        td.text-right 
-                          strong #{member[1]}
-                      case member[2]
-                        when 'OPEN'
-                          td
-                            .badge.badge-pill.badge-success OPEN
-                        when 'CLOSED'
-                          td
-                            .badge.badge-pill.badge-danger CLOSED
-                        default
-                          td #{member[2]}
-          .col-6.mt-4
-            .text-center
-              .light-header(style='font-size:1.5em') SUBSECTION 
-                strong TWO:
-            table.table.table-striped.table-sm.subsection-table
-              tbody
-                each member, index in members.bakersubtwo
-                  if (index >= 0 && index < 8)
-                    tr
-                      td #{member[0]}
-                      if (member[1] == '')
-                        td.text-right &#8212;
-                      else 
-                        td.text-right 
-                          strong #{member[1]}
-                      case member[2]
-                        when 'OPEN'
-                          td
-                            .badge.badge-pill.badge-success OPEN
-                        when 'CLOSED'
-                          td
-                            .badge.badge-pill.badge-danger CLOSED
-                        default
-                          td #{member[2]}
-        .row
-          .col-6
-            .text-center
-              .light-header(style='font-size:1.5em') WEAPONS TEAM 
-            table.table.table-striped.table-sm
-              tbody
-                each member, index in members.weapon3
-                  if (index >= 0 && index < 4)
-                    tr
-                      td #{member[0]}
-                      if (member[1] == '')
-                        td.text-right &#8212;
-                      else 
-                        td.text-right 
-                          strong #{member[1]}
-                      case member[2]
-                        when 'OPEN'
-                          td
-                            .badge.badge-pill.badge-success OPEN
-                        when 'CLOSED'
-                          td
-                            .badge.badge-pill.badge-danger CLOSED
-                        default
-                          td #{member[2]}
-          .col-6
-            .text-center
-              .light-header(style='font-size:1.5em') WEAPONS TEAM 
-            table.table.table-striped.table-sm
-              tbody
-                each member, index in members.weapon4
-                  if (index >= 0 && index < 4)
-                    tr
-                      td #{member[0]}
-                      if (member[1] == '')
-                        td.text-right &#8212;
-                      else 
-                        td.text-right 
-                          strong #{member[1]}
-                      case member[2]
-                        when 'OPEN'
-                          td
-                            .badge.badge-pill.badge-success OPEN
-                        when 'CLOSED'
-                          td
-                            .badge.badge-pill.badge-danger CLOSED
-                        default
-                          td #{member[2]}
-          //- .col-4.mt-4
-          //-   .text-center
-          //-     .light-header(style='font-size:1.5em') SUBSECTION 
-          //-       strong THREE:
-          //-   table.table.table-striped.table-sm.subsection-table
-          //-     tbody
-          //-       each member, index in members
-          //-         if (index > 38 && index < 50)
-          //-           tr
-          //-             td #{member[0]}
-          //-             if (member[1] == '')
-          //-               td.text-right &#8212;
-          //-             else 
-          //-               td.text-right 
-          //-                 strong #{member[1]}
-          //-             case member[2]
-          //-               when 'OPEN'
-          //-                 td
-          //-                   .badge.badge-pill.badge-success OPEN
-          //-               when 'CLOSED'
-          //-                 td
-          //-                   .badge.badge-pill.badge-danger CLOSED
-          //-               default
-          //-                 td #{member[2]}
-      hr.bg-dark
+      .row
+        .col-6.mt-4
+          .text-center
+            .light-header(style='font-size:1.5em') SUBSECTION 
+              strong ONE:
+          table.table.table-striped.table-sm.subsection-table
+            tbody
+              each member, index in members.bakersubone[0]
+                if (index >= 0 && index < members.bakersubone[1])
+                  tr
+                    td #{member[0]}
+                    if (member[1] == '')
+                      td.text-right &#8212;
+                    else 
+                      td.text-right 
+                        strong #{member[1]}
+                    case member[2]
+                      when 'OPEN'
+                        td
+                          .badge.badge-pill.badge-success OPEN
+                      when 'CLOSED'
+                        td
+                          .badge.badge-pill.badge-danger CLOSED
+                      default
+                        td #{member[2]}
+        .col-6.mt-4
+          .text-center
+            .light-header(style='font-size:1.5em') SUBSECTION 
+              strong TWO:
+          table.table.table-striped.table-sm.subsection-table
+            tbody
+              each member, index in members.bakersubtwo[0]
+                if (index >= 0 && index < members.bakersubtwo[1])
+                  tr
+                    td #{member[0]}
+                    if (member[1] == '')
+                      td.text-right &#8212;
+                    else 
+                      td.text-right 
+                        strong #{member[1]}
+                    case member[2]
+                      when 'OPEN'
+                        td
+                          .badge.badge-pill.badge-success OPEN
+                      when 'CLOSED'
+                        td
+                          .badge.badge-pill.badge-danger CLOSED
+                      default
+                        td #{member[2]}
+      .row
+        .col-6
+          .text-center
+            .light-header(style='font-size:1.5em') WEAPONS TEAM 
+          table.table.table-striped.table-sm
+            tbody
+              each member, index in members.weapon3[0]
+                if (index >= 0 && index < members.weapon3[1])
+                  tr
+                    td #{member[0]}
+                    if (member[1] == '')
+                      td.text-right &#8212;
+                    else 
+                      td.text-right 
+                        strong #{member[1]}
+                    case member[2]
+                      when 'OPEN'
+                        td
+                          .badge.badge-pill.badge-success OPEN
+                      when 'CLOSED'
+                        td
+                          .badge.badge-pill.badge-danger CLOSED
+                      default
+                        td #{member[2]}
+        .col-6
+          .text-center
+            .light-header(style='font-size:1.5em') WEAPONS TEAM 
+          table.table.table-striped.table-sm
+            tbody
+              each member, index in members.weapon4[0]
+                if (index >= 0 && index < members.weapon4[1])
+                  tr
+                    td #{member[0]}
+                    if (member[1] == '')
+                      td.text-right &#8212;
+                    else 
+                      td.text-right 
+                        strong #{member[1]}
+                    case member[2]
+                      when 'OPEN'
+                        td
+                          .badge.badge-pill.badge-success OPEN
+                      when 'CLOSED'
+                        td
+                          .badge.badge-pill.badge-danger CLOSED
+                      default
+                        td #{member[2]}
       .row
         .col-8
           .media.mt-4
@@ -455,7 +358,7 @@
             .media-body.text-justify
               h4.d-inline-block.mr-2.text-uppercase.light-header Flight Section &#8212;
               span.text-uppercase 
-                strong #{members.flight[0][1]} #{members.flight[0][2]}
+                strong #{members.flight[0][0][1]} #{members.flight[0][0][2]}
               br
               p Flight Section is a 
                 strong Royal Air Force 
@@ -466,8 +369,8 @@
             strong MEMBERS:
           table.table.table-striped.table-sm
             tbody
-              each member, index in members.flight
-                if (index >= 0 && index < 4)
+              each member, index in members.flight[0]
+                if (index >= 0 && index < members.flight[1])
                   tr
                     td #{member[0]}
                     if (member[1] == '')
