@@ -18,10 +18,8 @@
         strong Tuesday
         | , 
         strong Thursday
-        | , 
+        | and
         strong Saturday
-        |  and 
-        strong Sunday
         | .
       #weekdays.d-flex.justify-content-between.bg-faded.mb-2
         each day in weekdays
@@ -38,10 +36,10 @@
               div(style='background-color: rgba(169, 0, 0, 0.9); width:14.285%;')
                 button.btn.w-100.text-white.py-1(type='button', style='background-color: rgba(0,0,0,0)' data-container='body',data-trigger="hover", data-toggle='popover', data-placement='bottom', title="SIDE OPERATION" data-content='On this day we organize smaller scale operations, better tailored to our numbers and intended to fit the reduced members\' presence during the week.')
                   | #{day}
-            when "Sunday"
-              div(style='background-color: rgba(169, 0, 0, 0.75); width:14.285%;')
-                button.btn.w-100.text-white.py-1(type='button', style='background-color: rgba(0,0,0,0)' data-container='body',data-trigger="hover", data-toggle='popover', data-placement='bottom', title="TRAINING DAY" data-content='On sundays the units get to train together. On this day new recruits are usually instructed with the BCT programm, while the rest of the unit get to train topics that are usually picked by the senior leaders.')
-                  | #{day}
+            //- when "Sunday"
+            //-   div(style='background-color: rgba(169, 0, 0, 0.75); width:14.285%;')
+            //-     button.btn.w-100.text-white.py-1(type='button', style='background-color: rgba(0,0,0,0)' data-container='body',data-trigger="hover", data-toggle='popover', data-placement='bottom', title="TRAINING DAY" data-content='On sundays the units get to train together. On this day new recruits are usually instructed with the BCT programm, while the rest of the unit get to train topics that are usually picked by the senior leaders.')
+            //-       | #{day}
             default
               div.bg-light(style='width:14.28%;')
                 button.btn.w-100.py-1(type='button', style='background-color: rgba(0,0,0,0)' data-container='body', data-trigger="hover", data-toggle='popover', data-placement='bottom', title="DAY OFF" data-content='On these days no events are planned and the members are left free to organize something by themselves or just enjoy a break from the unit activities.')
