@@ -15,6 +15,8 @@ var readline = require("readline");
 var googleAuth = require("google-auth-library");
 var unit = {};
 
+const serverIP = "195.206.181.5";
+
 function reorderSpreadsheetArray(array, row1, row2, column) {
   column *= 3;
   var res = [];
@@ -96,9 +98,9 @@ router.get("/public", function(req, res, next) {
   let publicServer = {},
     privateServer = {},
     servers = [
-      ["arma3", "195.140.215.20", 2312],
-      ["arma3", "195.140.215.20", 2302],
-      ["teamspeak3", "195.140.215.20", 9987]
+      ["arma3", serverIP, 2312],
+      ["arma3", serverIP, 2302],
+      ["teamspeak3", serverIP, 9987]
     ];
   function getServer(connectData, callback) {
     let response = {};
