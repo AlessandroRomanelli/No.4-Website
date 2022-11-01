@@ -14,7 +14,7 @@
     "gamedig": "^1.0.36",
     "google-auth-library": "^0.10.0",
     "googleapis": "^20.1.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "morgan": "^1.9.1",
     "promise": "^8.0.1",
     "pug": "^2.0.4",
@@ -23,7 +23,7 @@
   "devDependencies": {
     "concurrent-transform": "^1.0.0",
     "del": "^3.0.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-clean-css": "^3.9.2",
     "gulp-concat": "^2.6.1",
     "gulp-image-resize": "^0.13.1",
